@@ -1,10 +1,16 @@
 # Handoff: Arch Space — architecture studio website
 
-> **Built.** This handoff has been implemented as a static site in `src/`,
-> output to `dist/`. Run `npm run setup` once, then `npm run dev`
-> (http://localhost:4321). Implementation decisions, deviations and the
-> remaining launch tasks are recorded in [docs/BUILD-NOTES.md](docs/BUILD-NOTES.md).
-> The rest of this document is the original handoff, unchanged.
+> **Built.** Live preview: **https://sandeshkashyap63-cpu.github.io/arch-space-website/**
+>
+> This handoff has been implemented as a static site in `src/`, output to
+> `dist/`. Run `npm run setup` once, then `npm run dev` (http://localhost:4321);
+> `npm run deploy` republishes the preview.
+>
+> The preview still carries **placeholder project photography**, and its enquiry
+> form hands off to WhatsApp because GitHub Pages has no backend. Implementation
+> decisions, deviations and the remaining launch tasks are recorded in
+> [docs/BUILD-NOTES.md](docs/BUILD-NOTES.md). The rest of this document is the
+> original handoff, unchanged.
 
 ## Overview
 A four-page marketing website for **Arch Space** — an architecture, interiors, 3D visualisation, valuation and landscape practice based in **Jagadhri (Haryana)** and **Chandigarh**, run by Abhishek Mangla, B.Arch. The site's job is credibility plus one action: get a prospective client to call, WhatsApp, or submit the enquiry form.
