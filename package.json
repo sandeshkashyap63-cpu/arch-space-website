@@ -1,0 +1,20 @@
+{
+  "name": "arch-space-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arch Space — architecture studio website. Static four-page site, zero runtime dependencies.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:pages": "BASE_PATH=/arch-space-website SITE_ORIGIN=https://sandeshkashyap63-cpu.github.io ENQUIRY_MODE=handoff node scripts/build.mjs",
+    "dev": "node scripts/dev-server.mjs",
+    "dev:pages": "BASE_PATH=/arch-space-website node scripts/dev-server.mjs",
+    "images": "node scripts/optimize-images.mjs",
+    "fonts": "node scripts/fetch-fonts.mjs",
+    "setup": "npm run fonts && npm run images && npm run build",
+    "deploy": "node scripts/deploy-pages.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

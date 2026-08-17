@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #23211D; color: #EDE6D9; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #EDE6D9; text-decoration: none; }
+  a:hover { color: #C9A24A; }
+  ::selection { background: #A6803F; color: #EDE6D9; }
+  @keyframes as-track { from { letter-spacing: 0.9em; opacity: 0 } to { letter-spacing: 0.34em; opacity: 1 } }
+  @keyframes as-rise { from { opacity: 0; transform: translateY(22px) } to { opacity: 1; transform: none } }
+  @keyframes as-drawx { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+  @keyframes as-drawy { from { transform: scaleY(0) } to { transform: scaleY(1) } }
+  @keyframes as-fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes as-zoom { from { transform: scale(1.1) } to { transform: scale(1) } }
+  @keyframes as-cue { 0%,100% { transform: scaleY(0.2); opacity: .3 } 50% { transform: scaleY(1); opacity: 1 } }
+  @keyframes as-marquee { from { transform: translateX(0) } to { transform: translateX(-50%) } }
+</style>
+</helmet>
+
+<div style="font-family:'Jost',system-ui,sans-serif;background:#23211D;overflow-x:hidden">
+
+  <header ref="{{ headerRef }}" style="position:fixed;top:0;left:0;right:0;z-index:70;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:20px 34px;transition:background 600ms ease,color 600ms ease,border-color 600ms ease;border-bottom:1px solid transparent">
+    <a href="Home.dc.html" style="font-size:12px;font-weight:400;letter-spacing:0.46em;text-transform:uppercase;animation:as-fade 1200ms ease both">Arch Space</a>
+    <nav style="display:flex;align-items:center;gap:30px;animation:as-fade 1400ms ease both">
+      <a href="Projects.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Projects</a>
+      <a href="Studio.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Studio</a>
+      <a href="Contact.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Contact</a>
+      <a href="tel:+919467629425" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;white-space:nowrap;color:#C9A24A">+91 94676 29425</a>
+    </nav>
+  </header>
+
+  <section data-screen-label="Hero board" style="position:relative;min-height:100svh;background:#23211D;padding:104px 34px 56px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;overflow:hidden">
+    <div style="position:absolute;left:34px;top:96px;bottom:56px;width:1px;background:rgba(237,230,217,0.14);transform-origin:top;animation:as-drawy 1600ms cubic-bezier(.2,.7,.2,1) 200ms both"></div>
+    <div style="position:absolute;right:34px;top:96px;bottom:56px;width:1px;background:rgba(237,230,217,0.14);transform-origin:bottom;animation:as-drawy 1600ms cubic-bezier(.2,.7,.2,1) 200ms both"></div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center">
+      <span style="font-size:9px;letter-spacing:0.34em;text-transform:uppercase;color:rgba(237,230,217,0.55);animation:as-fade 1400ms ease 300ms both">Architects · Interiors · Valuers · Landscape</span>
+      <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(34px,6.4vw,104px);line-height:1;text-transform:uppercase;letter-spacing:0.34em;text-indent:0.34em;color:#EDE6D9;animation:as-track 2000ms cubic-bezier(.2,.7,.2,1) 260ms both">Arch Space</h1>
+      <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,1.5vw,22px);color:#C9A24A;animation:as-fade 1600ms ease 900ms both">Concept to Completion</span>
+    </div>
+
+    <div style="position:relative;width:100%;max-width:1180px;display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,2.1fr) minmax(0,1fr);gap:clamp(14px,2vw,34px);align-items:center">
+      <div style="display:flex;flex-direction:column;gap:26px;align-items:flex-end;text-align:right">
+        <div style="display:flex;flex-direction:column;gap:6px;animation:as-rise 1200ms ease 1100ms both">
+          <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#C9A24A">Concept</span>
+          <span style="font-size:11px;line-height:1.7;color:rgba(237,230,217,0.6);max-width:20ch">daylight placed where people actually sit</span>
+          <span style="height:1px;background:rgba(237,230,217,0.3);transform-origin:right;animation:as-drawx 1000ms ease 1500ms both"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;animation:as-rise 1200ms ease 1300ms both">
+          <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#C9A24A">Material</span>
+          <span style="font-size:11px;line-height:1.7;color:rgba(237,230,217,0.6);max-width:20ch">exposed concrete · local brick · warm tone</span>
+          <span style="height:1px;background:rgba(237,230,217,0.3);transform-origin:right;animation:as-drawx 1000ms ease 1700ms both"></span>
+        </div>
+      </div>
+
+      <div style="position:relative;animation:as-fade 1400ms ease 700ms both">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden">
+          <div ref="{{ heroImgRef }}" style="position:absolute;inset:0;animation:as-zoom 2600ms cubic-bezier(.2,.7,.2,1) 700ms both">
+            <div ref="{{ slideARef }}" style="position:absolute;inset:0;opacity:1;transition:opacity 1500ms ease">
+              <image-slot id="hb-s1" shape="rect" fit="cover" src="uploads/Enhance_quality_and_change_size_202608161056.jpeg" placeholder="sketch design board"></image-slot>
+            </div>
+            <div ref="{{ slideBRef }}" style="position:absolute;inset:0;opacity:0;transition:opacity 1500ms ease">
+              <image-slot id="hb-s2" shape="rect" fit="cover" src="uploads/Enhance_quality_and_change_size_202608161057.jpeg" placeholder="wireframe interior render"></image-slot>
+            </div>
+            <div ref="{{ slideCRef }}" style="position:absolute;inset:0;opacity:0;transition:opacity 1500ms ease">
+              <image-slot id="hb-s3" shape="rect" fit="cover" src="uploads/Enhance_image_quality_and_size_202608161128.jpeg" placeholder="annotated sketch design board"></image-slot>
+            </div>
+            <div ref="{{ slideDRef }}" style="position:absolute;inset:0;opacity:0;transition:opacity 1500ms ease">
+              <image-slot id="hb-s4" shape="rect" fit="cover" src="uploads/Enhance_quality_and_change_size_202608171156.jpeg" placeholder="modern residence, blue hour"></image-slot>
+            </div>
+          </div>
+          <div ref="{{ dotsRef }}" style="position:absolute;left:12px;bottom:12px;display:flex;gap:8px;z-index:3">
+            <span style="width:22px;height:2px;background:#C9A24A;transition:background 600ms ease"></span>
+            <span style="width:22px;height:2px;background:rgba(237,230,217,0.35);transition:background 600ms ease"></span>
+            <span style="width:22px;height:2px;background:rgba(237,230,217,0.35);transition:background 600ms ease"></span>
+            <span style="width:22px;height:2px;background:rgba(237,230,217,0.35);transition:background 600ms ease"></span>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:12px">
+          <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(237,230,217,0.5)">Elevation · scale 1:100</span>
+          <span style="flex:1;height:1px;background:rgba(237,230,217,0.22);transform-origin:left;animation:as-drawx 1400ms ease 1400ms both"></span>
+          <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:rgba(237,230,217,0.5)">10.80 m</span>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div style="display:flex;flex-direction:column;gap:6px;animation:as-rise 1200ms ease 1200ms both">
+          <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#C9A24A">Section a—a</span>
+          <span style="font-size:11px;line-height:1.7;color:rgba(237,230,217,0.6);max-width:20ch">double-height void, cross ventilation</span>
+          <span style="height:1px;background:rgba(237,230,217,0.3);transform-origin:left;animation:as-drawx 1000ms ease 1600ms both"></span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px;animation:as-rise 1200ms ease 1400ms both">
+          <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#C9A24A">Site</span>
+          <span style="font-size:11px;line-height:1.7;color:rgba(237,230,217,0.6);max-width:20ch">Jagadhri, Haryana &amp; Chandigarh</span>
+          <span style="height:1px;background:rgba(237,230,217,0.3);transform-origin:left;animation:as-drawx 1000ms ease 1800ms both"></span>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;animation:as-fade 1600ms ease 1900ms both">
+      <span style="font-size:9px;letter-spacing:0.32em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Scroll</span>
+      <span style="width:1px;height:46px;background:#A6803F;animation:as-cue 2400ms ease-in-out infinite"></span>
+    </div>
+  </section>
+
+  <section data-screen-label="Statement" style="background:#EDE6D9;color:#221F1A;padding:clamp(56px,9vh,110px) 34px">
+    <div data-reveal style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:clamp(28px,4vw,72px);align-items:end">
+      <p style="margin:0;grid-column:1/-1;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(23px,2.9vw,46px);line-height:1.24;letter-spacing:-0.01em;max-width:26ch;text-wrap:pretty">Drawings, renders, valuation and site work — under one roof in Jagadhri and Chandigarh.</p>
+      <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(34,31,26,0.18);padding-top:14px">
+        <span ref="{{ n1Ref }}" style="font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1;color:#A6803F">140+</span>
+        <span style="font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(34,31,26,0.55)">Projects delivered</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(34,31,26,0.18);padding-top:14px">
+        <span ref="{{ n2Ref }}" style="font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1;color:#A6803F">15</span>
+        <span style="font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(34,31,26,0.55)">Years in practice</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(34,31,26,0.18);padding-top:14px">
+        <span ref="{{ n3Ref }}" style="font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1;color:#A6803F">05</span>
+        <span style="font-size:10px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(34,31,26,0.55)">Disciplines in-house</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Selected projects" style="background:#EDE6D9;color:#221F1A;padding:0 34px clamp(56px,9vh,110px)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:34px">
+      <div data-reveal style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(34,31,26,0.18);padding-bottom:16px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,3.4vw,58px);line-height:1;letter-spacing:-0.02em">Selected Projects</h2>
+        <a href="Projects.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(34,31,26,0.6);border-bottom:1px solid rgba(34,31,26,0.3);padding-bottom:4px;white-space:nowrap">View all →</a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(18px,2vw,30px)">
+        <a data-reveal href="Projects.dc.html" style="display:flex;flex-direction:column;gap:12px;min-width:0;color:#221F1A">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden">
+            <image-slot id="hb-p1" shape="rect" fit="cover" src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Courtyard House — contemporary residence"></image-slot>
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400">Courtyard House</span>
+            <span style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(34,31,26,0.5);white-space:nowrap">Sector 17 · 2024</span>
+          </div>
+        </a>
+        <a data-reveal href="Projects.dc.html" style="display:flex;flex-direction:column;gap:12px;min-width:0;color:#221F1A">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden">
+            <image-slot id="hb-p2" shape="rect" fit="cover" src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Vidya Bhawan — institutional block"></image-slot>
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400">Vidya Bhawan Block</span>
+            <span style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(34,31,26,0.5);white-space:nowrap">Institutional · 2023</span>
+          </div>
+        </a>
+        <a data-reveal href="Projects.dc.html" style="display:flex;flex-direction:column;gap:12px;min-width:0;color:#221F1A">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden">
+            <image-slot id="hb-p3" shape="rect" fit="cover" src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Mangla Flagship — retail interior"></image-slot>
+          </div>
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:400">Mangla Flagship</span>
+            <span style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(34,31,26,0.5);white-space:nowrap">Interiors · 2025</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Services marquee" style="background:#1B1A16;border-top:1px solid rgba(237,230,217,0.12);border-bottom:1px solid rgba(237,230,217,0.12);padding:26px 0;overflow:hidden">
+    <div style="display:flex;width:max-content;animation:as-marquee 34s linear infinite">
+      <div style="display:flex;align-items:center;gap:44px;padding-right:44px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">Architecture</span>
+        <span style="color:#A6803F">✦</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">Interiors</span>
+        <span style="color:#A6803F">✦</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">3D Visualisation</span>
+        <span style="color:#A6803F">✦</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">Valuation</span>
+        <span style="color:#A6803F">✦</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">Landscape</span>
+        <span style="color:#A6803F">✦</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:44px;padding-right:44px">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">Architecture</span>
+        <span style="color:#A6803F">✦</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">Interiors</span>
+        <span style="color:#A6803F">✦</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">3D Visualisation</span>
+        <span style="color:#A6803F">✦</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">Valuation</span>
+        <span style="color:#A6803F">✦</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.2vw,34px);font-weight:300;color:#EDE6D9">Landscape</span>
+        <span style="color:#A6803F">✦</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Testimonials" style="background:#23211D;padding:clamp(56px,9vh,110px) 34px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:34px">
+      <div data-reveal style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;border-bottom:1px solid rgba(237,230,217,0.16);padding-bottom:16px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,3.4vw,58px);line-height:1;letter-spacing:-0.02em;color:#EDE6D9">Clients</h2>
+        <span style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(237,230,217,0.45)">In their words</span>
+      </div>
+      <div ref="{{ tRailRef }}" style="overflow:hidden;width:100%">
+        <div ref="{{ tTrackRef }}" style="display:flex;width:max-content;gap:22px;animation:as-marquee 46s linear infinite">
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">He sat with us for the plan three times before drawing a line. The house works exactly as promised.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Rajesh Bansal</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Residence · Sector 17, Jagadhri</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">Renders matched the finished showroom so closely that our vendors used them as reference.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Simran Kaur</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Retail interior · Ambala</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">Valuation report was accepted by the bank without a single query. Handed over in four days.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Vikram Sethi</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Valuation · Yamunanagar</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">Our Chandigarh office was handed over on the date he promised, snag list closed in a week.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Naveen Gupta</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Office fit-out · Chandigarh</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">The walkthrough convinced my whole family. What was built looks exactly like that video.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Meenakshi Rana</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Residence · Radaur</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">Every site visit came with a written instruction sheet. The contractor never had an excuse.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Harpreet Singh</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Institutional · Yamunanagar</span>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">He sat with us for the plan three times before drawing a line. The house works exactly as promised.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Rajesh Bansal</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Residence · Sector 17, Jagadhri</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">Renders matched the finished showroom so closely that our vendors used them as reference.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Simran Kaur</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Retail interior · Ambala</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">Valuation report was accepted by the bank without a single query. Handed over in four days.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Vikram Sethi</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Valuation · Yamunanagar</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">Our Chandigarh office was handed over on the date he promised, snag list closed in a week.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Naveen Gupta</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Office fit-out · Chandigarh</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">The walkthrough convinced my whole family. What was built looks exactly like that video.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Meenakshi Rana</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Residence · Radaur</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:14px;width:min(380px,80vw);border:1px solid rgba(237,230,217,0.14);padding:26px">
+            <span style="font-size:13px;letter-spacing:0.24em;color:#C9A24A">★★★★★ <span style="font-size:10px;color:rgba(237,230,217,0.5);letter-spacing:0.16em">5/5</span></span>
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:19px;line-height:1.5;color:rgba(237,230,217,0.9)">Every site visit came with a written instruction sheet. The contractor never had an excuse.</p>
+            <span style="font-size:11px;letter-spacing:0.1em;color:#EDE6D9">Harpreet Singh</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Institutional · Yamunanagar</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Press wall" style="background:#23211D;border-top:1px solid rgba(237,230,217,0.12);padding:clamp(48px,7vh,90px) 34px">
+    <div data-reveal style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+      <div style="position:relative;width:100%;aspect-ratio:16/10;overflow:hidden">
+        <image-slot id="hb-award" shape="rect" fit="cover" src="uploads/photos-1786856519759-p198.jpeg" placeholder="award / panel photograph"></image-slot>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <span style="font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:#C9A24A">Awards &amp; press</span>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:space-between;gap:18px;border-top:1px solid rgba(237,230,217,0.16);padding:15px 0">
+            <span style="font-size:13px;color:rgba(237,230,217,0.85)">Panel member, Real Wood Collection launch</span>
+            <span style="font-size:11px;color:rgba(237,230,217,0.45)">2023</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:18px;border-top:1px solid rgba(237,230,217,0.16);padding:15px 0">
+            <span style="font-size:13px;color:rgba(237,230,217,0.85)">Speaker, Architects &amp; Interior Designers Meet</span>
+            <span style="font-size:11px;color:rgba(237,230,217,0.45)">2022</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:18px;border-top:1px solid rgba(237,230,217,0.16);border-bottom:1px solid rgba(237,230,217,0.16);padding:15px 0">
+            <span style="font-size:13px;color:rgba(237,230,217,0.85)">Council of Architecture, India — registered</span>
+            <span style="font-size:11px;color:rgba(237,230,217,0.45)">Member</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="CTA" style="background:#EDE6D9;color:#221F1A;padding:clamp(56px,9vh,120px) 34px">
+    <div data-reveal style="max-width:1400px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:28px;flex-wrap:wrap">
+      <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(30px,5vw,86px);line-height:0.96;letter-spacing:-0.03em">Bring us<br />the <span style="font-style:italic">site</span>.</h2>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <a href="Contact.dc.html" style="display:inline-flex;align-items:center;gap:12px;align-self:flex-start;background:#23211D;color:#EDE6D9;padding:15px 28px;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;transition:background 400ms ease" style-hover="background:#A6803F">Enquire →</a>
+        <span style="font-size:11px;letter-spacing:0.14em;color:rgba(34,31,26,0.55)">#510, Sector 17, HUDA, Jagadhri · <a href="mailto:arspace1@gmail.com" style="color:#221F1A">arspace1@gmail.com</a></span>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1B1A16;padding:26px 34px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
+      <span style="font-size:11px;letter-spacing:0.44em;text-transform:uppercase;color:rgba(237,230,217,0.8)">Arch Space</span>
+      <span style="font-size:10px;letter-spacing:0.16em;color:rgba(237,230,217,0.4)">© 2026 · Abhishek Mangla, B.Arch · Jagadhri &amp; Chandigarh</span>
+    </div>
+  </footer>
+
+  <div style="position:fixed;right:20px;bottom:20px;z-index:80;display:flex;flex-direction:column;gap:10px">
+    <a href="https://wa.me/919467629425" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#A6803F;color:#23211D;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,0.35);transition:transform 350ms ease" style-hover="transform:translateY(-3px)">WA</a>
+    <a href="tel:+919467629425" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;border:1px solid rgba(237,230,217,0.35);background:rgba(35,33,29,0.9);color:#EDE6D9;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;transition:transform 350ms ease" style-hover="transform:translateY(-3px);border-color:#A6803F">Call</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;animations&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Motion&quot; }
+}">
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.headerRef = React.createRef();
+    this.heroImgRef = React.createRef();
+    this.slideARef = React.createRef();
+    this.slideBRef = React.createRef();
+    this.slideCRef = React.createRef();
+    this.slideDRef = React.createRef();
+    this.dotsRef = React.createRef();
+    this.n1Ref = React.createRef();
+    this.n2Ref = React.createRef();
+    this.n3Ref = React.createRef();
+    this.tRailRef = React.createRef();
+    this.tTrackRef = React.createRef();
+  }
+
+  countUp(el, target, suffix, pad) {
+    if (!el) return;
+    const dur = 1600, t0 = performance.now();
+    const tick = (t) => {
+      const k = Math.min(1, (t - t0) / dur);
+      const eased = 1 - Math.pow(1 - k, 3);
+      let v = Math.round(target * eased);
+      el.textContent = (pad && v < 10 ? '0' + v : String(v)) + (k === 1 ? suffix : '');
+      if (k < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  componentDidMount() {
+    const header = this.headerRef.current;
+    this._onScroll = () => {
+      const y = window.scrollY;
+      if (header) {
+        const past = y > window.innerHeight * 0.86;
+        header.style.background = y > 30 ? (past ? 'rgba(237,230,217,0.94)' : 'rgba(27,26,22,0.86)') : 'transparent';
+        header.style.backdropFilter = y > 30 ? 'blur(12px)' : 'none';
+        header.style.color = past ? '#221F1A' : '#EDE6D9';
+        header.style.borderBottomColor = y > 30 ? (past ? 'rgba(34,31,26,0.14)' : 'rgba(237,230,217,0.12)') : 'transparent';
+        Array.from(header.querySelectorAll('a')).forEach((a) => { if (a.getAttribute('href') !== 'tel:+919467629425') a.style.color = 'inherit'; });
+      }
+      const hero = this.heroImgRef.current;
+      if (hero && y < window.innerHeight) hero.style.translate = '0 ' + (y * 0.07).toFixed(1) + 'px';
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+    this.startExtras();
+
+    if (this.props.animations === false) return;
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    nodes.forEach((n) => { n.style.opacity = '0'; });
+    this._io = new IntersectionObserver((es) => {
+      es.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.animation = 'as-rise 1000ms cubic-bezier(.2,.7,.2,1) ' + (i * 90) + 'ms both';
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    nodes.forEach((n) => this._io.observe(n));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+    if (this._statsIo) this._statsIo.disconnect();
+    if (this._slides) clearInterval(this._slides);
+  }
+
+  startExtras() {
+    const slides = [this.slideARef.current, this.slideBRef.current, this.slideCRef.current, this.slideDRef.current].filter(Boolean);
+    const dots = this.dotsRef.current ? Array.from(this.dotsRef.current.children) : [];
+    if (slides.length > 1) {
+      let on = 0;
+      this._slides = setInterval(() => {
+        on = (on + 1) % slides.length;
+        slides.forEach((s, i) => { s.style.opacity = i === on ? '1' : '0'; });
+        dots.forEach((d, i) => { d.style.background = i === on ? '#C9A24A' : 'rgba(237,230,217,0.35)'; });
+      }, 5200);
+    }
+
+    const n1 = this.n1Ref.current;
+    if (n1) {
+      const statsIo = new IntersectionObserver((es) => {
+        if (es.some((e) => e.isIntersecting)) {
+          this.countUp(n1, 140, '+', false);
+          this.countUp(this.n2Ref.current, 15, '', false);
+          this.countUp(this.n3Ref.current, 5, '', true);
+          statsIo.disconnect();
+        }
+      }, { threshold: 0.4 });
+      statsIo.observe(n1);
+      this._statsIo = statsIo;
+    }
+
+    const rail = this.tRailRef.current, track = this.tTrackRef.current;
+    if (rail && track) {
+      rail.addEventListener('mouseenter', () => { track.style.animationPlayState = 'paused'; });
+      rail.addEventListener('mouseleave', () => { track.style.animationPlayState = 'running'; });
+    }
+  }
+
+  renderVals() {
+    return {
+      headerRef: this.headerRef,
+      heroImgRef: this.heroImgRef,
+      slideARef: this.slideARef,
+      slideBRef: this.slideBRef,
+      slideCRef: this.slideCRef,
+      slideDRef: this.slideDRef,
+      dotsRef: this.dotsRef,
+      n1Ref: this.n1Ref,
+      n2Ref: this.n2Ref,
+      n3Ref: this.n3Ref,
+      tRailRef: this.tRailRef,
+      tTrackRef: this.tTrackRef
+    };
+  }
+}
+</script>
+</body>
+</html>

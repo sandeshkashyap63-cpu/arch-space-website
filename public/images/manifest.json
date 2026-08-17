@@ -1,0 +1,137 @@
+{
+  "hero-01.jpeg": {
+    "base": "hero-01",
+    "alt": "Sketch design board for a residence",
+    "width": 2400,
+    "height": 1792,
+    "widths": [
+      480,
+      768,
+      1024,
+      1440,
+      2000
+    ],
+    "formats": [
+      "jpeg"
+    ],
+    "aspect": 0.7467
+  },
+  "hero-02.jpeg": {
+    "base": "hero-02",
+    "alt": "Wireframe interior render of a living space",
+    "width": 2400,
+    "height": 1792,
+    "widths": [
+      480,
+      768,
+      1024,
+      1440,
+      2000
+    ],
+    "formats": [
+      "jpeg"
+    ],
+    "aspect": 0.7467
+  },
+  "hero-03.jpeg": {
+    "base": "hero-03",
+    "alt": "Annotated sketch design board",
+    "width": 2400,
+    "height": 1792,
+    "widths": [
+      480,
+      768,
+      1024,
+      1440,
+      2000
+    ],
+    "formats": [
+      "jpeg"
+    ],
+    "aspect": 0.7467
+  },
+  "hero-04.jpeg": {
+    "base": "hero-04",
+    "alt": "Completed modern residence photographed at blue hour",
+    "width": 2400,
+    "height": 1792,
+    "widths": [
+      480,
+      768,
+      1024,
+      1440,
+      2000
+    ],
+    "formats": [
+      "jpeg"
+    ],
+    "aspect": 0.7467
+  },
+  "principal-architect.jpeg": {
+    "base": "principal-architect",
+    "alt": "Abhishek Mangla at the drawing table",
+    "width": 2400,
+    "height": 1792,
+    "widths": [
+      480,
+      768,
+      1024,
+      1440,
+      2000
+    ],
+    "formats": [
+      "jpeg"
+    ],
+    "aspect": 0.7467
+  },
+  "site-engineer.jpeg": {
+    "base": "site-engineer",
+    "alt": "Site engineer reviewing work on site",
+    "width": 1536,
+    "height": 2752,
+    "widths": [
+      480,
+      768,
+      1024,
+      1440
+    ],
+    "formats": [
+      "jpeg"
+    ],
+    "aspect": 1.7917
+  },
+  "award-panel.jpeg": {
+    "base": "award-panel",
+    "alt": "Abhishek Mangla on an industry panel",
+    "width": 2400,
+    "height": 1792,
+    "widths": [
+      480,
+      768,
+      1024,
+      1440,
+      2000
+    ],
+    "formats": [
+      "jpeg"
+    ],
+    "aspect": 0.7467
+  },
+  "studio-site.jpeg": {
+    "base": "studio-site",
+    "alt": "The Arch Space studio",
+    "width": 2400,
+    "height": 1792,
+    "widths": [
+      480,
+      768,
+      1024,
+      1440,
+      2000
+    ],
+    "formats": [
+      "jpeg"
+    ],
+    "aspect": 0.7467
+  }
+}

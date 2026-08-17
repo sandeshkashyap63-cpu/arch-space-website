@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #23211D; color: #EDE6D9; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #EDE6D9; text-decoration: none; }
+  a:hover { color: #C9A24A; }
+  ::selection { background: #A6803F; color: #EDE6D9; }
+  @keyframes as-rise { from { opacity: 0; transform: translateY(22px) } to { opacity: 1; transform: none } }
+  @keyframes as-fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes as-drawx { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+</style>
+</helmet>
+
+<div style="font-family:'Jost',system-ui,sans-serif;background:#23211D;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:70;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:18px 34px;background:rgba(27,26,22,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(237,230,217,0.12)">
+    <a href="Home.dc.html" style="font-size:12px;letter-spacing:0.46em;text-transform:uppercase">Arch Space</a>
+    <nav style="display:flex;align-items:center;gap:30px">
+      <a href="Projects.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#C9A24A">Projects</a>
+      <a href="Studio.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Studio</a>
+      <a href="Contact.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Contact</a>
+      <a href="tel:+919467629425" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;white-space:nowrap;opacity:0.7">+91 94676 29425</a>
+    </nav>
+  </header>
+
+  <section data-screen-label="Projects header" style="padding:clamp(44px,7vh,84px) 34px clamp(20px,3vh,32px)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(34px,5.6vw,96px);line-height:0.95;text-transform:uppercase;letter-spacing:0.14em;animation:as-fade 1200ms ease both">Projects</h1>
+        <span style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(237,230,217,0.45);animation:as-fade 1400ms ease 200ms both">Index · 09 works · 2018—2026</span>
+      </div>
+      <span style="height:1px;background:rgba(237,230,217,0.2);transform-origin:left;animation:as-drawx 1400ms ease 300ms both"></span>
+      <div ref="{{ filterRef }}" style="display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+        <button data-filter="all" onClick="{{ onFilter }}" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#C9A24A">All</button>
+        <button data-filter="architecture" onClick="{{ onFilter }}" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Architecture</button>
+        <button data-filter="interiors" onClick="{{ onFilter }}" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Interiors</button>
+        <button data-filter="visualisation" onClick="{{ onFilter }}" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Visualisation</button>
+        <button data-filter="landscape" onClick="{{ onFilter }}" style="background:none;border:0;padding:0;cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Landscape</button>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Project index" style="padding:0 34px clamp(56px,9vh,110px)">
+    <div ref="{{ gridRef }}" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(18px,2vw,32px)">
+
+      <a data-cat="architecture" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-1" shape="rect" fit="cover" src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Courtyard House — contemporary residence"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Courtyard House</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">Sector 17 · 2024</span>
+        </div>
+      </a>
+
+      <a data-cat="architecture" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-2" shape="rect" fit="cover" src="https://images.pexels.com/photos/269077/pexels-photo-269077.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Vidya Bhawan — institutional block"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Vidya Bhawan Block</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">Institutional · 2023</span>
+        </div>
+      </a>
+
+      <a data-cat="interiors" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-3" shape="rect" fit="cover" src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Mangla Flagship — retail interior"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Mangla Flagship</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">Ambala · 2025</span>
+        </div>
+      </a>
+
+      <a data-cat="visualisation" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-4" shape="rect" fit="cover" src="https://images.pexels.com/photos/323705/pexels-photo-323705.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Radaur Road — commercial complex"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Radaur Road Complex</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">In progress</span>
+        </div>
+      </a>
+
+      <a data-cat="landscape" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-5" shape="rect" fit="cover" src="https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Kansapur Farmhouse — landscape"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Kansapur Farmhouse</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">Landscape · 2022</span>
+        </div>
+      </a>
+
+      <a data-cat="interiors" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-6" shape="rect" fit="cover" src="https://images.pexels.com/photos/260689/pexels-photo-260689.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Corporate Cabin — office fit-out"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Corporate Cabin</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">Fit-out · 2024</span>
+        </div>
+      </a>
+
+      <a data-cat="architecture" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-7" shape="rect" fit="cover" src="https://images.pexels.com/photos/439391/pexels-photo-439391.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Sector 18 Apartments"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Sector 18 Apartments</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">HUDA · 2021</span>
+        </div>
+      </a>
+
+      <a data-cat="visualisation" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-8" shape="rect" fit="cover" src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Laminate Showroom — interior visualisation"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Laminate Showroom</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">Walkthrough · 2023</span>
+        </div>
+      </a>
+
+      <a data-cat="landscape" data-reveal href="#" style="display:flex;flex-direction:column;gap:12px;min-width:0">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+          <image-slot id="pb-9" shape="rect" fit="cover" src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1600" placeholder="Community Court — landscape"></image-slot>
+        </div>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:14px">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:21px">Community Court</span>
+          <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45);white-space:nowrap">Radaur · 2020</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section style="background:#EDE6D9;color:#221F1A;padding:clamp(44px,7vh,86px) 34px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap">
+      <span style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,3.4vw,52px);line-height:1">Planning something similar?</span>
+      <a href="Contact.dc.html" style="background:#23211D;color:#EDE6D9;padding:15px 28px;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;transition:background 400ms ease" style-hover="background:#A6803F">Enquire →</a>
+    </div>
+  </section>
+
+  <footer style="background:#1B1A16;padding:24px 34px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap">
+      <span style="font-size:11px;letter-spacing:0.44em;text-transform:uppercase;color:rgba(237,230,217,0.8)">Arch Space</span>
+      <span style="font-size:10px;letter-spacing:0.16em;color:rgba(237,230,217,0.4)">Jagadhri &amp; Chandigarh · <a href="mailto:arspace1@gmail.com">arspace1@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <div style="position:fixed;right:20px;bottom:20px;z-index:80;display:flex;flex-direction:column;gap:10px">
+    <a href="https://wa.me/919467629425" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#A6803F;color:#23211D;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;transition:transform 350ms ease" style-hover="transform:translateY(-3px)">WA</a>
+    <a href="tel:+919467629425" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;border:1px solid rgba(237,230,217,0.35);background:rgba(35,33,29,0.9);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;transition:transform 350ms ease" style-hover="transform:translateY(-3px);border-color:#A6803F">Call</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.gridRef = React.createRef();
+    this.filterRef = React.createRef();
+  }
+  componentDidMount() {
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    nodes.forEach((n) => { n.style.opacity = '0'; });
+    this._io = new IntersectionObserver((es) => {
+      es.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.animation = 'as-rise 900ms cubic-bezier(.2,.7,.2,1) ' + (i * 80) + 'ms both';
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
+    nodes.forEach((n) => this._io.observe(n));
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+  apply(cat) {
+    const grid = this.gridRef.current;
+    const bar = this.filterRef.current;
+    if (grid) Array.from(grid.children).forEach((el) => {
+      const on = cat === 'all' || (el.getAttribute('data-cat') || '') === cat;
+      el.style.display = on ? 'flex' : 'none';
+      if (on) el.style.animation = 'as-rise 700ms cubic-bezier(.2,.7,.2,1) both';
+    });
+    if (bar) Array.from(bar.querySelectorAll('button')).forEach((b) => {
+      b.style.color = b.getAttribute('data-filter') === cat ? '#C9A24A' : 'rgba(237,230,217,0.45)';
+    });
+  }
+  renderVals() {
+    return {
+      gridRef: this.gridRef,
+      filterRef: this.filterRef,
+      onFilter: (e) => this.apply(e.currentTarget.getAttribute('data-filter'))
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #23211D; color: #EDE6D9; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #EDE6D9; text-decoration: none; }
+  a:hover { color: #C9A24A; }
+  ::selection { background: #A6803F; color: #EDE6D9; }
+  @keyframes as-rise { from { opacity: 0; transform: translateY(22px) } to { opacity: 1; transform: none } }
+  @keyframes as-fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes as-drawx { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+</style>
+</helmet>
+
+<div style="font-family:'Jost',system-ui,sans-serif;background:#23211D;overflow-x:hidden">
+
+  <header style="position:sticky;top:0;z-index:70;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:18px 34px;background:rgba(27,26,22,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(237,230,217,0.12)">
+    <a href="Home.dc.html" style="font-size:12px;letter-spacing:0.46em;text-transform:uppercase">Arch Space</a>
+    <nav style="display:flex;align-items:center;gap:30px">
+      <a href="Projects.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Projects</a>
+      <a href="Studio.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#C9A24A">Studio</a>
+      <a href="Contact.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Contact</a>
+      <a href="tel:+919467629425" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;white-space:nowrap;opacity:0.7">+91 94676 29425</a>
+    </nav>
+  </header>
+
+  <section data-screen-label="Studio board" style="padding:clamp(44px,7vh,80px) 34px clamp(40px,6vh,72px)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:30px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(34px,5.6vw,96px);line-height:0.95;text-transform:uppercase;letter-spacing:0.14em;animation:as-fade 1200ms ease both">Studio</h1>
+        <span style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Jagadhri &amp; Chandigarh · est. 2011 · five desks</span>
+      </div>
+      <span style="height:1px;background:rgba(237,230,217,0.2);transform-origin:left;animation:as-drawx 1400ms ease 200ms both"></span>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(24px,3vw,56px);align-items:center">
+        <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12);animation:as-fade 1400ms ease 300ms both">
+          <image-slot id="sb-hero" shape="rect" fit="cover" src="uploads/photos-1786856795790-y6tc.jpeg" placeholder="principal architect at the drawing table"></image-slot>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px;animation:as-rise 1200ms ease 400ms both">
+          <p style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(21px,2.4vw,38px);line-height:1.25;text-wrap:pretty">We draw a building once, then stay with it — structure, finishes, site rounds, handover.</p>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <span style="font-size:11px;letter-spacing:0.24em;text-transform:uppercase;color:#C9A24A">Abhishek Mangla, B.Arch</span>
+            <span style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Principal Architect · Registered Valuer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Capabilities" style="background:#EDE6D9;color:#221F1A;padding:clamp(48px,8vh,100px) 34px">
+    <div style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:clamp(28px,4vw,64px);align-items:start">
+      <div data-reveal style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#A6803F">Capabilities</span>
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,3.2vw,52px);line-height:1;letter-spacing:-0.02em">Five desks,<br />one studio</h2>
+      </div>
+      <div data-reveal style="grid-column:span 2;display:flex;flex-direction:column;min-width:0">
+        <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:20px;align-items:baseline;border-top:1px solid rgba(34,31,26,0.2);padding:22px 0;transition:background 350ms ease" style-hover="background:rgba(166,128,63,0.1)">
+          <span style="font-size:9px;letter-spacing:0.2em;color:#A6803F">i</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(19px,1.8vw,28px)">Architecture</span>
+          <span style="font-size:12px;line-height:1.75;color:rgba(34,31,26,0.62)">Feasibility, sanction drawings, structural coordination, construction documents.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:20px;align-items:baseline;border-top:1px solid rgba(34,31,26,0.2);padding:22px 0;transition:background 350ms ease" style-hover="background:rgba(166,128,63,0.1)">
+          <span style="font-size:9px;letter-spacing:0.2em;color:#A6803F">ii</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(19px,1.8vw,28px)">Interiors</span>
+          <span style="font-size:12px;line-height:1.75;color:rgba(34,31,26,0.62)">Joinery detail, material boards, lighting layouts, vendor supervision to fit-out.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:20px;align-items:baseline;border-top:1px solid rgba(34,31,26,0.2);padding:22px 0;transition:background 350ms ease" style-hover="background:rgba(166,128,63,0.1)">
+          <span style="font-size:9px;letter-spacing:0.2em;color:#A6803F">iii</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(19px,1.8vw,28px)">3D Visualisation</span>
+          <span style="font-size:12px;line-height:1.75;color:rgba(34,31,26,0.62)">Walkthroughs and stills that settle decisions before anything is cast.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:20px;align-items:baseline;border-top:1px solid rgba(34,31,26,0.2);padding:22px 0;transition:background 350ms ease" style-hover="background:rgba(166,128,63,0.1)">
+          <span style="font-size:9px;letter-spacing:0.2em;color:#A6803F">iv</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(19px,1.8vw,28px)">Valuation</span>
+          <span style="font-size:12px;line-height:1.75;color:rgba(34,31,26,0.62)">Valuation reports for property, bank and legal purposes.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:36px minmax(0,1fr) minmax(0,1.4fr);gap:20px;align-items:baseline;border-top:1px solid rgba(34,31,26,0.2);border-bottom:1px solid rgba(34,31,26,0.2);padding:22px 0;transition:background 350ms ease" style-hover="background:rgba(166,128,63,0.1)">
+          <span style="font-size:9px;letter-spacing:0.2em;color:#A6803F">v</span>
+          <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(19px,1.8vw,28px)">Landscape Design</span>
+          <span style="font-size:12px;line-height:1.75;color:rgba(34,31,26,0.62)">Ground planning, planting palettes and water detail for the local season.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Team" style="padding:clamp(48px,8vh,100px) 34px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:30px">
+      <div data-reveal style="display:flex;align-items:flex-end;justify-content:space-between;gap:22px;border-bottom:1px solid rgba(237,230,217,0.18);padding-bottom:14px">
+        <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(26px,3.2vw,52px);line-height:1">The Team</h2>
+        <span style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Five people</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:clamp(18px,2vw,32px)">
+        <div data-reveal style="display:flex;flex-direction:column;gap:12px">
+          <div style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+            <image-slot id="sb-t1" shape="rect" fit="cover" src="uploads/photos-1786856795790-y6tc.jpeg" placeholder="portrait — replace"></image-slot>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:20px">Abhishek Mangla</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Principal Architect</span>
+          </div>
+        </div>
+        <div data-reveal style="display:flex;flex-direction:column;gap:12px">
+          <div style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+            <image-slot id="sb-t2" shape="rect" fit="cover" placeholder="stock portrait — team will replace"></image-slot>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:20px">Senior Architect</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Design &amp; documentation</span>
+          </div>
+        </div>
+        <div data-reveal style="display:flex;flex-direction:column;gap:12px">
+          <div style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+            <image-slot id="sb-t3" shape="rect" fit="cover" placeholder="stock portrait — team will replace"></image-slot>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:20px">3D Visualiser</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Renders &amp; walkthroughs</span>
+          </div>
+        </div>
+        <div data-reveal style="display:flex;flex-direction:column;gap:12px">
+          <div style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+            <image-slot id="sb-t4" shape="rect" fit="cover" src="uploads/photos-1786856519692-jqr6.jpeg" placeholder="site engineer — replace"></image-slot>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:20px">Site Engineer</span>
+            <span style="font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Execution &amp; supervision</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Awards" style="border-top:1px solid rgba(237,230,217,0.12);padding:clamp(48px,8vh,100px) 34px">
+    <div data-reveal style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(26px,4vw,60px);align-items:center">
+      <div style="position:relative;width:100%;aspect-ratio:16/10;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+        <image-slot id="sb-award" shape="rect" fit="cover" src="uploads/photos-1786856519759-p198.jpeg" placeholder="award / panel photograph"></image-slot>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <span style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:#C9A24A">Awards &amp; press</span>
+        <div style="display:flex;flex-direction:column">
+          <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(237,230,217,0.16);padding:14px 0">
+            <span style="font-size:13px;color:rgba(237,230,217,0.85)">Panel member, Real Wood Collection launch</span>
+            <span style="font-size:11px;color:rgba(237,230,217,0.45)">2023</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(237,230,217,0.16);padding:14px 0">
+            <span style="font-size:13px;color:rgba(237,230,217,0.85)">Speaker, Architects &amp; Interior Designers Meet</span>
+            <span style="font-size:11px;color:rgba(237,230,217,0.45)">2022</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;gap:16px;border-top:1px solid rgba(237,230,217,0.16);border-bottom:1px solid rgba(237,230,217,0.16);padding:14px 0">
+            <span style="font-size:13px;color:rgba(237,230,217,0.85)">Council of Architecture, India — registered</span>
+            <span style="font-size:11px;color:rgba(237,230,217,0.45)">Member</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#EDE6D9;color:#221F1A;padding:clamp(44px,7vh,86px) 34px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap">
+      <span style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,3.4vw,52px);line-height:1">Work with the studio</span>
+      <a href="Contact.dc.html" style="background:#23211D;color:#EDE6D9;padding:15px 28px;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;transition:background 400ms ease" style-hover="background:#A6803F">Enquire →</a>
+    </div>
+  </section>
+
+  <footer style="background:#1B1A16;padding:24px 34px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap">
+      <span style="font-size:11px;letter-spacing:0.44em;text-transform:uppercase;color:rgba(237,230,217,0.8)">Arch Space</span>
+      <span style="font-size:10px;letter-spacing:0.16em;color:rgba(237,230,217,0.4)">Jagadhri &amp; Chandigarh · <a href="mailto:arspace1@gmail.com">arspace1@gmail.com</a></span>
+    </div>
+  </footer>
+
+  <div style="position:fixed;right:20px;bottom:20px;z-index:80;display:flex;flex-direction:column;gap:10px">
+    <a href="https://wa.me/919467629425" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#A6803F;color:#23211D;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;transition:transform 350ms ease" style-hover="transform:translateY(-3px)">WA</a>
+    <a href="tel:+919467629425" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;border:1px solid rgba(237,230,217,0.35);background:rgba(35,33,29,0.9);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;transition:transform 350ms ease" style-hover="transform:translateY(-3px);border-color:#A6803F">Call</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    nodes.forEach((n) => { n.style.opacity = '0'; });
+    this._io = new IntersectionObserver((es) => {
+      es.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.animation = 'as-rise 900ms cubic-bezier(.2,.7,.2,1) ' + (i * 80) + 'ms both';
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
+    nodes.forEach((n) => this._io.observe(n));
+  }
+  componentWillUnmount() { if (this._io) this._io.disconnect(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

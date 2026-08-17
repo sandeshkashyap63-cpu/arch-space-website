@@ -1,0 +1,6 @@
+dist/
+node_modules/
+enquiries.log
+.DS_Store
+*.log
+.claude/

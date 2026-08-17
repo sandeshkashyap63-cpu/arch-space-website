@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+<script src="./image-slot.js"></script>
+<style>
+  body { margin: 0; background: #23211D; color: #EDE6D9; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  a { color: #EDE6D9; text-decoration: none; }
+  a:hover { color: #C9A24A; }
+  input, textarea { font-family: 'Jost', system-ui, sans-serif; }
+  input::placeholder, textarea::placeholder { color: rgba(237,230,217,0.4) }
+  ::selection { background: #A6803F; color: #EDE6D9; }
+  @keyframes as-rise { from { opacity: 0; transform: translateY(22px) } to { opacity: 1; transform: none } }
+  @keyframes as-fade { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes as-drawx { from { transform: scaleX(0) } to { transform: scaleX(1) } }
+</style>
+</helmet>
+
+<div style="font-family:'Jost',system-ui,sans-serif;background:#23211D;overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column">
+
+  <header style="position:sticky;top:0;z-index:70;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:18px 34px;background:rgba(27,26,22,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(237,230,217,0.12)">
+    <a href="Home.dc.html" style="font-size:12px;letter-spacing:0.46em;text-transform:uppercase">Arch Space</a>
+    <nav style="display:flex;align-items:center;gap:30px">
+      <a href="Projects.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Projects</a>
+      <a href="Studio.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;opacity:0.7">Studio</a>
+      <a href="Contact.dc.html" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#C9A24A">Contact</a>
+      <a href="tel:+919467629425" style="font-size:10px;letter-spacing:0.26em;text-transform:uppercase;white-space:nowrap;opacity:0.7">+91 94676 29425</a>
+    </nav>
+  </header>
+
+  <section data-screen-label="Contact board" style="flex:1;padding:clamp(40px,6vh,76px) 34px clamp(40px,6vh,72px)">
+    <div style="max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:28px">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap">
+        <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(34px,5.6vw,96px);line-height:0.95;text-transform:uppercase;letter-spacing:0.14em;animation:as-fade 1200ms ease both">Contact</h1>
+        <span style="font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(237,230,217,0.45)">Mon—Sat · 10:00—19:00</span>
+      </div>
+      <span style="height:1px;background:rgba(237,230,217,0.2);transform-origin:left;animation:as-drawx 1400ms ease 200ms both"></span>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:clamp(26px,4vw,60px);align-items:start">
+        <div style="display:flex;flex-direction:column;gap:26px;animation:as-rise 1100ms ease 300ms both">
+          <div style="position:relative;width:100%;aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(237,230,217,0.12)">
+            <image-slot id="cb-img" shape="rect" fit="cover" src="uploads/photos-1786856519741-vsjh.jpeg" placeholder="studio or site photograph"></image-slot>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:24px">
+            <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(237,230,217,0.18);padding-top:12px">
+              <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#C9A24A">Studio</span>
+              <p style="margin:0;font-size:14px;line-height:1.8;color:rgba(237,230,217,0.85)">#510, Sector 17<br />Opp. Civil Dispensary, HUDA<br />Jagadhri, Distt. Yamunanagar<br />Haryana, India</p>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(237,230,217,0.18);padding-top:12px">
+              <span style="font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:#C9A24A">Direct</span>
+              <p style="margin:0;font-size:14px;line-height:1.8;color:rgba(237,230,217,0.85)"><a href="tel:+919467629425">+91 94676 29425</a><br /><a href="mailto:arspace1@gmail.com">arspace1@gmail.com</a><br /><a href="https://wa.me/919467629425">WhatsApp</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div style="animation:as-rise 1100ms ease 420ms both">
+          <form onSubmit="{{ onSubmit }}" style="display:flex;flex-direction:column;gap:22px">
+            <span style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(21px,2.4vw,36px);line-height:1.15">Tell us about the site</span>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:20px">
+              <input type="text" placeholder="Name" style="background:none;border:0;border-bottom:1px solid rgba(237,230,217,0.28);padding:10px 0;font-size:14px;color:#EDE6D9;outline:none" />
+              <input type="text" placeholder="Phone" style="background:none;border:0;border-bottom:1px solid rgba(237,230,217,0.28);padding:10px 0;font-size:14px;color:#EDE6D9;outline:none" />
+            </div>
+            <input type="email" placeholder="Email" style="background:none;border:0;border-bottom:1px solid rgba(237,230,217,0.28);padding:10px 0;font-size:14px;color:#EDE6D9;outline:none" />
+            <input type="text" placeholder="Location and plot size" style="background:none;border:0;border-bottom:1px solid rgba(237,230,217,0.28);padding:10px 0;font-size:14px;color:#EDE6D9;outline:none" />
+            <div style="display:flex;flex-wrap:wrap;gap:10px">
+              <span style="font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:rgba(237,230,217,0.45);width:100%">Scope</span>
+              <label style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(237,230,217,0.8);border:1px solid rgba(237,230,217,0.22);padding:8px 14px;cursor:pointer"><input type="checkbox" style="accent-color:#A6803F" />Architecture</label>
+              <label style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(237,230,217,0.8);border:1px solid rgba(237,230,217,0.22);padding:8px 14px;cursor:pointer"><input type="checkbox" style="accent-color:#A6803F" />Interiors</label>
+              <label style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(237,230,217,0.8);border:1px solid rgba(237,230,217,0.22);padding:8px 14px;cursor:pointer"><input type="checkbox" style="accent-color:#A6803F" />3D / Walkthrough</label>
+              <label style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(237,230,217,0.8);border:1px solid rgba(237,230,217,0.22);padding:8px 14px;cursor:pointer"><input type="checkbox" style="accent-color:#A6803F" />Valuation</label>
+              <label style="display:inline-flex;align-items:center;gap:8px;font-size:12px;color:rgba(237,230,217,0.8);border:1px solid rgba(237,230,217,0.22);padding:8px 14px;cursor:pointer"><input type="checkbox" style="accent-color:#A6803F" />Landscape</label>
+            </div>
+            <textarea rows="3" placeholder="What are you planning to build?" style="background:none;border:0;border-bottom:1px solid rgba(237,230,217,0.28);padding:10px 0;font-size:14px;color:#EDE6D9;outline:none;resize:vertical"></textarea>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
+              <button type="submit" style="background:#A6803F;color:#23211D;border:0;cursor:pointer;font-family:inherit;font-size:10px;letter-spacing:0.26em;text-transform:uppercase;padding:15px 30px;transition:background 380ms ease,transform 380ms ease" style-hover="background:#C9A24A;transform:translateY(-2px)">Send enquiry</button>
+              <span style="font-size:12px;color:#C9A24A">{{ status }}</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1B1A16;padding:24px 34px">
+    <div style="max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap">
+      <span style="font-size:11px;letter-spacing:0.44em;text-transform:uppercase;color:rgba(237,230,217,0.8)">Arch Space</span>
+      <span style="font-size:10px;letter-spacing:0.16em;color:rgba(237,230,217,0.4)">© 2026 · Abhishek Mangla, B.Arch · Architects · Interiors · Valuers · Landscape</span>
+    </div>
+  </footer>
+
+  <div style="position:fixed;right:20px;bottom:20px;z-index:80;display:flex;flex-direction:column;gap:10px">
+    <a href="https://wa.me/919467629425" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:#A6803F;color:#23211D;font-size:9px;letter-spacing:0.1em;text-transform:uppercase;transition:transform 350ms ease" style-hover="transform:translateY(-3px)">WA</a>
+    <a href="tel:+919467629425" style="display:flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;border:1px solid rgba(237,230,217,0.35);background:rgba(35,33,29,0.9);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;transition:transform 350ms ease" style-hover="transform:translateY(-3px);border-color:#A6803F">Call</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { status: '' };
+  renderVals() {
+    return {
+      status: this.state.status,
+      onSubmit: (e) => {
+        e.preventDefault();
+        this.setState({ status: 'Thank you — we will call you back within a working day.' });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
