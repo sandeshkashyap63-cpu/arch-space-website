@@ -17,7 +17,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
 const TO = process.env.ENQUIRY_TO || 'arspace1@gmail.com';
-const FROM = process.env.ENQUIRY_FROM || 'Arch Space website <enquiries@archspace.example>';
+const FROM = process.env.ENQUIRY_FROM || 'The Construction Project <enquiries@theconstructionproject.example>';
 const LOG_FILE = path.join(root, 'enquiries.log');
 
 /** Minimum seconds between the form rendering and it being submitted. */

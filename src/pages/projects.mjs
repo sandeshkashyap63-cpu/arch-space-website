@@ -8,9 +8,9 @@ export const projectsPage = {
   page: 'projects',
   path: '/projects/',
   outFile: 'projects/index.html',
-  title: 'Projects — Arch Space',
+  title: 'Projects — The Construction Project',
   description:
-    'Nine selected works by Arch Space: residences, institutional blocks, interiors, visualisation and landscape across Jagadhri, Yamunanagar, Ambala and Chandigarh.',
+    'Nine selected works by The Construction Project: residences, institutional blocks, interiors, visualisation and landscape across Jagadhri, Yamunanagar, Ambala and Chandigarh.',
   scripts: ['/assets/projects.js'],
   render: () => html`
     <section class="page-head" aria-labelledby="projects-heading">

@@ -45,7 +45,7 @@ export const clientImages = [
   {
     file: 'studio-site.jpeg',
     source: 'photos-1786856519741-vsjh.jpeg',
-    alt: 'The Arch Space studio',
+    alt: 'The Construction Project studio',
   },
 ];
 

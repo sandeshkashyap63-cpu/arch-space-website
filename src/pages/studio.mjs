@@ -10,9 +10,9 @@ export const studioPage = {
   page: 'studio',
   path: '/studio/',
   outFile: 'studio/index.html',
-  title: 'Studio — Arch Space',
+  title: 'Studio — The Construction Project',
   description:
-    'Five desks, one studio. Arch Space is led by Abhishek Mangla, B.Arch — Council of Architecture registered, practising from Jagadhri and Chandigarh since 2011.',
+    'Five desks, one studio. The Construction Project is led by Abhishek Mangla, B.Arch — Council of Architecture registered, practising from Jagadhri and Chandigarh since 2011.',
   scripts: ['/assets/site.js'],
   render: () => html`
     <section class="studio-board" aria-labelledby="studio-heading">

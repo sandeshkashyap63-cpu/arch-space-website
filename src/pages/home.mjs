@@ -31,7 +31,9 @@ const heroSection = () => html`
 
     <div class="hero-title">
       <span class="hero-eyebrow">${site.eyebrow}</span>
-      <h1 class="hero-h1" id="hero-title">${site.name}</h1>
+      <h1 class="hero-h1" id="hero-title">
+        ${site.nameLines.map((line) => html`<span>${line}</span>`)}
+      </h1>
       <span class="hero-tagline">${site.tagline}</span>
     </div>
 
@@ -248,9 +250,9 @@ export const home = {
   page: 'home',
   path: '/',
   outFile: 'index.html',
-  title: 'Arch Space — Architecture, Interiors & Valuation in Jagadhri and Chandigarh',
+  title: 'The Construction Project — Architects & Interiors, Jagadhri',
   description:
-    'Arch Space is an architecture, interiors, 3D visualisation, valuation and landscape practice led by Abhishek Mangla, B.Arch — Jagadhri, Haryana and Chandigarh. Concept to completion.',
+    'The Construction Project is an architecture, interiors, 3D visualisation, valuation and landscape practice led by Abhishek Mangla, B.Arch — Jagadhri, Haryana and Chandigarh. Concept to completion.',
   scripts: ['/assets/home.js'],
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}

@@ -101,7 +101,7 @@ const notFoundPage = {
   bodyClass: 'page--short',
   path: '/404.html',
   outFile: '404.html',
-  title: 'Page not found — Arch Space',
+  title: 'Page not found — The Construction Project',
   description: 'That page does not exist.',
   scripts: ['/assets/site.js'],
   noindex: true,

@@ -3,7 +3,7 @@
   'use strict';
 
   var reduced = function () {
-    return window.archSpace && window.archSpace.reducedMotion();
+    return window.siteMotion && window.siteMotion.reducedMotion();
   };
 
   /* ---- Header state + hero parallax ------------------------------------

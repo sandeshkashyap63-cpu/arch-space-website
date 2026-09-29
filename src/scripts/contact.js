@@ -72,7 +72,9 @@
 
   /** Human-readable enquiry, used for both the WhatsApp and email handoff. */
   function composeMessage(data) {
-    var lines = ['Enquiry from the Arch Space website', '', 'Name: ' + data.name];
+    // Phrased so it reads correctly whatever the brand name starts with.
+    var brand = form.getAttribute('data-brand') || 'Website';
+    var lines = [brand + ' — website enquiry', '', 'Name: ' + data.name];
     if (data.phone) lines.push('Phone: ' + data.phone);
     if (data.email) lines.push('Email: ' + data.email);
     if (data.location) lines.push('Location and plot size: ' + data.location);

@@ -2,7 +2,7 @@
   "name": "arch-space-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Arch Space — architecture studio website. Static four-page site, zero runtime dependencies.",
+  "description": "The Construction Project — architecture studio website. Static four-page site, zero runtime dependencies.",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",

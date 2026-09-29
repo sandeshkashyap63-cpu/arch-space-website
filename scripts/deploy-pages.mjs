@@ -39,7 +39,7 @@ async function main() {
   // 2. Stage dist/ into a temporary worktree on the gh-pages branch.
   const remote = capture('git', ['remote', 'get-url', 'origin']);
   const message = `Deploy site — ${capture('git', ['rev-parse', '--short', 'HEAD'])}`;
-  const work = await fs.mkdtemp(path.join(os.tmpdir(), 'arch-space-pages-'));
+  const work = await fs.mkdtemp(path.join(os.tmpdir(), 'tcp-site-pages-'));
 
   console.log(`› publishing to ${BRANCH}`);
   run('git', ['init', '-q', '-b', BRANCH], { cwd: work });

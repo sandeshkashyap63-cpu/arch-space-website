@@ -14,7 +14,7 @@
   });
 
   var reduced = function () {
-    return window.archSpace && window.archSpace.reducedMotion();
+    return window.siteMotion && window.siteMotion.reducedMotion();
   };
 
   function apply(category, options) {

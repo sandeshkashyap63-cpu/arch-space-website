@@ -1,8 +1,54 @@
-# Arch Space — build notes
+# The Construction Project — build notes
 
 Implementation record for the site built from `README.md` (the design handoff).
 Covers the stack choice, every deliberate deviation from the prototype, how to
 run and deploy it, and what is still outstanding.
+
+---
+
+## Brand name
+
+The practice is **The Construction Project**. It was originally handed over as
+"Arch Space" — the handoff document in `README.md` and the prototypes in
+`design/` still use the old name, deliberately, because they are the historical
+brief rather than live content. Everything the site renders, and every file the
+build touches, carries the new name.
+
+The name is set once, in `src/data/site.mjs`:
+
+```js
+name: 'The Construction Project',
+nameLines: ['The Construction', 'Project'],
+```
+
+`nameLines` is the wordmark lockup. Renaming again means editing those two
+fields (plus the page titles and meta descriptions, which are written per page
+for SEO rather than generated).
+
+### What the longer name changed
+
+Twenty-four tracked characters do not behave like ten, so three pieces of
+typography were re-cut. None of the tokens — colours, tracking ratios, motion
+timings — changed.
+
+- **Hero h1** is now a two-line lockup ("The Construction" / "Project") at
+  `clamp(26px, 5vw, 78px)` instead of one line at `clamp(34px, 6.4vw, 104px)`.
+  One line would have needed roughly 2000px at the old size. The signature
+  letter-spacing entrance survives, driven by `--track-from` / `--track-to`
+  custom properties so each breakpoint can set its own range; each line is
+  `white-space: nowrap`, so the wide opening frame is clipped by the hero
+  rather than re-wrapping mid-animation.
+- **Below 520px** the h1 tightens to `0.2em` tracking at `clamp(18px, 5.6vw, 30px)`.
+  Measured: at 320px the longest line renders 239px inside a 252px gutter;
+  at 390px, 291px inside 322px. Wide tracking at small sizes is poor practice
+  anyway, so this reads better as well as fitting.
+- **Wordmark** is a flex lockup that sits on one line on wide screens and
+  stacks to two below 620px, shrinking to 10px/0.24em below 430px. The mobile
+  nav breakpoint moved from 760px to 900px, because the longer wordmark plus
+  four nav items crowds earlier than the old name did.
+
+Verified with no horizontal overflow at 1920, 1440, 1200, 1024, 900, 760, 620,
+430, 390, 360 and 320px.
 
 ---
 
@@ -62,7 +108,7 @@ variables read in `src/lib/config.mjs`:
 | Variable | Default | Purpose |
 |---|---|---|
 | `BASE_PATH` | `""` | URL prefix. `""` for a root domain, `/arch-space-website` for GitHub Pages. Every internal link, asset and image URL is prefixed with it. |
-| `SITE_ORIGIN` | `https://www.archspace.example` | Absolute origin for canonical URLs, Open Graph and the sitemap. |
+| `SITE_ORIGIN` | `https://www.theconstructionproject.example` | Absolute origin for canonical URLs, Open Graph and the sitemap. |
 | `ENQUIRY_MODE` | `api` | `api` posts to a real endpoint; `handoff` is the static-host mode (see below). |
 | `ENQUIRY_ENDPOINT` | `/api/enquiry` | Where `api` mode posts. |
 

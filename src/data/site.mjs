@@ -2,13 +2,15 @@
  * Business details. Verbatim from the handoff — verify before launch.
  */
 export const site = {
-  name: 'Arch Space',
+  name: 'The Construction Project',
+  // The wordmark lockup stacks to two lines on narrow screens.
+  nameLines: ['The Construction', 'Project'],
   principal: 'Abhishek Mangla, B.Arch',
   tagline: 'Concept to Completion',
   eyebrow: 'Architects · Interiors · Valuers · Landscape',
   // Change this to the production origin before launch — it is used for
   // canonical URLs, the sitemap and Open Graph tags.
-  origin: 'https://www.archspace.example',
+  origin: 'https://www.theconstructionproject.example',
   phone: {
     display: '+91 94676 29425',
     tel: 'tel:+919467629425',

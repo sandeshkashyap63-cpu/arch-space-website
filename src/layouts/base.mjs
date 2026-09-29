@@ -54,7 +54,9 @@ function header({ page }) {
       class="site-header${raw(isHome ? ' site-header--home' : '')}"
       data-header${attr('data-home', isHome || null)}
     >
-      <a class="wordmark" href="${url('/')}">${site.name}</a>
+      <a class="wordmark" href="${url('/')}" aria-label="${site.name} — home">
+        ${site.nameLines.map((line) => html`<span class="wordmark-line">${line}</span>`)}
+      </a>
       <div class="header-right">
         <nav class="site-nav" id="site-nav" aria-label="Primary">
           <ul>

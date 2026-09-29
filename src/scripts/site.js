@@ -5,8 +5,8 @@
   var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   /** Single source of truth for "should this move?". */
-  window.archSpace = window.archSpace || {};
-  window.archSpace.reducedMotion = function () {
+  window.siteMotion = window.siteMotion || {};
+  window.siteMotion.reducedMotion = function () {
     return motionQuery.matches;
   };
 
@@ -45,7 +45,7 @@
     });
 
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 760) setOpen(false);
+      if (window.innerWidth > 900) setOpen(false);
     });
   }
 

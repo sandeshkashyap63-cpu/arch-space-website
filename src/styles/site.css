@@ -1,5 +1,5 @@
 /* =========================================================================
-   Arch Space — site stylesheet
+   The Construction Project — site stylesheet
    Values are taken verbatim from the design handoff (README.md, Design Tokens).
    Order: tokens → base → layout primitives → global furniture → page sections
           → motion/accessibility guards.
@@ -306,13 +306,25 @@ html:not(.js) .site-header--home {
   border-bottom-color: rgba(34, 31, 26, 0.14);
 }
 
+/* The wordmark is a two-part lockup ("The Construction" / "Project"): one
+   line on wide screens, stacked on narrow ones, so 24 tracked characters
+   never crowd the phone number out of the bar. */
 .wordmark {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.46em;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.46em;
   text-transform: uppercase;
+  line-height: 1.25;
   color: inherit;
   animation: as-fade 1200ms ease both;
+}
+
+.wordmark-line {
+  white-space: nowrap;
 }
 
 .header-right {
@@ -427,8 +439,9 @@ html:not(.js) .site-header--home {
 }
 
 /* ---- Mobile nav -------------------------------------------------------- */
-/* Only engaged when JS is running; without JS every link stays in the bar. */
-@media (max-width: 760px) {
+/* Only engaged when JS is running; without JS every link stays in the bar.
+   The 900px breakpoint (up from 760px) buys room for the longer wordmark. */
+@media (max-width: 900px) {
   .js .nav-toggle {
     display: inline-flex;
   }
@@ -489,19 +502,35 @@ html:not(.js) .site-header--home {
   }
 }
 
-/* Below ~420px the wordmark, phone and toggle still need to fit. */
+/* Stack the wordmark once a single tracked line would crowd the bar. */
+@media (max-width: 620px) {
+  .wordmark {
+    flex-direction: column;
+    gap: 0;
+    letter-spacing: 0.34em;
+    line-height: 1.35;
+  }
+}
+
+/* Below ~430px the wordmark, phone and toggle still need to fit. */
 @media (max-width: 430px) {
   .site-header {
-    gap: 14px;
+    gap: 12px;
     padding-inline: 20px;
   }
 
   .header-right {
-    gap: 16px;
+    gap: 14px;
   }
 
   .wordmark {
-    letter-spacing: 0.3em;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+  }
+
+  .nav-phone {
+    font-size: 9px;
+    letter-spacing: 0.18em;
   }
 
   .nav-toggle span:not(.nav-toggle-bars) {
@@ -537,6 +566,8 @@ html:not(.js) .site-header--home {
   letter-spacing: 0.44em;
   text-transform: uppercase;
   color: rgba(237, 230, 217, 0.8);
+  /* The trailing letter-space would otherwise push the mark off-centre. */
+  margin-right: -0.44em;
 }
 
 .footer-meta {
@@ -755,17 +786,33 @@ html:not(.js) .site-header--home {
   animation: as-fade 1400ms ease 300ms both;
 }
 
+/* The wordmark runs to 24 tracked characters, which cannot hold a single line
+   at the handoff's 104px. It is set as a two-line lockup instead, which keeps
+   the display size — and the signature tracking entrance — intact. */
 .hero-h1 {
+  --track-to: 0.34em;
+  --track-from: 0.62em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
   font-family: var(--display);
   font-weight: 300;
-  font-size: clamp(34px, 6.4vw, 104px);
-  line-height: 1;
+  font-size: clamp(26px, 5vw, 78px);
+  line-height: 1.04;
   text-transform: uppercase;
-  letter-spacing: 0.34em;
+  letter-spacing: var(--track-to);
   /* Matching indent keeps the trailing letter-space from pushing it off-centre. */
-  text-indent: 0.34em;
+  text-indent: var(--track-to);
   color: var(--bone);
   animation: as-track 2000ms var(--enter) 260ms both;
+}
+
+/* Each line holds together while the tracking animates; the hero clips the
+   wide opening frame rather than re-wrapping mid-animation. */
+.hero-h1 span {
+  display: block;
+  white-space: nowrap;
 }
 
 .hero-tagline {
@@ -952,6 +999,16 @@ html:not(.js) .site-header--home {
   height: 46px;
   background: var(--bronze);
   animation: as-cue 2400ms ease-in-out infinite;
+}
+
+/* At phone widths 16 characters at 0.34em would run past the gutter, so the
+   tracking tightens as the type shrinks — measured to fit down to 320px. */
+@media (max-width: 520px) {
+  .hero-h1 {
+    --track-to: 0.2em;
+    --track-from: 0.42em;
+    font-size: clamp(18px, 5.6vw, 30px);
+  }
 }
 
 /* The three-column board is unreadable on a phone; callouts stack under the
@@ -1882,8 +1939,8 @@ html:not(.js) .site-header--home {
    Keyframes
    ========================================================================= */
 @keyframes as-track {
-  from { letter-spacing: 0.9em; opacity: 0; }
-  to { letter-spacing: 0.34em; opacity: 1; }
+  from { letter-spacing: var(--track-from); opacity: 0; }
+  to { letter-spacing: var(--track-to); opacity: 1; }
 }
 
 @keyframes as-rise {

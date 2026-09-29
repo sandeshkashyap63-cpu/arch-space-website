@@ -27,9 +27,9 @@ export const contactPage = {
   page: 'contact',
   path: '/contact/',
   outFile: 'contact/index.html',
-  title: 'Contact — Arch Space',
+  title: 'Contact — The Construction Project',
   description:
-    'Tell us about the site. Arch Space, #510 Sector 17 HUDA Jagadhri — call +91 94676 29425, WhatsApp or send an enquiry. Mon—Sat, 10:00—19:00.',
+    'Tell us about the site. The Construction Project, #510 Sector 17 HUDA Jagadhri — call +91 94676 29425, WhatsApp or send an enquiry. Mon—Sat, 10:00—19:00.',
   scripts: ['/assets/contact.js'],
   bodyClass: '',
   render: () => html`
@@ -46,7 +46,7 @@ export const contactPage = {
             <div class="frame frame--4x3 frame--bordered">
               ${localImage({
                 file: 'studio-site.jpeg',
-                alt: 'The Arch Space studio',
+                alt: 'The Construction Project studio',
                 sizes: IMG_SIZES,
                 loading: 'eager',
                 fetchPriority: 'high',
@@ -101,6 +101,7 @@ export const contactPage = {
               novalidate
               data-enquiry-form
               data-enquiry-mode="${enquiryMode}"
+              data-brand="${site.name}"
               data-whatsapp="${site.phone.whatsapp}"
               data-email="${site.email}"
             >
@@ -207,8 +208,8 @@ export const enquiryReceivedPage = {
   page: 'contact',
   path: '/enquiry-received/',
   outFile: 'enquiry-received/index.html',
-  title: 'Enquiry received — Arch Space',
-  description: 'Thank you — your enquiry has reached the Arch Space studio.',
+  title: 'Enquiry received — The Construction Project',
+  description: 'Thank you — your enquiry has reached The Construction Project studio.',
   // site.js is what makes the mobile nav work — every page needs it.
   scripts: ['/assets/site.js'],
   noindex: true,

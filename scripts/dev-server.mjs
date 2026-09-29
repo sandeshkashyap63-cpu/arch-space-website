@@ -75,7 +75,7 @@ function errorPage(result) {
         .join('')
     : `<li>${result.message || 'Something went wrong.'}</li>`;
   return `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><title>Check your enquiry — Arch Space</title>
+<html lang="en"><head><meta charset="utf-8"><title>Check your enquiry — The Construction Project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="${base}/assets/site.css"></head>
@@ -171,7 +171,7 @@ const server = http.createServer(async (req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`Arch Space → http://localhost:${PORT}${base}/`);
+  console.log(`The Construction Project → http://localhost:${PORT}${base}/`);
   console.log(
     process.env.RESEND_API_KEY
       ? '  Enquiries will be emailed via Resend.'
