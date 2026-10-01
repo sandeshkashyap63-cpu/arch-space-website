@@ -125,15 +125,13 @@ function contactRail() {
 function structuredData() {
   const data = {
     '@context': 'https://schema.org',
-    '@type': 'ArchitecturalService',
+    '@type': 'GeneralContractor',
     name: site.name,
     description:
-      'Architecture, interiors, 3D visualisation, valuation and landscape practice in Jagadhri, Haryana and Chandigarh.',
+      'Construction, interiors, turnkey projects, renovation and landscape in Jagadhri, Haryana and Chandigarh.',
     url: absolute('/'),
     telephone: site.phone.display,
     email: site.email,
-    founder: { '@type': 'Person', name: site.principal },
-    foundingDate: String(site.established),
     areaServed: ['Jagadhri', 'Yamunanagar', 'Chandigarh', 'Ambala', 'Haryana'],
     address: {
       '@type': 'PostalAddress',

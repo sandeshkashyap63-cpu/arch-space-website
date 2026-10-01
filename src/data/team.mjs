@@ -1,27 +1,32 @@
 /**
- * Studio team. Two portraits are still owed by the client — those entries carry
- * `image: null` and render as a hairline placeholder frame rather than a broken
- * image or a stock face.
+ * The site team.
+ *
+ * Named individuals were removed at the client's request — the cards now carry
+ * roles, which is also the safer pattern while two portraits are outstanding.
+ * The two photographs that exist are the client's own.
  */
 export const team = [
   {
-    name: 'Abhishek Mangla',
-    role: 'Principal Architect',
-    image: { file: 'principal-architect.jpeg', alt: 'Abhishek Mangla at the drawing table' },
-  },
-  {
-    name: 'Senior Architect',
-    role: 'Design & documentation',
-    image: null,
-  },
-  {
-    name: '3D Visualiser',
-    role: 'Renders & walkthroughs',
-    image: null,
+    name: 'Project Director',
+    role: 'Contracts & delivery',
+    image: {
+      file: 'project-director.jpeg',
+      alt: 'Project director reviewing drawings at the office',
+    },
   },
   {
     name: 'Site Engineer',
-    role: 'Execution & supervision',
-    image: { file: 'site-engineer.jpeg', alt: 'Site engineer on a project site' },
+    role: 'Structure & quality',
+    image: null,
+  },
+  {
+    name: 'Project Manager',
+    role: 'Programme & procurement',
+    image: null,
+  },
+  {
+    name: 'Site Supervisor',
+    role: 'Trades & execution',
+    image: { file: 'site-supervisor.jpeg', alt: 'Site supervisor checking work on site' },
   },
 ];

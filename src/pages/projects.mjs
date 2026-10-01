@@ -10,7 +10,7 @@ export const projectsPage = {
   outFile: 'projects/index.html',
   title: 'Projects — The Construction Project',
   description:
-    'Nine selected works by The Construction Project: residences, institutional blocks, interiors, visualisation and landscape across Jagadhri, Yamunanagar, Ambala and Chandigarh.',
+    'Nine projects built by The Construction Project: residences, institutional blocks, interiors fit-out and landscape across Jagadhri, Yamunanagar, Ambala and Chandigarh.',
   scripts: ['/assets/projects.js'],
   render: () => html`
     <section class="page-head" aria-labelledby="projects-heading">

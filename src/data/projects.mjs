@@ -11,9 +11,9 @@ const pexels = (id) =>
 
 export const categories = [
   { key: 'all', label: 'All' },
-  { key: 'architecture', label: 'Architecture' },
+  { key: 'residential', label: 'Residential' },
+  { key: 'commercial', label: 'Commercial' },
   { key: 'interiors', label: 'Interiors' },
-  { key: 'visualisation', label: 'Visualisation' },
   { key: 'landscape', label: 'Landscape' },
 ];
 
@@ -23,7 +23,7 @@ export const projects = [
     name: 'Courtyard House',
     meta: 'Sector 17 · 2024',
     homeMeta: 'Sector 17 · 2024',
-    category: 'architecture',
+    category: 'residential',
     featured: true,
     image: { remote: pexels(323780), alt: 'Courtyard House — contemporary residence', placeholder: true },
   },
@@ -32,15 +32,15 @@ export const projects = [
     name: 'Vidya Bhawan Block',
     meta: 'Institutional · 2023',
     homeMeta: 'Institutional · 2023',
-    category: 'architecture',
+    category: 'commercial',
     featured: true,
     image: { remote: pexels(269077), alt: 'Vidya Bhawan — institutional block', placeholder: true },
   },
   {
     slug: 'mangla-flagship',
     name: 'Mangla Flagship',
-    meta: 'Ambala · 2025',
-    homeMeta: 'Interiors · 2025',
+    meta: 'Fit-out · 2025',
+    homeMeta: 'Fit-out · 2025',
     category: 'interiors',
     featured: true,
     image: { remote: pexels(260922), alt: 'Mangla Flagship — retail interior', placeholder: true },
@@ -49,7 +49,7 @@ export const projects = [
     slug: 'radaur-road-complex',
     name: 'Radaur Road Complex',
     meta: 'In progress',
-    category: 'visualisation',
+    category: 'commercial',
     image: { remote: pexels(323705), alt: 'Radaur Road — commercial complex', placeholder: true },
   },
   {
@@ -70,15 +70,15 @@ export const projects = [
     slug: 'sector-18-apartments',
     name: 'Sector 18 Apartments',
     meta: 'HUDA · 2021',
-    category: 'architecture',
+    category: 'residential',
     image: { remote: pexels(439391), alt: 'Sector 18 Apartments', placeholder: true },
   },
   {
     slug: 'laminate-showroom',
     name: 'Laminate Showroom',
-    meta: 'Walkthrough · 2023',
-    category: 'visualisation',
-    image: { remote: pexels(2724749), alt: 'Laminate Showroom — interior visualisation', placeholder: true },
+    meta: 'Fit-out · 2023',
+    category: 'interiors',
+    image: { remote: pexels(2724749), alt: 'Laminate Showroom — interior fit-out', placeholder: true },
   },
   {
     slug: 'community-court',

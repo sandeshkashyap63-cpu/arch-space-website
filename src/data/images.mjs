@@ -28,19 +28,19 @@ export const clientImages = [
     alt: 'Completed modern residence photographed at blue hour',
   },
   {
-    file: 'principal-architect.jpeg',
+    file: 'project-director.jpeg',
     source: 'photos-1786856795790-y6tc.jpeg',
-    alt: 'Abhishek Mangla at the drawing table',
+    alt: 'Project director reviewing drawings at the office',
   },
   {
-    file: 'site-engineer.jpeg',
+    file: 'site-supervisor.jpeg',
     source: 'photos-1786856519692-jqr6.jpeg',
-    alt: 'Site engineer reviewing work on site',
+    alt: 'Site supervisor checking work on site',
   },
   {
     file: 'award-panel.jpeg',
     source: 'photos-1786856519759-p198.jpeg',
-    alt: 'Abhishek Mangla on an industry panel',
+    alt: 'The Construction Project on an industry panel',
   },
   {
     file: 'studio-site.jpeg',

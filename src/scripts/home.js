@@ -102,6 +102,56 @@
     start();
   }
 
+  /* ---- Marquee sizing --------------------------------------------------
+     A marquee loops by translating the track -50%, which only looks seamless
+     while half the track is at least as wide as its container. With few items
+     — or on a very wide display — one set is too narrow and a gap swings past.
+     Repeat the set (always an even count) until half the track covers the
+     container. */
+  var marquees = Array.prototype.slice.call(document.querySelectorAll('[data-marquee]'));
+
+  function fillMarquee(track) {
+    var container = track.parentElement;
+    if (!container || !track.firstElementChild) return;
+
+    var sets = Array.prototype.slice.call(track.children);
+    var original = sets[0];
+    var setWidth = original.getBoundingClientRect().width;
+    if (!setWidth) return;
+
+    var styles = window.getComputedStyle(track);
+    var gap = parseFloat(styles.columnGap || styles.gap) || 0;
+    var unit = setWidth + gap;
+    var needed = Math.max(2, 2 * Math.ceil(container.getBoundingClientRect().width / unit));
+
+    while (track.children.length < needed) {
+      var clone = original.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      Array.prototype.forEach.call(clone.querySelectorAll('a, button, input'), function (el) {
+        el.setAttribute('tabindex', '-1');
+      });
+      track.appendChild(clone);
+    }
+    while (track.children.length > needed && track.children.length > 2) {
+      track.removeChild(track.lastElementChild);
+    }
+  }
+
+  if (marquees.length) {
+    var sizeMarquees = function () {
+      marquees.forEach(fillMarquee);
+    };
+    sizeMarquees();
+    // Webfonts change the measured width, so re-run once they land.
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeMarquees);
+
+    var resizeTimer = null;
+    window.addEventListener('resize', function () {
+      window.clearTimeout(resizeTimer);
+      resizeTimer = window.setTimeout(sizeMarquees, 200);
+    });
+  }
+
   /* ---- Stat count-up ---------------------------------------------------
      Final values are already in the markup; this only animates up to them. */
   var statement = document.querySelector('[data-statement]');

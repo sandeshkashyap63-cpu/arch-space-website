@@ -25,6 +25,9 @@ nameLines: ['The Construction', 'Project'],
 fields (plus the page titles and meta descriptions, which are written per page
 for SEO rather than generated).
 
+The old name also survives in `README.md` and `design/` — see "Brand name"
+above — and in the repository/URL slug `arch-space-website`.
+
 ### What the longer name changed
 
 Twenty-four tracked characters do not behave like ten, so three pieces of
@@ -49,6 +52,78 @@ timings — changed.
 
 Verified with no horizontal overflow at 1920, 1440, 1200, 1024, 900, 760, 620,
 430, 390, 360 and 320px.
+
+---
+
+## Repositioning: architecture practice → construction company
+
+The handoff described an architecture, interiors, 3D visualisation, valuation
+and landscape practice fronted by a named principal. The business is now a
+construction company, so the copy was rewritten rather than relabelled.
+
+| Was | Now |
+|---|---|
+| Services: Architecture · Interiors · 3D Visualisation · Valuation · Landscape | Construction · Interiors · Turnkey Projects · Renovation · Landscape |
+| Hero eyebrow "Architects · Interiors · Valuers · Landscape" | "Construction · Interiors · Turnkey · Landscape" |
+| Hero callouts "Concept" / "Section a—a" | "Structure" / "Programme" |
+| Lead: "Drawings, renders, valuation and site work…" | "Foundations, structure, finishes and handover — built…" |
+| Stats: 140+ delivered · 15 years in practice · 05 disciplines | 140+ delivered · **30+ years on site** · 05 trades |
+| Project filters: Architecture / Interiors / Visualisation / Landscape | Residential / Commercial / Interiors / Landscape |
+| "Studio" page at `/studio/` | "Company" page at `/company/` |
+| "Five desks, one studio" | "Five trades, one contract" |
+| Form scope: Architecture / 3D / Valuation … | Construction / Interiors / Turnkey / Renovation / Landscape |
+| JSON-LD `ArchitecturalService` | `GeneralContractor` |
+
+`/studio/` still resolves: the build writes a redirect stub there, since a
+static host cannot issue a 301 and the old URL may already be shared.
+
+### The named principal
+
+Every reference to the principal architect was removed at the client's request
+— the Studio credit, the footer copyright, the JSON-LD `founder`, image alt
+text and the image filenames (`principal-architect.jpeg` →
+`project-director.jpeg`). Team cards now carry **roles rather than names**,
+which is also the safer pattern while two portraits are outstanding. The
+client's own photographs stay in place.
+
+"Mangla Flagship" remains in the project list — that is the name of a project,
+not a person.
+
+### Judgement calls that need the client's confirmation
+
+1. **Testimonials — four of six are not rendered.** They sold 3D renders, a
+   valuation report and a walkthrough video, or praised whoever supervised
+   "the contractor" (incoherent now that the company *is* the contractor). I
+   did not reword them: putting new words into a named client's mouth would be
+   fabricating a testimonial. They are parked in `pendingTestimonials` in
+   `src/data/testimonials.mjs`. The two live quotes each had one word changed,
+   "he" → "they", because the referent is now a company. **Ask the client for
+   three or four construction testimonials.**
+2. **"30+ years" contradicts the handoff's "est. 2011"** (15 years as of 2026).
+   Rather than invent a founding year, `established` was replaced with
+   `yearsOnSite: 30`, and the Company page now reads "30+ years on site"
+   instead of "est. 2011". JSON-LD no longer claims a `foundingDate`. Supply
+   the real founding year if you want one shown.
+3. **Credentials are down to two entries.** The third was "Council of
+   Architecture, India — registered", an individual architect's credential
+   that does not transfer to a construction company. Replace it with the
+   contractor registration / licence / GST details.
+4. **The service list is a proposal.** Construction, Interiors, Turnkey
+   Projects, Renovation and Landscape are a coherent five for a builder and
+   keep the five-item layout, but they should be checked against what the
+   company actually tenders for.
+5. **Project categories were inferred** from project names (Courtyard House →
+   residential, Vidya Bhawan Block → commercial, and so on). Confirm.
+
+### Marquee fix that came with it
+
+Dropping to two testimonials exposed a latent bug: a marquee loops by
+translating its track -50%, which is only seamless while half the track covers
+its container. Two cards did not, and neither did the original six on a 2560px
+display — a blank gap would swing past. The track now starts with two sets in
+the markup and the script repeats them (always an even count) until half the
+track covers the container, re-measuring after webfonts load and on resize.
+Verified seamless at 2560, 1920, 1440, 1024, 768 and 390px.
 
 ---
 
@@ -356,17 +431,22 @@ are `noindex`.
 
 ## Outstanding
 
-Ordered by what blocks launch. Items 1–2 are the client's; 3–6 are ours.
+Ordered by what blocks launch. Items 1–4 are the client's; 5–9 are ours.
 
-1. **Replace the nine stock project photographs** with the studio's own work.
+1. **Replace the nine stock project photographs** with the company's own work.
 2. **Two team portraits** are still owed by the client.
-3. **Project detail pages** are undesigned; tiles are intentionally not links
+3. **Construction testimonials** — four of the six handoff quotes are held back
+   (see Repositioning above). Three or four replacements are needed.
+4. **Contractor registration details** to replace the architect credential in
+   the Awards & press list, and the real founding year if "30+ years" should be
+   stated as a date.
+5. **Project detail pages** are undesigned; tiles are intentionally not links
    until they exist. Adding them means a template plus a `slug` route —
    `src/data/projects.mjs` already carries slugs.
-4. **Wire the enquiry endpoint** in the chosen host, set the mail credentials
+6. **Wire the enquiry endpoint** in the chosen host, set the mail credentials
    and build with `ENQUIRY_MODE=api`. Until then the live preview hands
    enquiries to WhatsApp.
-5. **Set the production origin** and clear `BASE_PATH` for the real domain.
-6. Optional: add a real AVIF/WebP encoder to the image step (see above).
-7. Verify the business details in `src/data/site.mjs` against the client's own
+7. **Set the production origin** and clear `BASE_PATH` for the real domain.
+8. Optional: add a real AVIF/WebP encoder to the image step (see above).
+9. Verify the business details and the service list in `src/data/site.mjs` against the client's own
    records before launch — they are transcribed from the handoff.

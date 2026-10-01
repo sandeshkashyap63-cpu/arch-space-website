@@ -67,9 +67,9 @@
     ],
     "aspect": 0.7467
   },
-  "principal-architect.jpeg": {
-    "base": "principal-architect",
-    "alt": "Abhishek Mangla at the drawing table",
+  "project-director.jpeg": {
+    "base": "project-director",
+    "alt": "Project director reviewing drawings at the office",
     "width": 2400,
     "height": 1792,
     "widths": [
@@ -84,9 +84,9 @@
     ],
     "aspect": 0.7467
   },
-  "site-engineer.jpeg": {
-    "base": "site-engineer",
-    "alt": "Site engineer reviewing work on site",
+  "site-supervisor.jpeg": {
+    "base": "site-supervisor",
+    "alt": "Site supervisor checking work on site",
     "width": 1536,
     "height": 2752,
     "widths": [
@@ -102,7 +102,7 @@
   },
   "award-panel.jpeg": {
     "base": "award-panel",
-    "alt": "Abhishek Mangla on an industry panel",
+    "alt": "The Construction Project on an industry panel",
     "width": 2400,
     "height": 1792,
     "widths": [

@@ -10,9 +10,9 @@ const TILE_SIZES = '(max-width: 700px) calc(100vw - 68px), (max-width: 1100px) 4
 const PRESS_SIZES = '(max-width: 760px) calc(100vw - 68px), min(660px, 48vw)';
 
 const callouts = [
-  { label: 'Concept', text: 'daylight placed where people actually sit', side: 'left', n: 1 },
+  { label: 'Structure', text: 'RCC frame cast to drawing, checked on site', side: 'left', n: 1 },
   { label: 'Material', text: 'exposed concrete · local brick · warm tone', side: 'left', n: 2 },
-  { label: 'Section a—a', text: 'double-height void, cross ventilation', side: 'right', n: 3 },
+  { label: 'Programme', text: 'slab to handover on a dated schedule', side: 'right', n: 3 },
   { label: 'Site', text: 'Jagadhri, Haryana & Chandigarh', side: 'right', n: 4 },
 ];
 
@@ -85,7 +85,7 @@ const heroSection = () => html`
           </div>
         </div>
         <figcaption class="hero-dimension">
-          <span>Elevation · scale 1:100</span>
+          <span>Elevation · as built</span>
           <span class="hero-dimension-rule" aria-hidden="true"></span>
           <span>10.80 m</span>
         </figcaption>
@@ -107,7 +107,8 @@ const statementSection = () => html`
   <section class="band-light statement" aria-label="The practice" data-statement>
     <div class="shell" data-reveal>
       <p class="statement-lead">
-        Drawings, renders, valuation and site work — under one roof in Jagadhri and Chandigarh.
+        Foundations, structure, finishes and handover — built under one roof in Jagadhri and
+        Chandigarh.
       </p>
       ${stats.map(
         (stat) => html`
@@ -169,13 +170,13 @@ const marqueeGroup = (duplicate) => html`
 `;
 
 const marqueeSection = () => html`
-  <section class="marquee-band" aria-label="What the studio does">
-    <div class="marquee-track">${marqueeGroup(false)}${marqueeGroup(true)}</div>
+  <section class="marquee-band" aria-label="What the company does">
+    <div class="marquee-track" data-marquee>${marqueeGroup(false)}${marqueeGroup(true)}</div>
   </section>
 `;
 
-const quoteCard = (t, duplicate) => html`
-  <figure class="quote-card"${raw(duplicate ? ' aria-hidden="true"' : '')}>
+const quoteCard = (t) => html`
+  <figure class="quote-card">
     <span class="quote-stars" role="img" aria-label="Rated ${t.rating} out of 5">
       ${'★'.repeat(t.rating)} <span class="quote-score" aria-hidden="true">${t.rating}/5</span>
     </span>
@@ -195,9 +196,11 @@ const testimonialsSection = () => html`
         <span class="section-head-note">In their words</span>
       </div>
       <div class="rail" data-rail>
-        <div class="rail-track" data-rail-track>
-          ${testimonials.map((t) => quoteCard(t, false))}
-          ${testimonials.map((t) => quoteCard(t, true))}
+        <!-- Two identical sets make the loop seamless; the script adds more
+             when one set is narrower than the viewport. -->
+        <div class="rail-track" data-rail-track data-marquee>
+          <div class="rail-set">${testimonials.map(quoteCard)}</div>
+          <div class="rail-set" aria-hidden="true">${testimonials.map(quoteCard)}</div>
         </div>
       </div>
     </div>
@@ -210,7 +213,7 @@ const pressSection = () => html`
       <div class="frame frame--16x10">
         ${localImage({
           file: 'award-panel.jpeg',
-          alt: 'Abhishek Mangla on an industry panel',
+          alt: 'The Construction Project on an industry panel',
           sizes: PRESS_SIZES,
         })}
       </div>
@@ -250,9 +253,9 @@ export const home = {
   page: 'home',
   path: '/',
   outFile: 'index.html',
-  title: 'The Construction Project — Architects & Interiors, Jagadhri',
+  title: 'The Construction Project — Builders & Interiors, Jagadhri',
   description:
-    'The Construction Project is an architecture, interiors, 3D visualisation, valuation and landscape practice led by Abhishek Mangla, B.Arch — Jagadhri, Haryana and Chandigarh. Concept to completion.',
+    'The Construction Project builds homes, commercial blocks, interiors and landscape across Jagadhri, Haryana and Chandigarh. 30+ years on site, 140+ projects delivered — concept to completion.',
   scripts: ['/assets/home.js'],
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}

@@ -6,27 +6,29 @@ import { team } from '../data/team.mjs';
 const HALF_SIZES = '(max-width: 760px) calc(100vw - 68px), min(660px, 48vw)';
 const PORTRAIT_SIZES = '(max-width: 700px) calc(100vw - 68px), (max-width: 1100px) 45vw, 330px';
 
-export const studioPage = {
-  page: 'studio',
-  path: '/studio/',
-  outFile: 'studio/index.html',
-  title: 'Studio — The Construction Project',
+export const companyPage = {
+  page: 'company',
+  path: '/company/',
+  outFile: 'company/index.html',
+  title: 'Company — The Construction Project',
   description:
-    'Five desks, one studio. The Construction Project is led by Abhishek Mangla, B.Arch — Council of Architecture registered, practising from Jagadhri and Chandigarh since 2011.',
+    'Five trades under one contract. The Construction Project builds from Jagadhri and Chandigarh — 30+ years on site, structure to handover.',
   scripts: ['/assets/site.js'],
   render: () => html`
-    <section class="studio-board" aria-labelledby="studio-heading">
+    <section class="studio-board" aria-labelledby="company-heading">
       <div class="shell">
         <div class="page-head-row">
-          <h1 class="h1-page" id="studio-heading">Studio</h1>
-          <span class="eyebrow">Jagadhri &amp; Chandigarh · est. ${site.established} · five desks</span>
+          <h1 class="h1-page" id="company-heading">Company</h1>
+          <span class="eyebrow"
+            >Jagadhri &amp; Chandigarh · ${site.yearsOnSite}+ years on site · five trades</span
+          >
         </div>
         <span class="rule" aria-hidden="true" style="animation-delay:200ms"></span>
         <div class="studio-split">
           <div class="frame frame--4x3 frame--bordered">
             ${localImage({
-              file: 'principal-architect.jpeg',
-              alt: 'Abhishek Mangla at the drawing table',
+              file: 'project-director.jpeg',
+              alt: 'Project director reviewing drawings at the office',
               sizes: HALF_SIZES,
               loading: 'eager',
               fetchPriority: 'high',
@@ -34,12 +36,12 @@ export const studioPage = {
           </div>
           <div class="studio-copy">
             <p class="studio-lead">
-              We draw a building once, then stay with it — structure, finishes, site rounds,
+              We build it once and stay with it — structure, services, finishes, site rounds,
               handover.
             </p>
             <div class="studio-credit">
-              <span class="studio-credit-name">${site.principal}</span>
-              <span class="studio-credit-role">Principal Architect · Registered Valuer</span>
+              <span class="studio-credit-name">${site.name}</span>
+              <span class="studio-credit-role">Builders · ${site.cities}</span>
             </div>
           </div>
         </div>
@@ -50,7 +52,7 @@ export const studioPage = {
       <div class="shell">
         <div class="capabilities-intro" data-reveal>
           <span class="eyebrow eyebrow--bronze">Capabilities</span>
-          <h2 id="capabilities-heading">Five desks,<br />one studio</h2>
+          <h2 id="capabilities-heading">Five trades,<br />one contract</h2>
         </div>
         <div class="capabilities-list" data-reveal>
           ${capabilities.map(
@@ -70,7 +72,7 @@ export const studioPage = {
       <div class="shell">
         <div class="section-head" data-reveal>
           <h2 class="h2-section" id="team-heading">The Team</h2>
-          <span class="eyebrow">Five people</span>
+          <span class="eyebrow">On site every day</span>
         </div>
         <div class="team-grid">
           ${team.map(
@@ -101,7 +103,7 @@ export const studioPage = {
         <div class="frame frame--16x10 frame--bordered">
           ${localImage({
             file: 'award-panel.jpeg',
-            alt: 'Abhishek Mangla on an industry panel',
+            alt: 'The Construction Project on an industry panel',
             sizes: HALF_SIZES,
           })}
         </div>
@@ -123,7 +125,7 @@ export const studioPage = {
 
     <section class="band-light band-close" aria-label="Start a project">
       <div class="shell">
-        <span class="h2-band">Work with the studio</span>
+        <span class="h2-band">Build with us</span>
         <a class="btn btn--dark" href="${url('/contact/')}">Enquire →</a>
       </div>
     </section>

@@ -1228,6 +1228,13 @@ html:not(.js) .site-header--home {
   animation-play-state: paused;
 }
 
+/* One repetition of the testimonial set. The track holds an even number of
+   these; the script adds more when a single set is narrower than the rail. */
+.rail-set {
+  display: flex;
+  gap: 22px;
+}
+
 .quote-card {
   display: flex;
   flex-direction: column;
@@ -2046,7 +2053,7 @@ html:not(.js) .site-header--home {
   }
 
   .marquee-group[aria-hidden='true'],
-  .quote-card[aria-hidden='true'] {
+  .rail-set[aria-hidden='true'] {
     display: none;
   }
 

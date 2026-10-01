@@ -1,14 +1,15 @@
 # Handoff: Arch Space — architecture studio website
 
-> **Built — now branded "The Construction Project".**
+> **Built — now "The Construction Project", a construction company.**
 > Live preview: **https://sandeshkashyap63-cpu.github.io/arch-space-website/**
 >
-> The practice is now **The Construction Project**. The site, its data and the
-> build all carry the new name; **this handoff document below still says "Arch
-> Space"** because it is the original brief, kept as the historical record —
-> as are the prototypes in `design/`. See
-> [docs/BUILD-NOTES.md](docs/BUILD-NOTES.md#brand-name) for what the longer
-> name changed typographically.
+> The business repositioned twice since this brief: renamed from "Arch Space"
+> to **The Construction Project**, then from an architecture practice to a
+> **construction company**. The site reflects both; the handoff below does not,
+> because it is the original brief kept as the historical record — as are the
+> prototypes in `design/`. What changed, and the five judgement calls that need
+> the client's confirmation, are in
+> [docs/BUILD-NOTES.md](docs/BUILD-NOTES.md#repositioning-architecture-practice--construction-company).
 >
 > Implemented as a static site in `src/`, output to `dist/`. Run `npm run setup`
 > once, then `npm run dev` (http://localhost:4321); `npm run deploy`

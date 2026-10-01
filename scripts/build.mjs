@@ -13,15 +13,16 @@ import { fileURLToPath } from 'node:url';
 
 import { layout } from '../src/layouts/base.mjs';
 import { url, absolute, base, origin, enquiryMode } from '../src/lib/config.mjs';
+import { site } from '../src/data/site.mjs';
 import { home } from '../src/pages/home.mjs';
 import { projectsPage } from '../src/pages/projects.mjs';
-import { studioPage } from '../src/pages/studio.mjs';
+import { companyPage } from '../src/pages/company.mjs';
 import { contactPage, enquiryReceivedPage } from '../src/pages/contact.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = path.join(root, 'dist');
 
-const pages = [home, projectsPage, studioPage, contactPage, enquiryReceivedPage];
+const pages = [home, projectsPage, companyPage, contactPage, enquiryReceivedPage];
 
 /** Bundles: shared script first, then the page script. */
 const bundles = {
@@ -123,6 +124,30 @@ const notFoundPage = {
   `,
 };
 
+/**
+ * The Studio page became Company when the practice repositioned. Static hosts
+ * cannot issue a 301, so this stub keeps any shared /studio/ link working.
+ */
+async function writeRedirect(from, to) {
+  const target = url(to);
+  await writeFile(`${from.replace(/^\/|\/$/g, '')}/index.html`, `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Moved — ${site.name}</title>
+<meta name="robots" content="noindex" />
+<link rel="canonical" href="${absolute(to)}" />
+<meta http-equiv="refresh" content="0; url=${target}" />
+</head>
+<body style="background:#23211D;color:#EDE6D9;font-family:system-ui,sans-serif;padding:40px">
+<p>This page moved to <a href="${target}" style="color:#C9A24A">${target}</a>.</p>
+<script>location.replace(${JSON.stringify(target)});</script>
+</body>
+</html>
+`);
+  console.log(`  ✓ ${from} → ${to}`);
+}
+
 async function main() {
   const started = Date.now();
   await rimraf(DIST);
@@ -151,6 +176,8 @@ async function main() {
   // Static assets: images, fonts, favicons, anything else in public/.
   await copyDir(path.join(root, 'public'), DIST);
   await fs.rm(path.join(DIST, 'images', 'manifest.json'), { force: true });
+
+  await writeRedirect('/studio/', '/company/');
 
   await writeFile('sitemap.xml', sitemap());
   await writeFile('robots.txt', robots());

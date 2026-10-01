@@ -1,13 +1,17 @@
 /**
- * Business details. Verbatim from the handoff — verify before launch.
+ * Business details.
+ *
+ * The practice was handed over as an architecture studio ("Arch Space") and is
+ * now a construction company. Copy below is written for a builder: the service
+ * list, stat labels and credentials changed with it. Verify against the
+ * client's own records before launch — see docs/BUILD-NOTES.md.
  */
 export const site = {
   name: 'The Construction Project',
   // The wordmark lockup stacks to two lines on narrow screens.
   nameLines: ['The Construction', 'Project'],
-  principal: 'Abhishek Mangla, B.Arch',
   tagline: 'Concept to Completion',
-  eyebrow: 'Architects · Interiors · Valuers · Landscape',
+  eyebrow: 'Construction · Interiors · Turnkey · Landscape',
   // Change this to the production origin before launch — it is used for
   // canonical URLs, the sitemap and Open Graph tags.
   origin: 'https://www.theconstructionproject.example',
@@ -18,7 +22,9 @@ export const site = {
   },
   email: 'arspace1@gmail.com',
   hours: 'Mon—Sat · 10:00—19:00',
-  established: 2011,
+  // Years on site, not a founding year: the client has not supplied one, and
+  // "30+ years" and the old "est. 2011" cannot both be true.
+  yearsOnSite: 30,
   address: {
     line1: '#510, Sector 17',
     line2: 'Opp. Civil Dispensary, HUDA',
@@ -31,63 +37,74 @@ export const site = {
     // postalCode intentionally omitted — not supplied in the handoff.
   },
   cities: 'Jagadhri & Chandigarh',
-  disciplines: ['Architecture', 'Interiors', '3D Visualisation', 'Valuation', 'Landscape'],
-  copyright: '© 2026 · Abhishek Mangla, B.Arch · Jagadhri & Chandigarh',
+  disciplines: ['Construction', 'Interiors', 'Turnkey Projects', 'Renovation', 'Landscape'],
+  copyright: '© 2026 · The Construction Project · Jagadhri & Chandigarh',
 };
 
 export const nav = [
   { label: 'Projects', href: '/projects/', key: 'projects' },
-  { label: 'Studio', href: '/studio/', key: 'studio' },
+  { label: 'Company', href: '/company/', key: 'company' },
   { label: 'Contact', href: '/contact/', key: 'contact' },
 ];
 
 export const stats = [
   { value: 140, suffix: '+', pad: false, label: 'Projects delivered' },
-  { value: 15, suffix: '', pad: false, label: 'Years in practice' },
-  { value: 5, suffix: '', pad: true, label: 'Disciplines in-house' },
+  { value: 30, suffix: '+', pad: false, label: 'Years on site' },
+  { value: 5, suffix: '', pad: true, label: 'Trades in-house' },
 ];
 
-export const services = ['Architecture', 'Interiors', '3D Visualisation', 'Valuation', 'Landscape'];
+export const services = [
+  'Construction',
+  'Interiors',
+  'Turnkey Projects',
+  'Renovation',
+  'Landscape',
+];
 
+/**
+ * Credentials. The handoff's third entry was the principal's Council of
+ * Architecture registration — an individual architect's credential, which does
+ * not transfer to the company. The client needs to supply the contractor
+ * registration / licence details that replace it.
+ */
 export const awards = [
   { title: 'Panel member, Real Wood Collection launch', year: '2023' },
   { title: 'Speaker, Architects & Interior Designers Meet', year: '2022' },
-  { title: 'Council of Architecture, India — registered', year: 'Member' },
 ];
 
 export const capabilities = [
   {
     numeral: 'i',
-    name: 'Architecture',
-    detail: 'Feasibility, sanction drawings, structural coordination, construction documents.',
+    name: 'Construction',
+    detail: 'Foundations, RCC frame, masonry and finishes, built to drawing and checked on site.',
   },
   {
     numeral: 'ii',
     name: 'Interiors',
-    detail: 'Joinery detail, material boards, lighting layouts, vendor supervision to fit-out.',
+    detail: 'Joinery, false ceilings, lighting and services, run to a fit-out programme.',
   },
   {
     numeral: 'iii',
-    name: '3D Visualisation',
-    detail: 'Walkthroughs and stills that settle decisions before anything is cast.',
+    name: 'Turnkey Projects',
+    detail: 'One contract from drawing to handover — structure, services, finishes, snagging.',
   },
   {
     numeral: 'iv',
-    name: 'Valuation',
-    detail: 'Valuation reports for property, bank and legal purposes.',
+    name: 'Renovation',
+    detail: 'Retrofits, additions and repairs, sequenced so an occupied building keeps working.',
   },
   {
     numeral: 'v',
-    name: 'Landscape Design',
-    detail: 'Ground planning, planting palettes and water detail for the local season.',
+    name: 'Landscape',
+    detail: 'Ground works, paving, drainage and planting detailed for the local season.',
   },
 ];
 
 /** Scope options on the enquiry form. Shared by the client form and the server handler. */
 export const scopeOptions = [
-  'Architecture',
+  'Construction',
   'Interiors',
-  '3D / Walkthrough',
-  'Valuation',
+  'Turnkey',
+  'Renovation',
   'Landscape',
 ];
