@@ -41,8 +41,22 @@ async function main() {
   const message = `Deploy site — ${capture('git', ['rev-parse', '--short', 'HEAD'])}`;
   const work = await fs.mkdtemp(path.join(os.tmpdir(), 'tcp-site-pages-'));
 
+  // The staging repo is created from scratch, so it inherits nothing: carry the
+  // committer identity over from this repository explicitly.
+  const identity = (key, fallback) => {
+    try {
+      return capture('git', ['config', '--get', key]) || fallback;
+    } catch {
+      return fallback;
+    }
+  };
+  const authorName = identity('user.name', 'site deploy');
+  const authorEmail = identity('user.email', 'deploy@localhost');
+
   console.log(`› publishing to ${BRANCH}`);
   run('git', ['init', '-q', '-b', BRANCH], { cwd: work });
+  run('git', ['config', 'user.name', authorName], { cwd: work });
+  run('git', ['config', 'user.email', authorEmail], { cwd: work });
   run('git', ['remote', 'add', 'origin', remote], { cwd: work });
   await fs.cp(DIST, work, { recursive: true });
   run('git', ['add', '-A'], { cwd: work });
