@@ -1,7 +1,7 @@
 import { html, localImage } from '../lib/html.mjs';
 import { url } from '../lib/config.mjs';
+import { enquiryForm } from '../components/enquiry-form.mjs';
 import { site, capabilities, awards, process } from '../data/site.mjs';
-import { team } from '../data/team.mjs';
 
 const HALF_SIZES = '(max-width: 760px) calc(100vw - 68px), min(660px, 48vw)';
 const PORTRAIT_SIZES = '(max-width: 700px) calc(100vw - 68px), (max-width: 1100px) 45vw, 330px';
@@ -13,7 +13,7 @@ export const companyPage = {
   title: 'Company — The Construction Project',
   description:
     'Five trades under one contract. The Construction Project builds from Jagadhri and Chandigarh — 30+ years on site, structure to handover.',
-  scripts: ['/assets/site.js'],
+  scripts: ['/assets/contact.js'],
   render: () => html`
     <section class="company-board" aria-labelledby="company-heading">
       <div class="shell">
@@ -88,36 +88,6 @@ export const companyPage = {
       </div>
     </section>
 
-    <section class="team" aria-labelledby="team-heading">
-      <div class="shell">
-        <div class="section-head" data-reveal>
-          <h2 class="h2-section" id="team-heading">The Team</h2>
-          <span class="eyebrow">On site every day</span>
-        </div>
-        <div class="team-grid">
-          ${team.map(
-            (member) => html`
-              <div class="team-member" data-reveal>
-                <div class="frame frame--3x4 frame--bordered${member.image ? '' : ' frame--empty'}">
-                  ${member.image
-                    ? localImage({
-                        file: member.image.file,
-                        alt: member.image.alt,
-                        sizes: PORTRAIT_SIZES,
-                      })
-                    : html`<span>Portrait to follow</span>`}
-                </div>
-                <div class="team-member-body">
-                  <span class="team-name">${member.name}</span>
-                  <span class="team-role">${member.role}</span>
-                </div>
-              </div>
-            `
-          )}
-        </div>
-      </div>
-    </section>
-
     <section class="awards" aria-labelledby="awards-heading">
       <div class="shell split" data-reveal>
         <div class="frame frame--16x10 frame--bordered">
@@ -143,10 +113,36 @@ export const companyPage = {
       </div>
     </section>
 
-    <section class="band-light band-close" aria-label="Start a project">
+    <section class="enquiry-band" aria-labelledby="enquire-heading">
       <div class="shell">
-        <span class="h2-band">Build with us</span>
-        <a class="btn btn--dark" href="${url('/contact/')}">Enquire →</a>
+        <div class="section-head" data-reveal>
+          <h2 class="h2-section" id="enquire-heading">Build with us</h2>
+          <span class="section-head-note">${site.hours}</span>
+        </div>
+        <div class="enquiry-split">
+          <div class="enquiry-aside" data-reveal>
+            <p class="lead-text">
+              Tell us the site and the scope. We will come and look before we price anything.
+            </p>
+            <div class="contact-details">
+              <div class="contact-detail">
+                <h3 class="contact-detail-label">Direct</h3>
+                <p>
+                  <a href="${site.phone.tel}">${site.phone.display}</a><br />
+                  <a href="${site.phone.whatsapp}" rel="noopener" target="_blank">WhatsApp</a><br />
+                  <a href="mailto:${site.email}">${site.email}</a>
+                </p>
+              </div>
+              <div class="contact-detail">
+                <h3 class="contact-detail-label">Office</h3>
+                <p>${site.address.line1}<br />${site.address.line2}<br />${site.address.line3}</p>
+              </div>
+            </div>
+          </div>
+          <div class="enquiry-form-wrap" data-reveal>
+            ${enquiryForm({ fallbackAction: url('/company/'), headingLevel: 3 })}
+          </div>
+        </div>
       </div>
     </section>
   `,

@@ -32,11 +32,9 @@ export const clientImages = [
     source: 'photos-1786856795790-y6tc.jpeg',
     alt: 'Project director reviewing drawings at the office',
   },
-  {
-    file: 'site-supervisor.jpeg',
-    source: 'photos-1786856519692-jqr6.jpeg',
-    alt: 'Site supervisor checking work on site',
-  },
+  // The site-supervisor photograph (design/uploads/photos-1786856519692-jqr6.jpeg)
+  // is not currently placed — it only appeared on the Team section, which the
+  // client removed. The source is kept; re-add this entry to bring it back.
   {
     file: 'award-panel.jpeg',
     source: 'photos-1786856519759-p198.jpeg',

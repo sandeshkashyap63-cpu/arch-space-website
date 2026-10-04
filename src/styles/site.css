@@ -1735,6 +1735,38 @@ html:not(.js) .site-header--home {
   color: var(--muted-45);
 }
 
+/* ---- Enquiry band (Company page) --------------------------------------
+   The same form as Contact, closing the page where a visitor has just read
+   how the work runs. Dark ground, like Contact's, so the form inherits its
+   styling unchanged. */
+.enquiry-band {
+  border-top: 1px solid var(--hairline);
+  padding: clamp(48px, 8vh, 100px) var(--gutter);
+}
+
+.enquiry-band .shell {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+.enquiry-split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: clamp(26px, 4vw, 60px);
+  align-items: start;
+}
+
+.enquiry-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.enquiry-aside .lead-text {
+  font-size: clamp(19px, 2vw, 28px);
+}
+
 .awards {
   border-top: 1px solid var(--hairline);
   padding: clamp(48px, 8vh, 100px) var(--gutter);

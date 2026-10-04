@@ -84,22 +84,6 @@
     ],
     "aspect": 0.7467
   },
-  "site-supervisor.jpeg": {
-    "base": "site-supervisor",
-    "alt": "Site supervisor checking work on site",
-    "width": 1536,
-    "height": 2752,
-    "widths": [
-      480,
-      768,
-      1024,
-      1440
-    ],
-    "formats": [
-      "jpeg"
-    ],
-    "aspect": 1.7917
-  },
   "award-panel.jpeg": {
     "base": "award-panel",
     "alt": "The Construction Project on an industry panel",

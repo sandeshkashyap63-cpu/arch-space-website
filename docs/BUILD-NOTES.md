@@ -84,6 +84,39 @@ names, filenames or comments.
 `/studio/` still resolves: the build writes a redirect stub there, since a
 static host cannot issue a 301 and the old URL may already be shared.
 
+### The Company page
+
+Sections, in order: the company board, **How we work**, Capabilities, Awards &
+press, and an **enquiry form** that closes the page.
+
+The Team section was removed at the client's request — it carried two "Portrait
+to follow" placeholders. `src/data/team.mjs` went with it rather than sitting
+unused — `git log --diff-filter=D -- src/data/team.mjs` finds the commit that
+removed it if the roles are wanted back once portraits arrive. The site-supervisor photograph only
+appeared there, so it is no longer put through the image pipeline — the source
+file stays in `design/uploads/` and `src/data/images.mjs` records how to
+restore it.
+
+### The enquiry form appears twice
+
+The form is one component, `src/components/enquiry-form.mjs`, rendered by both
+Contact and Company, so the two cannot drift. Each page renders exactly one
+form, so field ids stay unique within a document.
+
+Two options matter:
+
+- `fallbackAction` — only reached in handoff mode without JavaScript, which the
+  `<noscript>` block hides anyway. It points at the page's own URL so a stray
+  submit reloads rather than 405s on a static host.
+- `headingLevel` — 2 on Contact, where the form title is the section's own
+  heading; 3 on Company, where it sits inside a section already headed "Build
+  with us". Keeps the document outline correct.
+
+The Company page loads `/assets/contact.js` rather than `/assets/site.js`,
+since that bundle carries the form behaviour on top of the shared script.
+Verified end to end from `/company/`: empty submit blocks with inline errors,
+a valid submit reaches the server and clears the form without navigating.
+
 ### The process section
 
 The Company page leads with **How we work** — the six stages the client
