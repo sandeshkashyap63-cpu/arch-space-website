@@ -72,6 +72,37 @@ export const awards = [
   { title: 'Speaker, Architects & Interior Designers Meet', year: '2022' },
 ];
 
+/**
+ * How a job runs, enquiry to handover. Shown on the Company page.
+ * Numbers are rendered zero-padded from the array order.
+ */
+export const process = [
+  {
+    label: 'Enquiry',
+    detail: 'You call, WhatsApp or send the form. We note the site, the scope and your budget.',
+  },
+  {
+    label: 'Site visit',
+    detail: 'We come to the plot and check measurements, access, soil and services before anything is priced.',
+  },
+  {
+    label: 'Drawings',
+    detail: 'We go through your plan and drawings together, mark the changes, and fix the scope.',
+  },
+  {
+    label: 'Quotation',
+    detail: 'An itemised quote built around your drawings — materials, labour and programme, in writing.',
+  },
+  {
+    label: 'Agreement',
+    detail: 'A signed contract covering scope, payment stages, timeline and site safety.',
+  },
+  {
+    label: 'We build',
+    detail: 'Structure to finishes, supervised daily, handed over on the date we agreed.',
+  },
+];
+
 export const capabilities = [
   {
     numeral: 'i',

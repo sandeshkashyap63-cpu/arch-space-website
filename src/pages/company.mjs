@@ -1,6 +1,6 @@
 import { html, localImage } from '../lib/html.mjs';
 import { url } from '../lib/config.mjs';
-import { site, capabilities, awards } from '../data/site.mjs';
+import { site, capabilities, awards, process } from '../data/site.mjs';
 import { team } from '../data/team.mjs';
 
 const HALF_SIZES = '(max-width: 760px) calc(100vw - 68px), min(660px, 48vw)';
@@ -15,7 +15,7 @@ export const companyPage = {
     'Five trades under one contract. The Construction Project builds from Jagadhri and Chandigarh — 30+ years on site, structure to handover.',
   scripts: ['/assets/site.js'],
   render: () => html`
-    <section class="studio-board" aria-labelledby="company-heading">
+    <section class="company-board" aria-labelledby="company-heading">
       <div class="shell">
         <div class="page-head-row">
           <h1 class="h1-page" id="company-heading">Company</h1>
@@ -24,7 +24,7 @@ export const companyPage = {
           >
         </div>
         <span class="rule" aria-hidden="true" style="animation-delay:200ms"></span>
-        <div class="studio-split">
+        <div class="company-split">
           <div class="frame frame--4x3 frame--bordered">
             ${localImage({
               file: 'project-director.jpeg',
@@ -34,17 +34,37 @@ export const companyPage = {
               fetchPriority: 'high',
             })}
           </div>
-          <div class="studio-copy">
-            <p class="studio-lead">
+          <div class="company-copy">
+            <p class="lead-text">
               We build it once and stay with it — structure, services, finishes, site rounds,
               handover.
             </p>
-            <div class="studio-credit">
-              <span class="studio-credit-name">${site.name}</span>
-              <span class="studio-credit-role">Builders · ${site.cities}</span>
+            <div class="company-credit">
+              <span class="company-credit-name">${site.name}</span>
+              <span class="company-credit-role">Builders · ${site.cities}</span>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="process" aria-labelledby="process-heading">
+      <div class="shell">
+        <div class="section-head" data-reveal>
+          <h2 class="h2-section" id="process-heading">How we work</h2>
+          <span class="section-head-note">Enquiry to handover</span>
+        </div>
+        <ol class="process-steps">
+          ${process.map(
+            (step, i) => html`
+              <li class="process-step" data-reveal>
+                <span class="process-number">${String(i + 1).padStart(2, '0')}</span>
+                <h3 class="process-label">${step.label}</h3>
+                <p class="process-detail">${step.detail}</p>
+              </li>
+            `
+          )}
+        </ol>
       </div>
     </section>
 

@@ -73,9 +73,36 @@ construction company, so the copy was rewritten rather than relabelled.
 | "Five desks, one studio" | "Five trades, one contract" |
 | Form scope: Architecture / 3D / Valuation … | Construction / Interiors / Turnkey / Renovation / Landscape |
 | JSON-LD `ArchitecturalService` | `GeneralContractor` |
+| "Index · 09 works" | "Index · 09 projects" |
+| "Call the studio" / "reached the studio" | "Call the office" / "reached the office" |
+| Carousel label "Studio work" | "Project work" |
+| `studio-site.jpeg`, `.studio-board`, `.studio-lead` … | `office-site.jpeg`, `.company-board`, `.lead-text` … |
+
+The word "studio" no longer appears anywhere in the build — markup, class
+names, filenames or comments.
 
 `/studio/` still resolves: the build writes a redirect stub there, since a
 static host cannot issue a 301 and the old URL may already be shared.
+
+### The process section
+
+The Company page leads with **How we work** — the six stages the client
+described, from enquiry to handover:
+
+| | | |
+|---|---|---|
+| 01 Enquiry | 02 Site visit | 03 Drawings |
+| 04 Quotation | 05 Agreement | 06 We build |
+
+Content lives in `process` in `src/data/site.mjs`; add or remove a step and the
+numbering and layout follow. It reuses the Statement section's stat-block motif
+— hairline above, display numeral, letterspaced label — so a brand-new section
+still reads as part of the same drawing, with a 22px bronze tick on each rule
+echoing the hero's slide indicator.
+
+The grid is explicit (3 / 2 / 1 columns) rather than `auto-fit` like the rest of
+the site: six steps auto-fitting to four columns leaves an orphan row of two,
+and a numbered sequence should break evenly.
 
 ### The named principal
 
@@ -114,6 +141,16 @@ not a person.
    company actually tenders for.
 5. **Project categories were inferred** from project names (Courtyard House →
    residential, Vidya Bhawan Block → commercial, and so on). Confirm.
+
+### Reveal fix that came with it
+
+Testing the new section exposed a flaw in the scroll reveal: elements the
+viewport *jumps past* — restored scroll position on reload, an anchor, a fast
+fling — never intersect, so they stayed invisible until the visitor scrolled
+back up through them. The observer now flushes any un-revealed element earlier
+in the document as soon as a later one appears, so there is never a blank gap
+above content that has shown up. Verified: nothing left hidden at 1920, 1440,
+1100, 900, 620, 390 or 320px after jumping to the foot of the page.
 
 ### Marquee fix that came with it
 

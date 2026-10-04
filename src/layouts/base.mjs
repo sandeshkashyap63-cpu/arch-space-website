@@ -114,7 +114,7 @@ function contactRail() {
         target="_blank"
         >WA</a
       >
-      <a class="rail-btn rail-btn--call" href="${site.phone.tel}" aria-label="Call the studio"
+      <a class="rail-btn rail-btn--call" href="${site.phone.tel}" aria-label="Call the office"
         >Call</a
       >
     </div>

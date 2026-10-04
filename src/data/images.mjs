@@ -43,9 +43,9 @@ export const clientImages = [
     alt: 'The Construction Project on an industry panel',
   },
   {
-    file: 'studio-site.jpeg',
+    file: 'office-site.jpeg',
     source: 'photos-1786856519741-vsjh.jpeg',
-    alt: 'The Construction Project studio',
+    alt: 'The Construction Project office',
   },
 ];
 

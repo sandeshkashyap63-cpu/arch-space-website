@@ -67,14 +67,29 @@
     revealAll();
   } else {
     var stagger = document.querySelector('.page--home') ? 90 : 80;
+
+    var reveal = function (el, delay) {
+      el.style.setProperty('--reveal-delay', delay + 'ms');
+      el.classList.add('is-revealed');
+      observer.unobserve(el);
+    };
+
     var observer = new IntersectionObserver(
       function (entries) {
         var shown = 0;
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          entry.target.style.setProperty('--reveal-delay', shown * stagger + 'ms');
-          entry.target.classList.add('is-revealed');
-          observer.unobserve(entry.target);
+
+          // Anything earlier in the document that never got its turn — the
+          // viewport jumped past it (restored scroll, anchor, fast fling) —
+          // is shown straight away, so there is never a blank gap above
+          // content that has appeared.
+          var index = targets.indexOf(entry.target);
+          for (var i = 0; i < index; i++) {
+            if (!targets[i].classList.contains('is-revealed')) reveal(targets[i], 0);
+          }
+
+          reveal(entry.target, shown * stagger);
           shown += 1;
         });
       },

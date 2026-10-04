@@ -45,7 +45,7 @@ export const contactPage = {
           <div class="contact-aside">
             <div class="frame frame--4x3 frame--bordered">
               ${localImage({
-                file: 'studio-site.jpeg',
+                file: 'office-site.jpeg',
                 alt: 'The Construction Project office',
                 sizes: IMG_SIZES,
                 loading: 'eager',
@@ -84,7 +84,7 @@ export const contactPage = {
                   <div class="enquiry-noscript">
                     <h2 class="form-title">Tell us about the site</h2>
                     <p class="form-note">
-                      The enquiry form needs JavaScript. Reach the studio directly:
+                      The enquiry form needs JavaScript. Reach the office directly:
                     </p>
                     <p class="contact-detail-direct">
                       <a href="${site.phone.tel}">${site.phone.display}</a><br />
@@ -223,8 +223,8 @@ export const enquiryReceivedPage = {
         <span class="rule" aria-hidden="true" style="animation-delay:200ms"></span>
         <div class="contact-split">
           <div class="contact-aside">
-            <p class="studio-lead">
-              Your enquiry has reached the studio. We will call you back within a working day.
+            <p class="lead-text">
+              Your enquiry has reached the office. We will call you back within a working day.
             </p>
             <div class="contact-details">
               <div class="contact-detail">

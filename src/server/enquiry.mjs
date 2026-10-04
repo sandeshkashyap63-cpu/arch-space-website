@@ -137,7 +137,7 @@ export async function handleEnquiry(input, meta = {}) {
     return {
       status: 429,
       ok: false,
-      message: 'Too many enquiries from this connection. Please call the studio instead.',
+      message: 'Too many enquiries from this connection. Please call the office instead.',
     };
   }
 

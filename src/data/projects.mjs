@@ -2,7 +2,7 @@
  * Project index.
  *
  * `image.placeholder: true` marks stock photography standing in for the
- * studio's own work. Those images are free-license Pexels files and MUST be
+ * company's own work. Those images are free-license Pexels files and MUST be
  * replaced before launch — see docs/BUILD-NOTES.md.
  */
 
@@ -93,5 +93,5 @@ export const projects = [
 export const featuredProjects = projects.filter((p) => p.featured);
 
 export const projectIndexMeta = {
-  eyebrow: 'Index · 09 works · 2018—2026',
+  eyebrow: 'Index · 09 projects · 2018—2026',
 };

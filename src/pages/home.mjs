@@ -48,7 +48,7 @@ const heroSection = () => html`
           data-slideshow
           role="group"
           aria-roledescription="carousel"
-          aria-label="Studio work"
+          aria-label="Project work"
         >
           <div class="hero-parallax" data-parallax>
             ${heroSlides.map(

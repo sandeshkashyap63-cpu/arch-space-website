@@ -114,7 +114,7 @@ const notFoundPage = {
           <span class="eyebrow">Page not found</span>
         </div>
         <span class="rule" aria-hidden="true"></span>
-        <p class="studio-lead" style="max-width:26ch">
+        <p class="lead-text" style="max-width:26ch">
           That drawing isn't in the set. Try the
           <a href="${url('/projects/')}">project index</a> or
           <a href="${url('/contact/')}">get in touch</a>.
