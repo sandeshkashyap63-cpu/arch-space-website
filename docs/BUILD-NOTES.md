@@ -86,8 +86,20 @@ static host cannot issue a 301 and the old URL may already be shared.
 
 ### The Company page
 
-Sections, in order: the company board, **How we work**, Capabilities, Awards &
+Sections, in order: **Why choose us**, **How we work**, Capabilities, Awards &
 press, and an **enquiry form** that closes the page.
+
+The page opens on the nine differentiators the client dictated (`reasons` in
+`src/data/site.mjs`) in place of the old hero lead. They are set as a ruled
+spec list beside the director photograph — deliberately *not* a numbered grid,
+because "How we work" directly below already uses one and two numbered grids
+back to back would read as the same section twice. The photograph stays because
+it backs the first claim: a qualified engineer at a drawing board is the
+argument against "a thekedar working without technical training".
+
+Two phrases are the client's own and were kept rather than smoothed into
+neutral English — "thekedar" and "desi jugaad". They speak directly to the
+local market and lose their force in translation.
 
 The Team section was removed at the client's request — it carried two "Portrait
 to follow" placeholders. `src/data/team.mjs` went with it rather than sitting

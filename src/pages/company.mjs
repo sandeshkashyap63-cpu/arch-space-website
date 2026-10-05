@@ -1,7 +1,7 @@
 import { html, localImage } from '../lib/html.mjs';
 import { url } from '../lib/config.mjs';
 import { enquiryForm } from '../components/enquiry-form.mjs';
-import { site, capabilities, awards, process } from '../data/site.mjs';
+import { site, capabilities, awards, process, reasons } from '../data/site.mjs';
 
 const HALF_SIZES = '(max-width: 760px) calc(100vw - 68px), min(660px, 48vw)';
 const PORTRAIT_SIZES = '(max-width: 700px) calc(100vw - 68px), (max-width: 1100px) 45vw, 330px';
@@ -12,7 +12,7 @@ export const companyPage = {
   outFile: 'company/index.html',
   title: 'Company — The Construction Project',
   description:
-    'Five trades under one contract. The Construction Project builds from Jagadhri and Chandigarh — 30+ years on site, structure to handover.',
+    'Qualified civil engineers, not contractors: proper site safety, a dedicated supervisor, daily WhatsApp updates with photographs and no compromise on quality. Jagadhri and Chandigarh.',
   scripts: ['/assets/contact.js'],
   render: () => html`
     <section class="company-board" aria-labelledby="company-heading">
@@ -24,26 +24,39 @@ export const companyPage = {
           >
         </div>
         <span class="rule" aria-hidden="true" style="animation-delay:200ms"></span>
+
+        <div class="section-head" data-reveal>
+          <h2 class="h2-section" id="why-heading">Why choose us</h2>
+          <span class="section-head-note">${reasons.length} reasons</span>
+        </div>
+
         <div class="company-split">
-          <div class="frame frame--4x3 frame--bordered">
-            ${localImage({
-              file: 'project-director.jpeg',
-              alt: 'Project director reviewing drawings at the office',
-              sizes: HALF_SIZES,
-              loading: 'eager',
-              fetchPriority: 'high',
-            })}
-          </div>
-          <div class="company-copy">
+          <div class="company-media">
+            <div class="frame frame--4x3 frame--bordered">
+              ${localImage({
+                file: 'project-director.jpeg',
+                alt: 'Project director reviewing drawings at the office',
+                sizes: HALF_SIZES,
+                loading: 'eager',
+                fetchPriority: 'high',
+              })}
+            </div>
             <p class="lead-text">
               We build it once and stay with it — structure, services, finishes, site rounds,
               handover.
             </p>
-            <div class="company-credit">
-              <span class="company-credit-name">${site.name}</span>
-              <span class="company-credit-role">Builders · ${site.cities}</span>
-            </div>
           </div>
+
+          <ul class="reasons" aria-labelledby="why-heading">
+            ${reasons.map(
+              (reason) => html`
+                <li class="reason" data-reveal>
+                  <h3 class="reason-label">${reason.label}</h3>
+                  <p class="reason-detail">${reason.detail}</p>
+                </li>
+              `
+            )}
+          </ul>
         </div>
       </div>
     </section>

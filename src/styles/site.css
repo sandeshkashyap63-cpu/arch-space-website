@@ -1483,20 +1483,31 @@ html:not(.js) .site-header--home {
 
 .company-split {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: minmax(0, 1fr);
   gap: clamp(24px, 3vw, 56px);
-  align-items: center;
+  align-items: start;
+}
+
+/* The reasons list is the longer column, so it takes the wider track. */
+@media (min-width: 900px) {
+  .company-split {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+  }
+}
+
+.company-media {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.company-media .lead-text {
+  font-size: clamp(19px, 2vw, 28px);
 }
 
 .company-split .frame {
   animation: as-fade 1400ms ease 300ms both;
-}
-
-.company-copy {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  animation: as-rise 1200ms ease 400ms both;
 }
 
 .lead-text {
@@ -1505,26 +1516,6 @@ html:not(.js) .site-header--home {
   font-size: clamp(21px, 2.4vw, 38px);
   line-height: 1.25;
   text-wrap: pretty;
-}
-
-.company-credit {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.company-credit-name {
-  font-size: 11px;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.company-credit-role {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--muted-45);
 }
 
 /* ---- Process ----------------------------------------------------------
@@ -1605,6 +1596,42 @@ html:not(.js) .site-header--home {
   line-height: 1.75;
   color: var(--muted-60);
   max-width: 40ch;
+}
+
+/* ---- Why choose us ----------------------------------------------------
+   A ruled spec list: one claim per row, hairline above, so nine points read
+   as a schedule rather than nine cards. */
+.reasons {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.reason {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid var(--hairline-strong);
+  padding: 16px 0;
+}
+
+.reason:last-child {
+  border-bottom: 1px solid var(--hairline-strong);
+}
+
+.reason-label {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.reason-detail {
+  font-size: 12px;
+  line-height: 1.75;
+  color: var(--muted-60);
 }
 
 .capabilities {

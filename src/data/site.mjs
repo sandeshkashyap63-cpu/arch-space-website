@@ -73,6 +73,54 @@ export const awards = [
 ];
 
 /**
+ * Why choose us — the company's own differentiators, in the client's words.
+ * Rendered as the opening section of the Company page.
+ */
+export const reasons = [
+  {
+    label: 'Civil engineers',
+    detail:
+      'Qualified civil engineers plan and run every job — not a thekedar working without technical training.',
+  },
+  {
+    label: 'Safety on site',
+    detail:
+      'Proper safety measures on every site: equipment, scaffolding and method, never shortcuts.',
+  },
+  {
+    label: 'Quality, no compromise',
+    detail:
+      'Quality is held through the whole job, checked as it is built rather than argued about after.',
+  },
+  {
+    label: 'Daily site updates',
+    detail:
+      'A WhatsApp report every day with photographs, so you see the work without standing on site.',
+  },
+  {
+    label: 'Dedicated supervisor',
+    detail: 'One supervisor assigned to your site and answerable for it, from start to handover.',
+  },
+  {
+    label: 'Conduct on site',
+    detail: 'Our labour and staff behave themselves. Any misconduct is acted on at once.',
+  },
+  {
+    label: 'Value for money',
+    detail: 'Itemised, honest pricing — affordable without cutting what should not be cut.',
+  },
+  {
+    label: 'Best material',
+    detail: 'The material specified is the material that goes in, with nothing substituted quietly.',
+  },
+  {
+    label: 'Technical, not jugaad',
+    detail:
+      'The work follows drawings and technical method. No desi jugaad holding the job together.',
+  },
+];
+
+/**
  * How a job runs, enquiry to handover. Shown on the Company page.
  * Numbers are rendered zero-padded from the array order.
  */
