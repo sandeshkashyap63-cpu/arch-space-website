@@ -10,7 +10,7 @@ export const site = {
   name: 'The Construction Project',
   // The wordmark lockup stacks to two lines on narrow screens.
   nameLines: ['The Construction', 'Project'],
-  tagline: 'Concept to Completion',
+  tagline: 'The Art of Building',
   eyebrow: 'Construction · Interiors · Turnkey · Landscape',
   // Change this to the production origin before launch — it is used for
   // canonical URLs, the sitemap and Open Graph tags.
