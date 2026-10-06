@@ -107,7 +107,7 @@ const statementSection = () => html`
   <section class="band-light statement" aria-label="What the company does" data-statement>
     <div class="shell" data-reveal>
       <p class="statement-lead">
-        Qualified civil engineers building homes that last generations.
+        Qualified civil engineers building homes &amp; buildings that last generations.
       </p>
       <p class="statement-support">
         Every project is designed, supervised and delivered by professional engineers — sound
@@ -258,7 +258,7 @@ export const home = {
   outFile: 'index.html',
   title: 'The Construction Project — Builders & Interiors, Jagadhri',
   description:
-    'Qualified civil engineers building homes that last generations. Sound structures, honest materials and daily site reports — Jagadhri, Haryana and Chandigarh.',
+    'Qualified civil engineers building homes & buildings that last generations. Sound structures, honest materials and daily site reports — Jagadhri and Chandigarh.',
   scripts: ['/assets/home.js'],
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}
