@@ -1011,40 +1011,65 @@ html:not(.js) .site-header--home {
   }
 }
 
-/* The three-column board is unreadable on a phone; callouts stack under the
-   image, which is how the design's auto-fit grids behave elsewhere. */
+/* Below 900px the header is sticky and sits in the flow, so the hero stops
+   reserving the 96px a fixed bar needed to overlay it — that reserve was
+   reading as dead space at the top of the page on a phone. */
+@media (max-width: 900px) {
+  .hero {
+    padding-top: clamp(24px, 4vh, 40px);
+  }
+
+  .hero-hairline {
+    top: clamp(24px, 4vh, 40px);
+  }
+}
+
+/* The three-column board is unreadable on a phone; the image leads and the
+   four annotations collapse into a single ruled block beneath it. */
 @media (max-width: 720px) {
   .hero {
-    padding-top: 96px;
     gap: 28px;
+    /* A full-screen hero that is mostly empty costs a phone user a screenful
+       of scrolling, so the board sizes to its content here. */
+    min-height: auto;
   }
 
   .hero-board {
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    row-gap: 0;
   }
 
   .hero-figure {
     order: -1;
+    margin-bottom: 24px;
   }
 
-  .hero-callouts--left {
-    align-items: flex-start;
+  /* One tile, not four: each annotation is a row of label beside note, and the
+     row rules replace the drawn hairlines. */
+  .hero-callouts {
+    display: block;
     text-align: left;
   }
 
-  .hero-callouts--left .callout-rule {
-    transform-origin: left;
-  }
-
-  .hero-callouts {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px 34px;
-  }
-
   .callout {
-    flex: 1 1 200px;
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr);
+    gap: 2px 14px;
+    align-items: baseline;
+    border-top: 1px solid var(--hairline-strong);
+    padding: 10px 0;
+  }
+
+  .hero-callouts--right .callout:last-child {
+    border-bottom: 1px solid var(--hairline-strong);
+  }
+
+  .callout-text {
+    max-width: none;
+  }
+
+  .callout-rule {
+    display: none;
   }
 }
 

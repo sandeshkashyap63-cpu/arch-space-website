@@ -64,6 +64,12 @@ async function main() {
   run('git', ['push', '-q', '--force', 'origin', BRANCH], { cwd: work });
   await fs.rm(work, { recursive: true, force: true });
 
+  // The Pages build left dist/ full of /arch-space-website/... asset URLs,
+  // which 404 on the local dev server. Put the default build back so
+  // `npm run dev` works straight after a deploy.
+  console.log('› restoring the local build');
+  run('npm', ['run', 'build'], { stdio: 'ignore' });
+
   console.log(`\n✓ deployed. Pages will refresh within a minute or two.`);
 }
 
