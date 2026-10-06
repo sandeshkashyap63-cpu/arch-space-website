@@ -104,11 +104,14 @@ const heroSection = () => html`
 `;
 
 const statementSection = () => html`
-  <section class="band-light statement" aria-label="The practice" data-statement>
+  <section class="band-light statement" aria-label="What the company does" data-statement>
     <div class="shell" data-reveal>
       <p class="statement-lead">
-        Foundations, structure, finishes and handover — built under one roof in Jagadhri and
-        Chandigarh.
+        Qualified civil engineers building homes that last generations.
+      </p>
+      <p class="statement-support">
+        Every project is designed, supervised and delivered by professional engineers — sound
+        structures, honest materials, and work that passes every test across India.
       </p>
       ${stats.map(
         (stat) => html`
@@ -255,7 +258,7 @@ export const home = {
   outFile: 'index.html',
   title: 'The Construction Project — Builders & Interiors, Jagadhri',
   description:
-    'The Construction Project builds homes, commercial blocks, interiors and landscape across Jagadhri, Haryana and Chandigarh. 30+ years on site, 140+ projects delivered — concept to completion.',
+    'Qualified civil engineers building homes that last generations. Sound structures, honest materials and daily site reports — Jagadhri, Haryana and Chandigarh.',
   scripts: ['/assets/home.js'],
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}
