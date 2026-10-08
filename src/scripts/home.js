@@ -1,4 +1,5 @@
-/* Home: header inversion, hero parallax, hero slideshow, stat count-up. */
+/* Home: header inversion, hero parallax, stat count-up, marquee sizing.
+   The hero slideshow itself lives in slideshow.js, shared with the gallery. */
 (function () {
   'use strict';
 
@@ -40,66 +41,6 @@
     window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('resize', onScroll, { passive: true });
     apply();
-  }
-
-  /* ---- Hero slideshow --------------------------------------------------
-     Four cross-fading layers. Auto-advance pauses on hover and on keyboard
-     focus, and does not run at all under reduced motion — the manual
-     controls still work in that case. */
-  var stage = document.querySelector('[data-slideshow]');
-
-  if (stage) {
-    var slides = Array.prototype.slice.call(stage.querySelectorAll('[data-slide]'));
-    var dots = Array.prototype.slice.call(stage.querySelectorAll('[data-dot]'));
-    var INTERVAL = 5200;
-    var current = 0;
-    var timer = null;
-
-    var show = function (next) {
-      current = (next + slides.length) % slides.length;
-      slides.forEach(function (slide, i) {
-        var on = i === current;
-        slide.classList.toggle('is-active', on);
-        if (on) slide.removeAttribute('aria-hidden');
-        else slide.setAttribute('aria-hidden', 'true');
-      });
-      dots.forEach(function (dot, i) {
-        dot.setAttribute('aria-current', i === current ? 'true' : 'false');
-      });
-    };
-
-    var start = function () {
-      if (timer || reduced() || slides.length < 2) return;
-      timer = window.setInterval(function () {
-        show(current + 1);
-      }, INTERVAL);
-    };
-
-    var stop = function () {
-      if (!timer) return;
-      window.clearInterval(timer);
-      timer = null;
-    };
-
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        show(i);
-        // A manual choice restarts the clock rather than cutting away early.
-        stop();
-        start();
-      });
-    });
-
-    stage.addEventListener('mouseenter', stop);
-    stage.addEventListener('mouseleave', start);
-    stage.addEventListener('focusin', stop);
-    stage.addEventListener('focusout', start);
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) stop();
-      else start();
-    });
-
-    start();
   }
 
   /* ---- Marquee sizing --------------------------------------------------

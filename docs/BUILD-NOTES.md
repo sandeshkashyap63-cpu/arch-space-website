@@ -84,6 +84,27 @@ names, filenames or comments.
 `/studio/` still resolves: the build writes a redirect stub there, since a
 static host cannot issue a 301 and the old URL may already be shared.
 
+### The home page's "On site" slider
+
+The Awards & press block on the home page — a photograph beside two
+architecture-era credentials — is replaced by an auto-advancing slider of the
+company's own site photographs. The same block still exists on the Company
+page, where the credentials are in their proper context.
+
+`src/scripts/slideshow.js` now drives every `[data-slideshow]` on a page rather
+than the single hero instance it started as, so the hero board and the gallery
+share one implementation: cross-fade, progress buttons, pause on hover, on
+keyboard focus and while the tab is hidden, and no auto-advance at all under
+`prefers-reduced-motion` (the manual controls still work there). Per-instance
+timing comes from `data-interval`; the gallery runs at 4200ms against the
+hero's 5200ms.
+
+The frame is height-capped and centred rather than full-bleed. At 1400px a
+full-width 16:10 frame is 850px tall — it swallowed the viewport and cropped a
+portrait photograph into a close-up. Capping the width to height × 1.6 keeps it
+a showcase. On phones it switches to 4:3, since a 16:10 letterbox is barely
+200px tall there.
+
 ### The Company page
 
 Sections, in order: **Why choose us**, **How we work**, Capabilities, Awards &
@@ -367,6 +388,26 @@ matching entry in `src/data/images.mjs` at it, then `npm run images && npm run b
 The derived files in `public/images/` **are committed**, unusually for build
 output: the pipeline uses macOS `sips`, so a Linux CI runner could not
 regenerate them. Swapping in `sharp` would make them safe to gitignore.
+
+### Site photographs — the drop folder
+
+**`photos/work/`** is where the client's own site photographs go. Everything in
+it appears in the "On site" slider on the home page, in filename order, with no
+code change: drop files in, run `npm run images && npm run build`, deploy.
+
+`scripts/optimize-images.mjs` scans the folder, derives the responsive widths
+like any other image, and records the order in the manifest's `gallery` array.
+Alt text comes from the filename — `03-sector-17-slab-pour.jpeg` becomes
+"Sector 17 slab pour" — with leading digits stripped, so numeric prefixes can
+order the slider without leaking into the description. `photos/work/README.md`
+says all of this in the client's terms.
+
+That folder currently holds two of the client's own site photographs as a
+starting point; they are meant to be replaced.
+
+The manifest is now `{ images: { … }, gallery: [ … ] }` rather than a bare map
+of images, so `localImage()` reads `manifest.images[file]` and `galleryImages()`
+returns the ordered gallery list.
 
 ### Image pipeline — and why there is no AVIF yet
 

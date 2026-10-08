@@ -27,9 +27,11 @@ const pages = [home, projectsPage, companyPage, contactPage, enquiryReceivedPage
 /** Bundles: shared script first, then the page script. */
 const bundles = {
   'site.js': ['site.js'],
-  'home.js': ['site.js', 'home.js'],
+  'home.js': ['site.js', 'slideshow.js', 'home.js'],
   'projects.js': ['site.js', 'projects.js'],
   'contact.js': ['site.js', 'contact.js'],
+  // Company carries both the gallery slideshow and the enquiry form.
+  'company.js': ['site.js', 'slideshow.js', 'contact.js'],
 };
 
 async function rimraf(dir) {

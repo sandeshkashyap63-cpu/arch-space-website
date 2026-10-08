@@ -61,10 +61,21 @@ export function attr(name, value) {
 
 /* ---- Images ------------------------------------------------------------ */
 
-let manifest = {};
+let manifest = { images: {}, gallery: [] };
 const manifestPath = path.join(root, 'public', 'images', 'manifest.json');
 if (fs.existsSync(manifestPath)) {
   manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+}
+
+/**
+ * The site photographs dropped into photos/work/, in filename order, each with
+ * the alt text derived from its filename. Empty if the folder is empty.
+ */
+export function galleryImages() {
+  return (manifest.gallery ?? []).map((file) => ({
+    file,
+    alt: manifest.images[file]?.alt ?? 'Site photograph',
+  }));
 }
 
 /**
@@ -84,7 +95,7 @@ export function localImage({
   decoding = 'async',
   className,
 }) {
-  const entry = manifest[file];
+  const entry = manifest.images[file];
   if (!entry) {
     // Build-time signal rather than a silent broken image.
     console.warn(`  ! no image manifest entry for "${file}" — run npm run images`);

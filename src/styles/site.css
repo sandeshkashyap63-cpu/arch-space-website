@@ -1370,6 +1370,74 @@ html:not(.js) .site-header--home {
   white-space: nowrap;
 }
 
+/* ---- 1f. Site gallery -------------------------------------------------
+   Auto-advancing photographs from the company's own sites, using the same
+   cross-fade and progress bars as the hero board. */
+.gallery-band {
+  background: var(--ground);
+  border-top: 1px solid var(--hairline);
+  padding: clamp(48px, 7vh, 90px) var(--gutter);
+}
+
+.gallery-band .shell {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+
+/* Height-capped and centred rather than full-bleed: at 1400px a full-width
+   16:10 frame is 850px tall, which swallows the viewport and crops a portrait
+   photograph down to a close-up. Capping the width to height x 1.6 keeps the
+   frame a showcase instead of a wall. */
+.gallery {
+  position: relative;
+  width: 100%;
+  max-width: min(100%, calc(min(58vh, 540px) * 1.6));
+  margin-inline: auto;
+}
+
+.gallery-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+}
+
+.gallery-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1500ms ease;
+}
+
+.gallery-slide.is-active {
+  opacity: 1;
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-dots {
+  position: absolute;
+  left: 12px;
+  bottom: 4px;
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+/* A phone in portrait gets a squarer frame — a 16:10 letterbox of a site
+   photograph is barely 200px tall there. */
+@media (max-width: 620px) {
+  .gallery-stage {
+    aspect-ratio: 4 / 3;
+  }
+}
+
 /* ---- 1g. CTA ----------------------------------------------------------- */
 .cta {
   padding: clamp(56px, 9vh, 120px) var(--gutter);

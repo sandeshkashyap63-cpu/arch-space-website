@@ -1,121 +1,160 @@
 {
-  "hero-01.jpeg": {
-    "base": "hero-01",
-    "alt": "Sketch design board for a residence",
-    "width": 2400,
-    "height": 1792,
-    "widths": [
-      480,
-      768,
-      1024,
-      1440,
-      2000
-    ],
-    "formats": [
-      "jpeg"
-    ],
-    "aspect": 0.7467
+  "images": {
+    "hero-01.jpeg": {
+      "base": "hero-01",
+      "alt": "Sketch design board for a residence",
+      "width": 2400,
+      "height": 1792,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7467
+    },
+    "hero-02.jpeg": {
+      "base": "hero-02",
+      "alt": "Wireframe interior render of a living space",
+      "width": 2400,
+      "height": 1792,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7467
+    },
+    "hero-03.jpeg": {
+      "base": "hero-03",
+      "alt": "Annotated sketch design board",
+      "width": 2400,
+      "height": 1792,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7467
+    },
+    "hero-04.jpeg": {
+      "base": "hero-04",
+      "alt": "Completed modern residence photographed at blue hour",
+      "width": 2400,
+      "height": 1792,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7467
+    },
+    "project-director.jpeg": {
+      "base": "project-director",
+      "alt": "Project director reviewing drawings at the office",
+      "width": 2400,
+      "height": 1792,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7467
+    },
+    "award-panel.jpeg": {
+      "base": "award-panel",
+      "alt": "The Construction Project on an industry panel",
+      "width": 2400,
+      "height": 1792,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7467
+    },
+    "office-site.jpeg": {
+      "base": "office-site",
+      "alt": "The Construction Project office",
+      "width": 2400,
+      "height": 1792,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7467
+    },
+    "gallery-01.jpeg": {
+      "base": "gallery-01",
+      "alt": "Rebar and columns",
+      "width": 1536,
+      "height": 2752,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 1.7917
+    },
+    "gallery-02.jpeg": {
+      "base": "gallery-02",
+      "alt": "Site walkthrough",
+      "width": 2400,
+      "height": 1792,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7467
+    }
   },
-  "hero-02.jpeg": {
-    "base": "hero-02",
-    "alt": "Wireframe interior render of a living space",
-    "width": 2400,
-    "height": 1792,
-    "widths": [
-      480,
-      768,
-      1024,
-      1440,
-      2000
-    ],
-    "formats": [
-      "jpeg"
-    ],
-    "aspect": 0.7467
-  },
-  "hero-03.jpeg": {
-    "base": "hero-03",
-    "alt": "Annotated sketch design board",
-    "width": 2400,
-    "height": 1792,
-    "widths": [
-      480,
-      768,
-      1024,
-      1440,
-      2000
-    ],
-    "formats": [
-      "jpeg"
-    ],
-    "aspect": 0.7467
-  },
-  "hero-04.jpeg": {
-    "base": "hero-04",
-    "alt": "Completed modern residence photographed at blue hour",
-    "width": 2400,
-    "height": 1792,
-    "widths": [
-      480,
-      768,
-      1024,
-      1440,
-      2000
-    ],
-    "formats": [
-      "jpeg"
-    ],
-    "aspect": 0.7467
-  },
-  "project-director.jpeg": {
-    "base": "project-director",
-    "alt": "Project director reviewing drawings at the office",
-    "width": 2400,
-    "height": 1792,
-    "widths": [
-      480,
-      768,
-      1024,
-      1440,
-      2000
-    ],
-    "formats": [
-      "jpeg"
-    ],
-    "aspect": 0.7467
-  },
-  "award-panel.jpeg": {
-    "base": "award-panel",
-    "alt": "The Construction Project on an industry panel",
-    "width": 2400,
-    "height": 1792,
-    "widths": [
-      480,
-      768,
-      1024,
-      1440,
-      2000
-    ],
-    "formats": [
-      "jpeg"
-    ],
-    "aspect": 0.7467
-  },
-  "office-site.jpeg": {
-    "base": "office-site",
-    "alt": "The Construction Project office",
-    "width": 2400,
-    "height": 1792,
-    "widths": [
-      480,
-      768,
-      1024,
-      1440,
-      2000
-    ],
-    "formats": [
-      "jpeg"
-    ],
-    "aspect": 0.7467
-  }
+  "gallery": [
+    "gallery-01.jpeg",
+    "gallery-02.jpeg"
+  ]
 }

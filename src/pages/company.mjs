@@ -13,7 +13,7 @@ export const companyPage = {
   title: 'Company — The Construction Project',
   description:
     'Qualified civil engineers, not contractors: proper site safety, a dedicated supervisor, daily WhatsApp updates with photographs and no compromise on quality. Jagadhri and Chandigarh.',
-  scripts: ['/assets/contact.js'],
+  scripts: ['/assets/company.js'],
   render: () => html`
     <section class="company-board" aria-labelledby="company-heading">
       <div class="shell">

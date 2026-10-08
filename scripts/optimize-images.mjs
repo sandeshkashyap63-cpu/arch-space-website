@@ -31,6 +31,10 @@ const exec = promisify(execFile);
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC_DIR = path.join(root, 'design', 'uploads');
 const OUT_DIR = path.join(root, 'public', 'images');
+/* Drop-folder for the client's own site photographs — everything in here is
+   picked up automatically, no code change needed. See photos/work/README.md. */
+const GALLERY_DIR = path.join(root, 'photos', 'work');
+const GALLERY_EXT = new Set(['.jpg', '.jpeg', '.png']);
 
 /** Widths to emit. A source narrower than a width is skipped, never upscaled. */
 const WIDTHS = [480, 768, 1024, 1440, 2000];
@@ -56,9 +60,62 @@ async function derive(src, out, width, format, quality) {
   ]);
 }
 
+/** Processes one source file into every width, returning its manifest entry. */
+async function processImage(src, base, alt) {
+  const { width, height } = await dimensions(src);
+  // Never upscale, and never ship more than the largest useful width — the
+  // widest slot on the page is ~700 CSS px, so 2000 covers it beyond 2×.
+  const widths = WIDTHS.filter((w) => w <= width);
+  if (widths.length === 0) widths.push(width);
+
+  for (const w of widths) {
+    for (const format of FORMATS) {
+      await derive(src, path.join(OUT_DIR, `${base}-${w}.${format}`), w, format, JPEG_QUALITY);
+    }
+  }
+
+  console.log(
+    `  ✓ ${base}  ${width}×${height}  →  ${widths.length} widths × ${FORMATS.length} format(s)`
+  );
+  return {
+    base,
+    alt,
+    width,
+    height,
+    widths,
+    formats: FORMATS,
+    // Height/width of the source, so <img> can carry a correct intrinsic ratio.
+    aspect: Number((height / width).toFixed(4)),
+  };
+}
+
+/** "03-sector-17-slab-pour.jpeg" -> "Sector 17 slab pour" */
+function altFromFileName(fileName) {
+  const words = path
+    .basename(fileName, path.extname(fileName))
+    .replace(/^\d+[-_\s]*/, '')
+    .replace(/[-_]+/g, ' ')
+    .trim();
+  if (!words) return 'Site photograph';
+  return words.charAt(0).toUpperCase() + words.slice(1);
+}
+
+/** Every image in the drop-folder, in filename order (numeric-aware). */
+async function galleryFiles() {
+  let entries;
+  try {
+    entries = await fs.readdir(GALLERY_DIR);
+  } catch {
+    return [];
+  }
+  return entries
+    .filter((name) => GALLERY_EXT.has(path.extname(name).toLowerCase()))
+    .sort((a, b) => a.localeCompare(b, 'en', { numeric: true }));
+}
+
 async function main() {
   await fs.mkdir(OUT_DIR, { recursive: true });
-  const manifest = {};
+  const images = {};
 
   for (const image of clientImages) {
     const src = path.join(SRC_DIR, image.source);
@@ -68,41 +125,29 @@ async function main() {
       console.warn(`  ! missing source, skipped: ${image.source}`);
       continue;
     }
+    images[image.file] = await processImage(src, image.file.replace(/\.jpe?g$/i, ''), image.alt);
+  }
 
-    const { width, height } = await dimensions(src);
-    const base = image.file.replace(/\.jpe?g$/i, '');
-    // Never upscale, and never ship more than the largest useful width — the
-    // widest slot on the page is ~700 CSS px, so 2000 covers it beyond 2×.
-    const widths = WIDTHS.filter((w) => w <= width);
-    if (widths.length === 0) widths.push(width);
-    const ratio = height / width;
-
-    for (const w of widths) {
-      for (const format of FORMATS) {
-        await derive(src, path.join(OUT_DIR, `${base}-${w}.${format}`), w, format, JPEG_QUALITY);
-      }
-    }
-
-    manifest[image.file] = {
-      base,
-      alt: image.alt,
-      width,
-      height,
-      widths,
-      formats: FORMATS,
-      // Height/width of the source, so <img> can carry a correct intrinsic ratio.
-      aspect: Number(ratio.toFixed(4)),
-    };
-    console.log(
-      `  ✓ ${image.file}  ${width}×${height}  →  ${widths.length} widths × ${FORMATS.length} format(s)`
+  const gallery = [];
+  const files = await galleryFiles();
+  console.log(`\n  photos/work/ — ${files.length} photograph(s)`);
+  for (const [i, fileName] of files.entries()) {
+    const key = `gallery-${String(i + 1).padStart(2, '0')}.jpeg`;
+    images[key] = await processImage(
+      path.join(GALLERY_DIR, fileName),
+      key.replace(/\.jpe?g$/i, ''),
+      altFromFileName(fileName)
     );
+    gallery.push(key);
   }
 
   await fs.writeFile(
     path.join(OUT_DIR, 'manifest.json'),
-    JSON.stringify(manifest, null, 2) + '\n',
+    JSON.stringify({ images, gallery }, null, 2) + '\n'
   );
-  console.log(`\nWrote ${Object.keys(manifest).length} entries to public/images/manifest.json`);
+  console.log(
+    `\nWrote ${Object.keys(images).length} entries (${gallery.length} in the gallery) to public/images/manifest.json`
+  );
 }
 
 main().catch((err) => {
