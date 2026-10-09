@@ -61,16 +61,11 @@ export const services = [
   'Landscape',
 ];
 
-/**
- * Credentials. The handoff's third entry was the principal's Council of
- * Architecture registration — an individual architect's credential, which does
- * not transfer to the company. The client needs to supply the contractor
- * registration / licence details that replace it.
- */
-export const awards = [
-  { title: 'Panel member, Real Wood Collection launch', year: '2023' },
-  { title: 'Speaker, Architects & Interior Designers Meet', year: '2022' },
-];
+/* The Awards & press block was replaced by the site-photo gallery on both
+   pages, so the credentials list has no consumer. The entries were "Panel
+   member, Real Wood Collection launch" (2023) and "Speaker, Architects &
+   Interior Designers Meet" (2022); git history has them if they are wanted
+   back, and the contractor registration details still need to be supplied. */
 
 /**
  * Why choose us — the company's own differentiators, in the client's words.

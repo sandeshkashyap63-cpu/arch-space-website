@@ -1,7 +1,8 @@
 import { html, localImage } from '../lib/html.mjs';
 import { url } from '../lib/config.mjs';
 import { enquiryForm } from '../components/enquiry-form.mjs';
-import { site, capabilities, awards, process, reasons } from '../data/site.mjs';
+import { siteGallery } from '../components/site-gallery.mjs';
+import { site, capabilities, process, reasons } from '../data/site.mjs';
 
 const HALF_SIZES = '(max-width: 760px) calc(100vw - 68px), min(660px, 48vw)';
 const PORTRAIT_SIZES = '(max-width: 700px) calc(100vw - 68px), (max-width: 1100px) 45vw, 330px';
@@ -101,30 +102,7 @@ export const companyPage = {
       </div>
     </section>
 
-    <section class="awards" aria-labelledby="awards-heading">
-      <div class="shell split" data-reveal>
-        <div class="frame frame--16x10 frame--bordered">
-          ${localImage({
-            file: 'award-panel.jpeg',
-            alt: 'The Construction Project on an industry panel',
-            sizes: HALF_SIZES,
-          })}
-        </div>
-        <div class="press-list">
-          <h2 class="eyebrow eyebrow--gold" id="awards-heading">Awards &amp; press</h2>
-          <div class="record-list">
-            ${awards.map(
-              (award) => html`
-                <div class="record">
-                  <span class="record-title">${award.title}</span>
-                  <span class="record-year">${award.year}</span>
-                </div>
-              `
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
+    ${siteGallery({ headingId: 'company-gallery-heading' })}
 
     <section class="enquiry-band" aria-labelledby="enquire-heading">
       <div class="shell">

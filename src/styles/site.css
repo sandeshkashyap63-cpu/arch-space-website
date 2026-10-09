@@ -1421,13 +1421,27 @@ html:not(.js) .site-header--home {
   object-fit: cover;
 }
 
+/* With two dozen photographs the fixed 22px bars would run off the frame, so
+   they share the width instead: full size when there is room, squeezed into a
+   single segmented strip when there is not. */
 .gallery-dots {
   position: absolute;
   left: 12px;
+  right: 12px;
   bottom: 4px;
   display: flex;
-  gap: 8px;
+  gap: clamp(4px, 0.8vw, 8px);
   z-index: 3;
+}
+
+.gallery-dot {
+  flex: 0 1 22px;
+  width: auto;
+  min-width: 4px;
+}
+
+.gallery-dot::before {
+  width: 100%;
 }
 
 /* A phone in portrait gets a squarer frame — a 16:10 letterbox of a site

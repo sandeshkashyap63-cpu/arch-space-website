@@ -35,11 +35,8 @@ export const clientImages = [
   // The site-supervisor photograph (design/uploads/photos-1786856519692-jqr6.jpeg)
   // is not currently placed — it only appeared on the Team section, which the
   // client removed. The source is kept; re-add this entry to bring it back.
-  {
-    file: 'award-panel.jpeg',
-    source: 'photos-1786856519759-p198.jpeg',
-    alt: 'The Construction Project on an industry panel',
-  },
+  // The award/panel photograph is no longer placed — the Awards & press block
+  // it belonged to is now the site-photo gallery. Source kept in design/uploads/.
   {
     file: 'office-site.jpeg',
     source: 'photos-1786856519741-vsjh.jpeg',

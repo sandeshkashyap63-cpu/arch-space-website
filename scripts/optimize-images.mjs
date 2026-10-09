@@ -34,7 +34,12 @@ const OUT_DIR = path.join(root, 'public', 'images');
 /* Drop-folder for the client's own site photographs — everything in here is
    picked up automatically, no code change needed. See photos/work/README.md. */
 const GALLERY_DIR = path.join(root, 'photos', 'work');
-const GALLERY_EXT = new Set(['.jpg', '.jpeg', '.png']);
+/* HEIC/HEIF included because that is what iPhones produce, and no browser
+   except Safari can display it — sips decodes it and we ship JPEG. */
+const GALLERY_EXT = new Set(['.jpg', '.jpeg', '.png', '.heic', '.heif']);
+/* The gallery frame is capped at ~864 CSS px, so 1440 already covers it at 2x;
+   a 2000px variant per photograph is dead weight across two dozen of them. */
+const GALLERY_MAX_WIDTH = 1440;
 
 /** Widths to emit. A source narrower than a width is skipped, never upscaled. */
 const WIDTHS = [480, 768, 1024, 1440, 2000];
@@ -61,11 +66,11 @@ async function derive(src, out, width, format, quality) {
 }
 
 /** Processes one source file into every width, returning its manifest entry. */
-async function processImage(src, base, alt) {
+async function processImage(src, base, alt, maxWidth = Infinity) {
   const { width, height } = await dimensions(src);
   // Never upscale, and never ship more than the largest useful width — the
   // widest slot on the page is ~700 CSS px, so 2000 covers it beyond 2×.
-  const widths = WIDTHS.filter((w) => w <= width);
+  const widths = WIDTHS.filter((w) => w <= width && w <= maxWidth);
   if (widths.length === 0) widths.push(width);
 
   for (const w of widths) {
@@ -89,14 +94,25 @@ async function processImage(src, base, alt) {
   };
 }
 
-/** "03-sector-17-slab-pour.jpeg" -> "Sector 17 slab pour" */
-function altFromFileName(fileName) {
-  const words = path
-    .basename(fileName, path.extname(fileName))
-    .replace(/^\d+[-_\s]*/, '')
-    .replace(/[-_]+/g, ' ')
-    .trim();
-  if (!words) return 'Site photograph';
+/**
+ * "03-sector-17-slab-pour.jpeg" -> "Sector 17 slab pour".
+ *
+ * Camera filenames (IMG_4900, DSC_012) and export UUIDs carry no meaning, so
+ * they fall back to a plain description rather than reading a serial number
+ * out to someone on a screen reader. Renaming the file in photos/work/ is what
+ * turns that into a real caption.
+ */
+function altFromFileName(fileName, index) {
+  const raw = path.basename(fileName, path.extname(fileName));
+  const compact = raw.replace(/[-_\s]/g, '');
+  const meaningless =
+    /^(img|dsc|dscn|photo|image|pxl|screenshot)[-_\s]*[\d\s]*$/i.test(raw) ||
+    (/^[0-9a-f]+$/i.test(compact) && compact.length >= 12);
+
+  if (meaningless) return `Construction site photograph ${index}`;
+
+  const words = raw.replace(/^\d+[-_\s]*/, '').replace(/[-_]+/g, ' ').trim();
+  if (!words) return `Construction site photograph ${index}`;
   return words.charAt(0).toUpperCase() + words.slice(1);
 }
 
@@ -136,7 +152,8 @@ async function main() {
     images[key] = await processImage(
       path.join(GALLERY_DIR, fileName),
       key.replace(/\.jpe?g$/i, ''),
-      altFromFileName(fileName)
+      altFromFileName(fileName, i + 1),
+      GALLERY_MAX_WIDTH
     );
     gallery.push(key);
   }

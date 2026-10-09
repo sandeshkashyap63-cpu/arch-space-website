@@ -392,14 +392,24 @@ regenerate them. Swapping in `sharp` would make them safe to gitignore.
 ### Site photographs — the drop folder
 
 **`photos/work/`** is where the client's own site photographs go. Everything in
-it appears in the "On site" slider on the home page, in filename order, with no
-code change: drop files in, run `npm run images && npm run build`, deploy.
+it appears in the "On site" slider on both the home and Company pages, in
+filename order, with no code change: drop files in, run
+`npm run images && npm run build`, deploy.
+
+**HEIC is accepted**, because that is what iPhones produce and no browser but
+Safari can display it — `sips` decodes it and the build ships JPEG. Gallery
+photographs stop at 1440px wide rather than 2000: the frame is capped at 864
+CSS px, so 1440 already covers it at 2×, and the larger variant was dead weight
+across two dozen files.
 
 `scripts/optimize-images.mjs` scans the folder, derives the responsive widths
 like any other image, and records the order in the manifest's `gallery` array.
 Alt text comes from the filename — `03-sector-17-slab-pour.jpeg` becomes
 "Sector 17 slab pour" — with leading digits stripped, so numeric prefixes can
-order the slider without leaking into the description. `photos/work/README.md`
+order the slider without leaking into the description. Camera filenames
+(`IMG_4900`) and export UUIDs fall back to "Construction site photograph N"
+rather than reading a serial number aloud to a screen reader; renaming the file
+is what turns that into a real caption. `photos/work/README.md`
 says all of this in the client's terms.
 
 That folder currently holds two of the client's own site photographs as a

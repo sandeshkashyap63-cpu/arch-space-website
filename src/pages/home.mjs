@@ -1,4 +1,5 @@
-import { html, raw, localImage, remoteImage, galleryImages } from '../lib/html.mjs';
+import { html, raw, localImage, remoteImage } from '../lib/html.mjs';
+import { siteGallery } from '../components/site-gallery.mjs';
 import { url } from '../lib/config.mjs';
 import { site, stats, services } from '../data/site.mjs';
 import { featuredProjects } from '../data/projects.mjs';
@@ -210,67 +211,6 @@ const testimonialsSection = () => html`
   </section>
 `;
 
-const GALLERY_SIZES = '(max-width: 760px) calc(100vw - 68px), min(1400px, 100vw - 68px)';
-
-/* Auto-advancing photographs from the company's own sites. Everything in
-   photos/work/ appears here, in filename order — see that folder's README. */
-const gallerySection = () => {
-  const photos = galleryImages();
-  if (!photos.length) return html``;
-
-  return html`
-    <section class="gallery-band" aria-labelledby="gallery-heading">
-      <div class="shell">
-        <div class="section-head" data-reveal>
-          <h2 class="h2-section" id="gallery-heading">On site</h2>
-          <span class="section-head-note">Past &amp; current projects</span>
-        </div>
-        <div
-          class="gallery"
-          data-slideshow
-          data-interval="4200"
-          role="group"
-          aria-roledescription="carousel"
-          aria-label="Photographs from our sites"
-          data-reveal
-        >
-          <div class="gallery-stage">
-            ${photos.map(
-              (photo, i) => html`
-                <div
-                  class="gallery-slide${raw(i === 0 ? ' is-active' : '')}"
-                  data-slide="${i}"
-                  ${raw(i === 0 ? '' : 'aria-hidden="true"')}
-                >
-                  ${localImage({
-                    file: photo.file,
-                    alt: photo.alt,
-                    sizes: GALLERY_SIZES,
-                    loading: i === 0 ? 'eager' : 'lazy',
-                  })}
-                </div>
-              `
-            )}
-          </div>
-          <div class="gallery-dots" data-dots role="group" aria-label="Choose photograph">
-            ${photos.map(
-              (photo, i) => html`
-                <button
-                  class="hero-dot"
-                  type="button"
-                  data-dot="${i}"
-                  aria-label="Show photograph ${i + 1} of ${photos.length}"
-                  aria-current="${i === 0 ? 'true' : 'false'}"
-                ></button>
-              `
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  `;
-};
-
 const ctaSection = () => html`
   <section class="band-light cta" aria-labelledby="cta-heading">
     <div class="shell" data-reveal>
@@ -296,6 +236,6 @@ export const home = {
   scripts: ['/assets/home.js'],
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}
-    ${testimonialsSection()} ${gallerySection()} ${ctaSection()}
+    ${testimonialsSection()} ${siteGallery()} ${ctaSection()}
   `,
 };
