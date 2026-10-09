@@ -1430,6 +1430,54 @@ html:not(.js) .site-header--home {
 /* With two dozen photographs the fixed 22px bars would run off the frame, so
    they share the width instead: full size when there is room, squeezed into a
    single segmented strip when there is not. */
+/* Caption line beneath the frame — the same label/rule/value arrangement as
+   the hero board's dimension line, so it reads as part of the same drawing.
+   Hidden from assistive tech: the text is already the active image's alt. */
+.gallery-caption {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.gallery-caption-text,
+.gallery-count {
+  font-size: 9px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted-50);
+  min-width: 0;
+}
+
+.gallery-count {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.gallery-caption-rule {
+  flex: 1 1 24px;
+  min-width: 12px;
+  height: 1px;
+  background: rgba(237, 230, 217, 0.22);
+}
+
+/* A long caption at this tracking will not share a line with the counter on a
+   phone, so it takes the row and the counter drops beneath it. */
+@media (max-width: 620px) {
+  .gallery-caption {
+    flex-wrap: wrap;
+    gap: 6px 12px;
+  }
+
+  .gallery-caption-text {
+    flex: 1 1 100%;
+  }
+
+  .gallery-caption-rule {
+    flex: 1 1 24px;
+  }
+}
+
 .gallery-dots {
   position: absolute;
   left: 12px;

@@ -24,6 +24,8 @@
     if (slides.length < 2) return;
 
     var interval = Number(stage.getAttribute('data-interval')) || 5200;
+    var caption = stage.querySelector('[data-caption-target]');
+    var captionIndex = stage.querySelector('[data-caption-index]');
     var current = 0;
     var timer = null;
 
@@ -38,6 +40,12 @@
       dots.forEach(function (dot, i) {
         dot.setAttribute('aria-current', i === current ? 'true' : 'false');
       });
+
+      // The caption line, where there is one. It is aria-hidden: the same text
+      // is already the active image's alt, so this would otherwise be read out
+      // twice.
+      if (caption) caption.textContent = slides[current].getAttribute('data-caption') || '';
+      if (captionIndex) captionIndex.textContent = ('0' + (current + 1)).slice(-2);
     };
 
     var start = function () {

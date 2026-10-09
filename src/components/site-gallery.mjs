@@ -26,7 +26,7 @@ export function siteGallery({ headingId = 'gallery-heading' } = {}) {
           <h2 class="h2-section" id="${headingId}">On site</h2>
           <span class="section-head-note">Past &amp; current projects</span>
         </div>
-        <div
+        <figure
           class="gallery"
           data-slideshow
           data-interval="4200"
@@ -41,6 +41,7 @@ export function siteGallery({ headingId = 'gallery-heading' } = {}) {
                 <div
                   class="gallery-slide${raw(i === 0 ? ' is-active' : '')}"
                   data-slide="${i}"
+                  data-caption="${photo.alt}"
                   ${raw(i === 0 ? '' : 'aria-hidden="true"')}
                 >
                   ${localImage({
@@ -52,8 +53,7 @@ export function siteGallery({ headingId = 'gallery-heading' } = {}) {
                 </div>
               `
             )}
-          </div>
-          <div class="gallery-dots" data-dots role="group" aria-label="Choose photograph">
+            <div class="gallery-dots" data-dots role="group" aria-label="Choose photograph">
             ${photos.map(
               (photo, i) => html`
                 <button
@@ -65,8 +65,16 @@ export function siteGallery({ headingId = 'gallery-heading' } = {}) {
                 ></button>
               `
             )}
+            </div>
           </div>
-        </div>
+          <figcaption class="gallery-caption" aria-hidden="true">
+            <span class="gallery-caption-text" data-caption-target>${photos[0].alt}</span>
+            <span class="gallery-caption-rule"></span>
+            <span class="gallery-count"
+              ><span data-caption-index>01</span> / ${String(photos.length).padStart(2, '0')}</span
+            >
+          </figcaption>
+        </figure>
       </div>
     </section>
   `;

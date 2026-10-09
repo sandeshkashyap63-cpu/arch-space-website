@@ -404,8 +404,9 @@ across two dozen files.
 
 `scripts/optimize-images.mjs` scans the folder, derives the responsive widths
 like any other image, and records the order in the manifest's `gallery` array.
-Alt text comes from the filename — `03-sector-17-slab-pour.jpeg` becomes
-"Sector 17 slab pour" — with leading digits stripped, so numeric prefixes can
+**The filename is the visible caption**, shown beneath the frame and updated as
+the slider advances, as well as the image's alt text — so naming a file well is
+the whole job. `03-sector-17-slab-pour.jpeg` becomes "Sector 17 slab pour" — with leading digits stripped, so numeric prefixes can
 order the slider without leaking into the description. Camera filenames
 (`IMG_4900`) and export UUIDs fall back to "Construction site photograph N"
 rather than reading a serial number aloud to a screen reader; renaming the file
