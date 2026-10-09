@@ -1385,23 +1385,29 @@ html:not(.js) .site-header--home {
   gap: 34px;
 }
 
-/* Height-capped and centred rather than full-bleed: at 1400px a full-width
-   16:10 frame is 850px tall, which swallows the viewport and crops a portrait
-   photograph down to a close-up. Capping the width to height x 1.6 keeps the
-   frame a showcase instead of a wall. */
+/* Height-capped and centred rather than full-bleed: full width at 1400px would
+   be 850px tall and swallow the viewport.
+
+   The frame is 4:3 because most site photographs are — and the images are
+   `contain`, not `cover`, so a portrait shot is shown whole rather than
+   cropped to a band of whatever happened to be in the middle. The mount behind
+   it is a shade darker than the section, so the letterboxing reads as a slide
+   mount rather than a gap. */
 .gallery {
+  --gallery-ratio: 4 / 3;
   position: relative;
   width: 100%;
-  max-width: min(100%, calc(min(58vh, 540px) * 1.6));
+  max-width: min(100%, calc(min(58vh, 540px) * 4 / 3));
   margin-inline: auto;
 }
 
 .gallery-stage {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: var(--gallery-ratio);
   overflow: hidden;
   border: 1px solid var(--hairline);
+  background: var(--ground-deep);
 }
 
 .gallery-slide {
@@ -1418,7 +1424,7 @@ html:not(.js) .site-header--home {
 .gallery-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 /* With two dozen photographs the fixed 22px bars would run off the frame, so
@@ -1442,14 +1448,6 @@ html:not(.js) .site-header--home {
 
 .gallery-dot::before {
   width: 100%;
-}
-
-/* A phone in portrait gets a squarer frame — a 16:10 letterbox of a site
-   photograph is barely 200px tall there. */
-@media (max-width: 620px) {
-  .gallery-stage {
-    aspect-ratio: 4 / 3;
-  }
 }
 
 /* ---- 1g. CTA ----------------------------------------------------------- */

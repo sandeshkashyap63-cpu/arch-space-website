@@ -85,23 +85,6 @@
       ],
       "aspect": 0.7467
     },
-    "award-panel.jpeg": {
-      "base": "award-panel",
-      "alt": "The Construction Project on an industry panel",
-      "width": 2400,
-      "height": 1792,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440,
-        2000
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.7467
-    },
     "office-site.jpeg": {
       "base": "office-site",
       "alt": "The Construction Project office",
@@ -121,39 +104,7 @@
     },
     "gallery-01.jpeg": {
       "base": "gallery-01",
-      "alt": "Rebar and columns",
-      "width": 1536,
-      "height": 2752,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 1.7917
-    },
-    "gallery-02.jpeg": {
-      "base": "gallery-02",
-      "alt": "Site walkthrough",
-      "width": 2400,
-      "height": 1792,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.7467
-    },
-    "gallery-03.jpeg": {
-      "base": "gallery-03",
-      "alt": "Construction site photograph 3",
+      "alt": "Construction site photograph 1",
       "width": 1170,
       "height": 2080,
       "widths": [
@@ -166,9 +117,9 @@
       ],
       "aspect": 1.7778
     },
-    "gallery-04.jpeg": {
-      "base": "gallery-04",
-      "alt": "Construction site photograph 4",
+    "gallery-02.jpeg": {
+      "base": "gallery-02",
+      "alt": "Construction site photograph 2",
       "width": 1280,
       "height": 576,
       "widths": [
@@ -181,9 +132,9 @@
       ],
       "aspect": 0.45
     },
-    "gallery-05.jpeg": {
-      "base": "gallery-05",
-      "alt": "Construction site photograph 5",
+    "gallery-03.jpeg": {
+      "base": "gallery-03",
+      "alt": "Construction site photograph 3",
       "width": 1600,
       "height": 720,
       "widths": [
@@ -197,9 +148,9 @@
       ],
       "aspect": 0.45
     },
-    "gallery-06.jpeg": {
-      "base": "gallery-06",
-      "alt": "Construction site photograph 6",
+    "gallery-04.jpeg": {
+      "base": "gallery-04",
+      "alt": "Construction site photograph 4",
       "width": 1280,
       "height": 958,
       "widths": [
@@ -211,6 +162,38 @@
         "jpeg"
       ],
       "aspect": 0.7484
+    },
+    "gallery-05.jpeg": {
+      "base": "gallery-05",
+      "alt": "Construction site photograph 5",
+      "width": 3024,
+      "height": 4032,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 1.3333
+    },
+    "gallery-06.jpeg": {
+      "base": "gallery-06",
+      "alt": "Construction site photograph 6",
+      "width": 3024,
+      "height": 4032,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 1.3333
     },
     "gallery-07.jpeg": {
       "base": "gallery-07",
@@ -231,8 +214,8 @@
     "gallery-08.jpeg": {
       "base": "gallery-08",
       "alt": "Construction site photograph 8",
-      "width": 3024,
-      "height": 4032,
+      "width": 4032,
+      "height": 3024,
       "widths": [
         480,
         768,
@@ -242,13 +225,13 @@
       "formats": [
         "jpeg"
       ],
-      "aspect": 1.3333
+      "aspect": 0.75
     },
     "gallery-09.jpeg": {
       "base": "gallery-09",
       "alt": "Construction site photograph 9",
-      "width": 3024,
-      "height": 4032,
+      "width": 4032,
+      "height": 3024,
       "widths": [
         480,
         768,
@@ -258,13 +241,13 @@
       "formats": [
         "jpeg"
       ],
-      "aspect": 1.3333
+      "aspect": 0.75
     },
     "gallery-10.jpeg": {
       "base": "gallery-10",
       "alt": "Construction site photograph 10",
-      "width": 4032,
-      "height": 3024,
+      "width": 3024,
+      "height": 4032,
       "widths": [
         480,
         768,
@@ -274,11 +257,27 @@
       "formats": [
         "jpeg"
       ],
-      "aspect": 0.75
+      "aspect": 1.3333
     },
     "gallery-11.jpeg": {
       "base": "gallery-11",
       "alt": "Construction site photograph 11",
+      "width": 3024,
+      "height": 4032,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 1.3333
+    },
+    "gallery-12.jpeg": {
+      "base": "gallery-12",
+      "alt": "Construction site photograph 12",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -292,27 +291,11 @@
       ],
       "aspect": 0.75
     },
-    "gallery-12.jpeg": {
-      "base": "gallery-12",
-      "alt": "Construction site photograph 12",
-      "width": 3024,
-      "height": 4032,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 1.3333
-    },
     "gallery-13.jpeg": {
       "base": "gallery-13",
       "alt": "Construction site photograph 13",
-      "width": 3024,
-      "height": 4032,
+      "width": 4032,
+      "height": 3024,
       "widths": [
         480,
         768,
@@ -322,7 +305,7 @@
       "formats": [
         "jpeg"
       ],
-      "aspect": 1.3333
+      "aspect": 0.75
     },
     "gallery-14.jpeg": {
       "base": "gallery-14",
@@ -391,38 +374,6 @@
     "gallery-18.jpeg": {
       "base": "gallery-18",
       "alt": "Construction site photograph 18",
-      "width": 4032,
-      "height": 3024,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
-    "gallery-19.jpeg": {
-      "base": "gallery-19",
-      "alt": "Construction site photograph 19",
-      "width": 4032,
-      "height": 3024,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
-    "gallery-20.jpeg": {
-      "base": "gallery-20",
-      "alt": "Construction site photograph 20",
       "width": 3024,
       "height": 4032,
       "widths": [
@@ -436,9 +387,9 @@
       ],
       "aspect": 1.3333
     },
-    "gallery-21.jpeg": {
-      "base": "gallery-21",
-      "alt": "Construction site photograph 21",
+    "gallery-19.jpeg": {
+      "base": "gallery-19",
+      "alt": "Construction site photograph 19",
       "width": 8064,
       "height": 4536,
       "widths": [
@@ -452,9 +403,9 @@
       ],
       "aspect": 0.5625
     },
-    "gallery-22.jpeg": {
-      "base": "gallery-22",
-      "alt": "Construction site photograph 22",
+    "gallery-20.jpeg": {
+      "base": "gallery-20",
+      "alt": "Construction site photograph 20",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -468,9 +419,9 @@
       ],
       "aspect": 0.75
     },
-    "gallery-23.jpeg": {
-      "base": "gallery-23",
-      "alt": "Construction site photograph 23",
+    "gallery-21.jpeg": {
+      "base": "gallery-21",
+      "alt": "Construction site photograph 21",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -506,8 +457,6 @@
     "gallery-18.jpeg",
     "gallery-19.jpeg",
     "gallery-20.jpeg",
-    "gallery-21.jpeg",
-    "gallery-22.jpeg",
-    "gallery-23.jpeg"
+    "gallery-21.jpeg"
   ]
 }

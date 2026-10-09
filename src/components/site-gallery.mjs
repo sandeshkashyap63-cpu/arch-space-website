@@ -10,10 +10,10 @@
  */
 import { html, raw, localImage, galleryImages } from '../lib/html.mjs';
 
-/* Matches the CSS: the frame is capped at 864px and goes full-bleed within the
-   gutters on a phone. Overstating this makes browsers fetch a larger file than
-   they can ever show. */
-const SIZES = '(max-width: 620px) calc(100vw - 68px), min(864px, 100vw - 68px)';
+/* Matches the CSS: the frame is capped at 720px and fills the gutters on a
+   phone. Overstating this makes browsers fetch a larger file than they can
+   ever show. */
+const SIZES = '(max-width: 620px) calc(100vw - 68px), min(720px, 100vw - 68px)';
 
 export function siteGallery({ headingId = 'gallery-heading' } = {}) {
   const photos = galleryImages();
