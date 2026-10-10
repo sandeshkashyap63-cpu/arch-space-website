@@ -14,6 +14,9 @@
   --ink: #221f1a;
   --bronze: #a6803f;
   --gold: #c9a24a;
+  /* WhatsApp's own brand green, deliberately outside the palette: the button
+     is a recognised lockup and stops reading as WhatsApp in bronze. */
+  --whatsapp: #25d366;
 
   --hairline: rgba(237, 230, 217, 0.12);
   --hairline-strong: rgba(237, 230, 217, 0.16);
@@ -617,14 +620,16 @@ html:not(.js) .site-header--home {
   fill: currentColor;
 }
 
+/* The official lockup: white mark on brand green. The icon inherits `color`,
+   so both states are set here and the SVG needs no rule of its own. */
 .rail-btn--wa {
-  background: var(--bronze);
-  color: var(--ground);
+  background: var(--whatsapp);
+  color: #fff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .rail-btn--wa:hover {
-  color: var(--ground);
+  color: #fff;
 }
 
 .rail-btn--call {
