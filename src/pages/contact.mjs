@@ -11,7 +11,7 @@ export const contactPage = {
   outFile: 'contact/index.html',
   title: 'Contact — The Construction Project',
   description:
-    'Tell us what you are building. The Construction Project, #510 Sector 17 HUDA Jagadhri — call +91 94676 29425, WhatsApp or send an enquiry. Mon—Sat, 10:00—19:00.',
+    'Tell us what you are building. Call +91 70155 35542, message us on WhatsApp or send an enquiry — The Construction Project works on sites across India. Mon—Sat, 10:00—19:00.',
   scripts: ['/assets/contact.js'],
   bodyClass: '',
   render: () => html`
@@ -36,11 +36,8 @@ export const contactPage = {
             </div>
             <div class="contact-details">
               <div class="contact-detail">
-                <h2 class="contact-detail-label">Office</h2>
-                <p>
-                  ${site.address.line1}<br />${site.address.line2}<br />${site.address
-                    .line3}<br />${site.address.line4}
-                </p>
+                <h2 class="contact-detail-label">Where we work</h2>
+                <p>${site.coverageLong}.<br />${site.hours}</p>
               </div>
               <div class="contact-detail">
                 <h2 class="contact-detail-label">Direct</h2>

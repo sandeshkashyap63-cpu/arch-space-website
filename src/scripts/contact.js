@@ -85,8 +85,8 @@
 
   function handOff(data) {
     var text = composeMessage(data);
-    var whatsapp = form.getAttribute('data-whatsapp') || 'https://wa.me/919467629425';
-    var email = form.getAttribute('data-email') || 'arspace1@gmail.com';
+    var whatsapp = form.getAttribute('data-whatsapp') || 'https://wa.me/917015535542';
+    var email = form.getAttribute('data-email') || 'Support@theconstructionproject.in';
 
     // Opened from inside the submit handler, so it counts as a user gesture
     // and is not treated as a pop-up.
@@ -172,7 +172,7 @@
       })
       .catch(function () {
         setStatus(
-          'That did not send. Please call +91 94676 29425 or email arspace1@gmail.com.',
+          'That did not send. Please call +91 70155 35542 or email Support@theconstructionproject.in.',
           'error'
         );
       })

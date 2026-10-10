@@ -6,6 +6,29 @@ run and deploy it, and what is still outstanding.
 
 ---
 
+## Contact details and coverage
+
+Phone **+91 70155 35542**, email **Support@theconstructionproject.in**, both set
+once in `src/data/site.mjs` and used everywhere — header, contact rail,
+footer, forms, structured data, and the fallback strings in `contact.js` and
+`enquiry.mjs` that run when the markup cannot be read.
+
+**There is no address anywhere on the site.** The company has no premises yet,
+so nothing claims one: the `address` object is gone from the data, the Contact
+and Company pages show "Where we work · Projects across India" in its place,
+and the JSON-LD carries `areaServed: India` with no `PostalAddress`. Add an
+`address` object back to `site.mjs` and restore the PostalAddress when there is
+a real office to publish.
+
+"Jagadhri & Chandigarh" is replaced throughout by `site.coverage` /
+`site.coverageLong` — the company works pan-India. Two places still name those
+towns, both deliberately: the client testimonials, which describe where those
+customers' jobs actually were. Changing them would misreport what the customers
+said.
+
+The default `SITE_ORIGIN` is now `https://www.theconstructionproject.in`,
+inferred from the email domain. The GitHub Pages build still overrides it.
+
 ## Brand name
 
 The practice is **The Construction Project**. It was originally handed over as

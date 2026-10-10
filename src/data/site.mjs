@@ -14,31 +14,28 @@ export const site = {
   eyebrow: 'Construction · Interiors · Turnkey · Landscape',
   // Change this to the production origin before launch — it is used for
   // canonical URLs, the sitemap and Open Graph tags.
-  origin: 'https://www.theconstructionproject.example',
+  origin: 'https://www.theconstructionproject.in',
   phone: {
-    display: '+91 94676 29425',
-    tel: 'tel:+919467629425',
-    whatsapp: 'https://wa.me/919467629425',
+    display: '+91 70155 35542',
+    tel: 'tel:+917015535542',
+    whatsapp: 'https://wa.me/917015535542',
   },
-  email: 'arspace1@gmail.com',
+  email: 'Support@theconstructionproject.in',
   hours: 'Mon—Sat · 10:00—19:00',
   // Years on site, not a founding year: the client has not supplied one, and
   // "30+ years" and the old "est. 2011" cannot both be true.
   yearsOnSite: 30,
-  address: {
-    line1: '#510, Sector 17',
-    line2: 'Opp. Civil Dispensary, HUDA',
-    line3: 'Jagadhri, Distt. Yamunanagar',
-    line4: 'Haryana, India',
-    short: '#510, Sector 17, HUDA, Jagadhri',
-    locality: 'Jagadhri',
-    region: 'Haryana',
-    country: 'IN',
-    // postalCode intentionally omitted — not supplied in the handoff.
-  },
-  cities: 'Jagadhri & Chandigarh',
+  /* No street address: the company has no office yet, so nothing on the site
+     claims one — the phone, WhatsApp and email are the whole contact set.
+     Add an `address` object back here when there is a premises to publish, and
+     restore the PostalAddress in the JSON-LD with it. */
+  country: 'India',
+  /* Where the company works, which is no longer a pair of towns. Used wherever
+     the site used to say "Jagadhri & Chandigarh". */
+  coverage: 'Across India',
+  coverageLong: 'Projects across India',
   disciplines: ['Construction', 'Interiors', 'Turnkey Projects', 'Renovation', 'Landscape'],
-  copyright: '© 2026 · The Construction Project · Jagadhri & Chandigarh',
+  copyright: '© 2026 · The Construction Project · Projects across India',
 };
 
 export const nav = [

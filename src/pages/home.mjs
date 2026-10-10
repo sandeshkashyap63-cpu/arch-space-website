@@ -14,7 +14,7 @@ const callouts = [
   { label: 'Structure', text: 'RCC frame cast to drawing, checked on site', side: 'left', n: 1 },
   { label: 'Material', text: 'exposed concrete · local brick · warm tone', side: 'left', n: 2 },
   { label: 'Programme', text: 'slab to handover on a dated schedule', side: 'right', n: 3 },
-  { label: 'Site', text: 'Jagadhri, Haryana & Chandigarh', side: 'right', n: 4 },
+  { label: 'Site', text: 'projects across India', side: 'right', n: 4 },
 ];
 
 const callout = (c) => html`
@@ -218,7 +218,7 @@ const ctaSection = () => html`
       <div class="cta-aside">
         <a class="btn btn--dark" href="${url('/contact/')}">Enquire →</a>
         <span class="cta-address"
-          >${site.address.short} ·
+          >${site.coverageLong} ·
           <a href="mailto:${site.email}">${site.email}</a></span
         >
       </div>
@@ -230,9 +230,9 @@ export const home = {
   page: 'home',
   path: '/',
   outFile: 'index.html',
-  title: 'The Construction Project — Builders & Interiors, Jagadhri',
+  title: 'The Construction Project — Civil Engineers & Builders, India',
   description:
-    'Qualified civil engineers building homes & buildings that last generations. Sound structures, honest materials and daily site reports — Jagadhri and Chandigarh.',
+    'Qualified civil engineers building homes & buildings that last generations. Sound structures, honest materials and daily site reports — projects across India.',
   scripts: ['/assets/home.js'],
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}

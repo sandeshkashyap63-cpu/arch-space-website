@@ -13,7 +13,7 @@ export const companyPage = {
   outFile: 'company/index.html',
   title: 'Company — The Construction Project',
   description:
-    'Qualified civil engineers, not contractors: proper site safety, a dedicated supervisor, daily WhatsApp updates with photographs and no compromise on quality. Jagadhri and Chandigarh.',
+    'Qualified civil engineers, not contractors: proper site safety, a dedicated supervisor, daily WhatsApp updates with photographs and no compromise on quality. Projects across India.',
   scripts: ['/assets/company.js'],
   render: () => html`
     <section class="company-board" aria-labelledby="company-heading">
@@ -21,7 +21,7 @@ export const companyPage = {
         <div class="page-head-row">
           <h1 class="h1-page" id="company-heading">Company</h1>
           <span class="eyebrow"
-            >Jagadhri &amp; Chandigarh · ${site.yearsOnSite}+ years on site · five trades</span
+            >${site.coverage} · ${site.yearsOnSite}+ years on site · five trades</span
           >
         </div>
         <span class="rule" aria-hidden="true" style="animation-delay:200ms"></span>
@@ -125,8 +125,8 @@ export const companyPage = {
                 </p>
               </div>
               <div class="contact-detail">
-                <h3 class="contact-detail-label">Office</h3>
-                <p>${site.address.line1}<br />${site.address.line2}<br />${site.address.line3}</p>
+                <h3 class="contact-detail-label">Where we work</h3>
+                <p>${site.coverageLong}.<br />${site.hours}</p>
               </div>
             </div>
           </div>

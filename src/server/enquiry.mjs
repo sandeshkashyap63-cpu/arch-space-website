@@ -7,7 +7,7 @@
  * deployment.
  *
  * Delivery: if RESEND_API_KEY is set, the enquiry is emailed to
- * ENQUIRY_TO (default arspace1@gmail.com). Otherwise it is appended to
+ * ENQUIRY_TO (default Support@theconstructionproject.in). Otherwise it is appended to
  * enquiries.log so nothing is ever silently dropped in development.
  */
 import fs from 'node:fs/promises';
@@ -16,8 +16,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 
-const TO = process.env.ENQUIRY_TO || 'arspace1@gmail.com';
-const FROM = process.env.ENQUIRY_FROM || 'The Construction Project <enquiries@theconstructionproject.example>';
+const TO = process.env.ENQUIRY_TO || 'Support@theconstructionproject.in';
+const FROM = process.env.ENQUIRY_FROM || 'The Construction Project <enquiries@theconstructionproject.in>';
 const LOG_FILE = path.join(root, 'enquiries.log');
 
 /** Minimum seconds between the form rendering and it being submitted. */
@@ -162,7 +162,7 @@ export async function handleEnquiry(input, meta = {}) {
     return {
       status: 502,
       ok: false,
-      message: 'That did not send. Please call +91 94676 29425 or email arspace1@gmail.com.',
+      message: 'That did not send. Please call +91 70155 35542 or email Support@theconstructionproject.in.',
     };
   }
 }

@@ -20,7 +20,7 @@ const trimTrailing = (value) => String(value ?? '').replace(/\/+$/, '');
 export const base = trimTrailing(process.env.BASE_PATH || '');
 
 export const origin = trimTrailing(
-  process.env.SITE_ORIGIN || 'https://www.theconstructionproject.example'
+  process.env.SITE_ORIGIN || 'https://www.theconstructionproject.in'
 );
 
 export const enquiryMode = process.env.ENQUIRY_MODE === 'handoff' ? 'handoff' : 'api';

@@ -96,7 +96,7 @@ function footer({ page }) {
         <span class="footer-meta">
           ${isHome
             ? site.copyright
-            : raw(`${site.cities} · <a href="mailto:${site.email}">${site.email}</a>`)}
+            : raw(`${site.coverageLong} · <a href="mailto:${site.email}">${site.email}</a>`)}
         </span>
       </div>
     </footer>
@@ -128,18 +128,11 @@ function structuredData() {
     '@type': 'GeneralContractor',
     name: site.name,
     description:
-      'Construction, interiors, turnkey projects, renovation and landscape in Jagadhri, Haryana and Chandigarh.',
+      'Construction, interiors, turnkey projects, renovation and landscape, on sites across India.',
     url: absolute('/'),
     telephone: site.phone.display,
     email: site.email,
-    areaServed: ['Jagadhri', 'Yamunanagar', 'Chandigarh', 'Ambala', 'Haryana'],
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: `${site.address.line1}, ${site.address.line2}`,
-      addressLocality: site.address.locality,
-      addressRegion: site.address.region,
-      addressCountry: site.address.country,
-    },
+    areaServed: { '@type': 'Country', name: site.country },
     openingHours: 'Mo-Sa 10:00-19:00',
     knowsAbout: site.disciplines,
   };
