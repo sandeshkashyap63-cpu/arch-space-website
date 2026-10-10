@@ -608,6 +608,15 @@ html:not(.js) .site-header--home {
   transform: translateY(-3px);
 }
 
+/* The mark inherits the button's colour, so the hover/active rules keep
+   working without touching the SVG. */
+.rail-icon {
+  width: 25px;
+  height: 25px;
+  display: block;
+  fill: currentColor;
+}
+
 .rail-btn--wa {
   background: var(--bronze);
   color: var(--ground);
