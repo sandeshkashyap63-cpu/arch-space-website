@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /arch-space-website/enquiry-received/
+
+Sitemap: https://sandeshkashyap63-cpu.github.io/arch-space-website/sitemap.xml
