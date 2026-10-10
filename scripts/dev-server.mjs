@@ -67,8 +67,20 @@ function parseBody(raw, contentType = '') {
   return out;
 }
 
+/** The stylesheet is content-hashed, so find it rather than guessing a name. */
+async function stylesheetHref() {
+  try {
+    const files = await fs.readdir(path.join(DIST, 'assets'));
+    const css = files.find((f) => /^site\..+\.css$/.test(f));
+    if (css) return `${base}/assets/${css}`;
+  } catch {
+    // fall through
+  }
+  return `${base}/assets/site.css`;
+}
+
 /** No-JS error response, styled with the site's own stylesheet. */
-function errorPage(result) {
+function errorPage(result, cssHref) {
   const items = result.errors
     ? Object.values(result.errors)
         .map((message) => `<li>${message}</li>`)
@@ -78,7 +90,7 @@ function errorPage(result) {
 <html lang="en"><head><meta charset="utf-8"><title>Check your enquiry — The Construction Project</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="${base}/assets/site.css"></head>
+<link rel="stylesheet" href="${cssHref}"></head>
 <body><div class="page page--contact"><main id="main">
 <section class="contact-board"><div class="shell">
 <div class="page-head-row"><h1 class="h1-page">Almost</h1><span class="eyebrow">Enquiry not sent</span></div>
@@ -158,7 +170,7 @@ const server = http.createServer(async (req, res) => {
     }
 
     res.writeHead(result.status, { 'Content-Type': 'text/html; charset=utf-8' });
-    res.end(errorPage(result));
+    res.end(errorPage(result, await stylesheetHref()));
     return;
   }
 

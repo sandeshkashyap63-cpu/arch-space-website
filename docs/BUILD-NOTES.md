@@ -301,6 +301,22 @@ npm run deploy   # build for GitHub Pages and publish to the gh-pages branch
 `npm run fonts` and `npm run images` are one-off asset steps; re-run `images`
 after replacing any photograph, `fonts` only if the typeface selection changes.
 
+### Asset names are content-hashed
+
+The CSS and JS bundles are written as `site.<hash>.css`, `home.<hash>.js` and
+so on, so the filename changes whenever the contents do.
+
+This matters because GitHub Pages serves assets with `Cache-Control:
+max-age=600` under a filename that never changed, so a browser holding the
+previous `site.css` kept using it — a deploy could appear to do nothing for ten
+minutes, or until a hard reload. It cost a round trip of "I changed the colour
+but the site still shows the old one". With hashed names a new deploy is always
+a new URL, so it is always fetched.
+
+Pages reference the logical name (`/assets/site.css`); `src/lib/assets.mjs`
+maps it to the hashed one, which the build registers. The dev server's no-JS
+error page looks the stylesheet up by pattern rather than guessing a name.
+
 ### Build configuration
 
 The same source builds for a root domain or a sub-path, driven by environment

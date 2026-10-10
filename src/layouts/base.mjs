@@ -5,6 +5,7 @@
 import { html, raw, attr } from '../lib/html.mjs';
 import { site, nav } from '../data/site.mjs';
 import { url, absolute, origin } from '../lib/config.mjs';
+import { asset } from '../lib/assets.mjs';
 
 function head({ title, description, canonical, page, scripts }) {
   return html`
@@ -39,11 +40,11 @@ function head({ title, description, canonical, page, scripts }) {
       type="font/woff2"
       crossorigin
     />
-    <link rel="stylesheet" href="${url('/assets/site.css')}" />
+    <link rel="stylesheet" href="${url(asset('/assets/site.css'))}" />
     <script>
       document.documentElement.classList.add('js');
     </script>
-    ${scripts.map((src) => html`<script src="${url(src)}" defer></script>`)}
+    ${scripts.map((src) => html`<script src="${url(asset(src))}" defer></script>`)}
   `;
 }
 

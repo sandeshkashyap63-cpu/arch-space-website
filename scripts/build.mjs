@@ -7,12 +7,14 @@
  *
  * Run: npm run build
  */
+import crypto from 'node:crypto';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { layout } from '../src/layouts/base.mjs';
 import { url, absolute, base, origin, enquiryMode } from '../src/lib/config.mjs';
+import { registerAsset } from '../src/lib/assets.mjs';
 import { site } from '../src/data/site.mjs';
 import { home } from '../src/pages/home.mjs';
 import { projectsPage } from '../src/pages/projects.mjs';
@@ -48,6 +50,18 @@ async function writeFile(relative, contents) {
   await fs.writeFile(target, contents, 'utf8');
 }
 
+/** Short content hash, so a changed file always gets a new URL. */
+function contentHash(contents) {
+  return crypto.createHash('sha256').update(contents).digest('hex').slice(0, 8);
+}
+
+/** Writes `assets/<name>.<hash>.<ext>` and maps the logical name to it. */
+async function writeHashedAsset(name, ext, contents) {
+  const actual = `assets/${name}.${contentHash(contents)}.${ext}`;
+  await writeFile(actual, contents);
+  registerAsset(`/assets/${name}.${ext}`, `/${actual}`);
+}
+
 async function buildStyles() {
   const styleDir = path.join(root, 'src', 'styles');
   const fontCss = await fs
@@ -57,7 +71,7 @@ async function buildStyles() {
       return '';
     });
   const siteCss = await fs.readFile(path.join(styleDir, 'site.css'), 'utf8');
-  await writeFile('assets/site.css', `${fontCss}\n${siteCss}`);
+  await writeHashedAsset('site', 'css', `${fontCss}\n${siteCss}`);
 }
 
 async function buildScripts() {
@@ -66,7 +80,7 @@ async function buildScripts() {
     const sources = await Promise.all(
       parts.map((file) => fs.readFile(path.join(scriptDir, file), 'utf8'))
     );
-    await writeFile(`assets/${outName}`, sources.join('\n'));
+    await writeHashedAsset(outName.replace(/\.js$/, ''), 'js', sources.join('\n'));
   }
 }
 
