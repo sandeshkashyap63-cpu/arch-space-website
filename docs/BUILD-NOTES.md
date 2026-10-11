@@ -560,9 +560,16 @@ the WhatsApp handoff form. For the real launch see below.
 
 ### Custom domain (theconstructionproject.in)
 
-`npm run deploy:domain` publishes to the domain instead of the project-page
-URL: it builds with no base path, sets the origin to the real domain, and
-writes `dist/CNAME`.
+**The site is live at https://theconstructionproject.in.**
+`npm run deploy:domain` is how it is published: it builds with no base path,
+sets the origin to the real domain, and writes `dist/CNAME`. Plain
+`npm run deploy` still publishes the github.io preview — use `deploy:domain`
+for anything that should reach the public site.
+
+DNS is at Hostinger: four A records on the apex to GitHub Pages, `www` a CNAME
+to `sandeshkashyap63-cpu.github.io`, with the Hostinger MX and SPF records left
+in place so the mailbox keeps working. HTTPS is enforced, `www` redirects to
+the apex, and the old `/arch-space-website/` preview URL 301s to the domain.
 
 **The CNAME must come from the build, not the GitHub UI.** The deploy replaces
 the whole `gh-pages` branch, so a CNAME added through Settings would be wiped

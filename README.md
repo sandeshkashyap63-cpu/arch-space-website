@@ -1,21 +1,21 @@
 # Handoff: Arch Space — architecture studio website
 
-> **Built — now "The Construction Project", a construction company.**
-> Live preview: **https://sandeshkashyap63-cpu.github.io/arch-space-website/**
+> **Live at https://theconstructionproject.in**
 >
 > The business repositioned twice since this brief: renamed from "Arch Space"
 > to **The Construction Project**, then from an architecture practice to a
 > **construction company**. The site reflects both; the handoff below does not,
 > because it is the original brief kept as the historical record — as are the
-> prototypes in `design/`. What changed, and the five judgement calls that need
-> the client's confirmation, are in
-> [docs/BUILD-NOTES.md](docs/BUILD-NOTES.md#repositioning-architecture-practice--construction-company).
+> prototypes in `design/`. What changed is in
+> [docs/BUILD-NOTES.md](docs/BUILD-NOTES.md).
 >
-> Implemented as a static site in `src/`, output to `dist/`. Run `npm run setup`
-> once, then `npm run dev` (http://localhost:4321); `npm run deploy`
-> republishes the preview. The preview still carries **placeholder project
-> photography**, and its enquiry form hands off to WhatsApp because GitHub
-> Pages has no backend.
+> Static site in `src/`, output to `dist/`. `npm run setup` once, then
+> `npm run dev` (http://localhost:4321). **`npm run deploy:domain` publishes to
+> the live domain**; plain `npm run deploy` publishes the github.io preview.
+> Photographs drop into `photos/work/` (the slider) and `photos/projects/`.
+>
+> Six of twelve projects still carry placeholder stock photography, and the
+> enquiry form hands off to WhatsApp because GitHub Pages has no backend.
 
 ## Overview
 A four-page marketing website for **Arch Space** — an architecture, interiors, 3D visualisation, valuation and landscape practice based in **Jagadhri (Haryana)** and **Chandigarh**, run by Abhishek Mangla, B.Arch. The site's job is credibility plus one action: get a prospective client to call, WhatsApp, or submit the enquiry form.
