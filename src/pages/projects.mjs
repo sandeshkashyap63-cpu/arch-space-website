@@ -58,7 +58,7 @@ export const projectsPage = {
               </div>
               <div class="tile-caption">
                 <h2 class="tile-name">${project.name}</h2>
-                <span class="tile-meta">${project.meta}</span>
+                ${project.meta ? html`<span class="tile-meta">${project.meta}</span>` : ''}
               </div>
             </article>
           `

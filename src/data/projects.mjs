@@ -37,6 +37,17 @@ export const projects = [
     image: { local: 'project-arched-residence.jpeg', alt: 'Residence with a tall arched entrance and carved jaali screens' },
   },
   {
+    slug: 'neoclassical-residence',
+    name: 'Neoclassical Residence',
+    // meta deliberately absent: the client has not said which state this one
+    // is in, and a guess would be published as fact. Add it here when known.
+    category: 'residential',
+    image: {
+      local: 'project-neoclassical-residence.jpeg',
+      alt: 'Neoclassical residence in cream stone with ornamental iron balconies',
+    },
+  },
+  {
     slug: 'brick-and-stone-residence',
     name: 'Brick & Stone Residence',
     meta: 'Chandigarh',

@@ -149,7 +149,9 @@ const selectedSection = () => html`
               </div>
               <div class="tile-caption">
                 <span class="tile-name">${project.name}</span>
-                <span class="tile-meta">${project.homeMeta ?? project.meta}</span>
+                ${(project.homeMeta ?? project.meta)
+                  ? html`<span class="tile-meta">${project.homeMeta ?? project.meta}</span>`
+                  : ''}
               </div>
             </a>
           `

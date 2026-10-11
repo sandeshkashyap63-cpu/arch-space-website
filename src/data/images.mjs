@@ -49,6 +49,11 @@ export const clientImages = [
     alt: 'Residence with a tall arched entrance and carved jaali screens',
   },
   {
+    file: 'project-neoclassical-residence.jpeg',
+    source: 'photos/projects/neoclassical-residence.jpg',
+    alt: 'Neoclassical residence in cream stone with ornamental iron balconies',
+  },
+  {
     file: 'project-brick-and-stone-residence.jpeg',
     source: 'photos/projects/brick-and-stone-residence.jpg',
     alt: 'Contemporary residence in red brick and stone',
