@@ -1,5 +1,6 @@
 import { html, raw, localImage, remoteImage } from '../lib/html.mjs';
 import { siteGallery } from '../components/site-gallery.mjs';
+import { enquirySection } from '../components/enquiry-section.mjs';
 import { url } from '../lib/config.mjs';
 import { site, stats, services } from '../data/site.mjs';
 import { featuredProjects } from '../data/projects.mjs';
@@ -216,7 +217,7 @@ const ctaSection = () => html`
     <div class="shell" data-reveal>
       <h2 class="cta-h2" id="cta-heading">Bring us<br />the <em>site</em>.</h2>
       <div class="cta-aside">
-        <a class="btn btn--dark" href="${url('/contact/')}">Enquire →</a>
+        <a class="btn btn--dark" href="#enquire">Enquire →</a>
         <span class="cta-address"
           >${site.coverageLong} ·
           <a href="mailto:${site.email}">${site.email}</a></span
@@ -237,5 +238,6 @@ export const home = {
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}
     ${testimonialsSection()} ${siteGallery()} ${ctaSection()}
+    ${enquirySection({ heading: 'Get a quote', fallbackAction: url('/') })}
   `,
 };

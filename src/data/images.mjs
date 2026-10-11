@@ -27,21 +27,14 @@ export const clientImages = [
     source: 'Enhance_quality_and_change_size_202608171156.jpeg',
     alt: 'Completed modern residence photographed at blue hour',
   },
-  {
-    file: 'project-director.jpeg',
-    source: 'photos-1786856795790-y6tc.jpeg',
-    alt: 'Project director reviewing drawings at the office',
-  },
+  // The director and office photographs are no longer placed — both columns
+  // that held them now carry the site-photo slider. Sources kept in
+  // design/uploads/; re-add an entry here to bring one back.
   // The site-supervisor photograph (design/uploads/photos-1786856519692-jqr6.jpeg)
   // is not currently placed — it only appeared on the Team section, which the
   // client removed. The source is kept; re-add this entry to bring it back.
   // The award/panel photograph is no longer placed — the Awards & press block
   // it belonged to is now the site-photo gallery. Source kept in design/uploads/.
-  {
-    file: 'office-site.jpeg',
-    source: 'photos-1786856519741-vsjh.jpeg',
-    alt: 'The Construction Project office',
-  },
 ];
 
 /** The four frames of the Home hero slideshow, in order. */

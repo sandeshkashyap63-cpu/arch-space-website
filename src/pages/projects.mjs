@@ -1,5 +1,6 @@
 import { html, remoteImage } from '../lib/html.mjs';
 import { url } from '../lib/config.mjs';
+import { enquirySection } from '../components/enquiry-section.mjs';
 import { projects, categories, projectIndexMeta } from '../data/projects.mjs';
 
 const TILE_SIZES = '(max-width: 700px) calc(100vw - 68px), (max-width: 1100px) 45vw, 440px';
@@ -72,8 +73,10 @@ export const projectsPage = {
     <section class="band-light band-close" aria-label="Start a project">
       <div class="shell">
         <span class="h2-band">Planning something similar?</span>
-        <a class="btn btn--dark" href="${url('/contact/')}">Enquire →</a>
+        <a class="btn btn--dark" href="#enquire">Enquire →</a>
       </div>
     </section>
+
+    ${enquirySection({ heading: 'Get a quote', fallbackAction: url('/projects/') })}
   `,
 };

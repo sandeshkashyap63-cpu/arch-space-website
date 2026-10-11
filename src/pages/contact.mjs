@@ -1,9 +1,9 @@
-import { html, raw, localImage } from '../lib/html.mjs';
+import { html, raw } from '../lib/html.mjs';
+import { gallerySlider } from '../components/site-gallery.mjs';
 import { site } from '../data/site.mjs';
 import { url } from '../lib/config.mjs';
 import { enquiryForm } from '../components/enquiry-form.mjs';
 
-const IMG_SIZES = '(max-width: 760px) calc(100vw - 68px), min(660px, 48vw)';
 
 export const contactPage = {
   page: 'contact',
@@ -25,15 +25,7 @@ export const contactPage = {
 
         <div class="contact-split">
           <div class="contact-aside">
-            <div class="frame frame--4x3 frame--bordered">
-              ${localImage({
-                file: 'office-site.jpeg',
-                alt: 'The Construction Project office',
-                sizes: IMG_SIZES,
-                loading: 'eager',
-                fetchPriority: 'high',
-              })}
-            </div>
+            ${gallerySlider({ sizes: '(max-width: 900px) calc(100vw - 68px), min(640px, 46vw)' })}
             <div class="contact-details">
               <div class="contact-detail">
                 <h2 class="contact-detail-label">Where we work</h2>

@@ -68,40 +68,6 @@
       ],
       "aspect": 0.7467
     },
-    "project-director.jpeg": {
-      "base": "project-director",
-      "alt": "Project director reviewing drawings at the office",
-      "width": 2400,
-      "height": 1792,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440,
-        2000
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.7467
-    },
-    "office-site.jpeg": {
-      "base": "office-site",
-      "alt": "The Construction Project office",
-      "width": 2400,
-      "height": 1792,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440,
-        2000
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.7467
-    },
     "gallery-01.jpeg": {
       "base": "gallery-01",
       "alt": "Building Project with TATA",

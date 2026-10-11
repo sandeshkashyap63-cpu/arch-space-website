@@ -27,13 +27,14 @@ const DIST = path.join(root, 'dist');
 const pages = [home, projectsPage, companyPage, contactPage, enquiryReceivedPage];
 
 /** Bundles: shared script first, then the page script. */
+/* Every page now carries the enquiry form, and every page but Projects
+   carries a slider, so the bundles differ only by the page script. */
 const bundles = {
   'site.js': ['site.js'],
-  'home.js': ['site.js', 'slideshow.js', 'home.js'],
-  'projects.js': ['site.js', 'projects.js'],
-  'contact.js': ['site.js', 'contact.js'],
-  // Company carries both the gallery slideshow and the enquiry form.
-  'company.js': ['site.js', 'slideshow.js', 'contact.js'],
+  'home.js': ['site.js', 'slideshow.js', 'contact.js', 'home.js'],
+  'projects.js': ['site.js', 'contact.js', 'projects.js'],
+  // Contact and Company need the slider and the form, and nothing page-specific.
+  'contact.js': ['site.js', 'slideshow.js', 'contact.js'],
 };
 
 async function rimraf(dir) {

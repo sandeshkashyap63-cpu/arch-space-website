@@ -1,11 +1,9 @@
-import { html, localImage } from '../lib/html.mjs';
+import { html } from '../lib/html.mjs';
 import { url } from '../lib/config.mjs';
-import { enquiryForm } from '../components/enquiry-form.mjs';
-import { siteGallery } from '../components/site-gallery.mjs';
+import { enquirySection } from '../components/enquiry-section.mjs';
+import { gallerySlider } from '../components/site-gallery.mjs';
 import { site, capabilities, process, reasons } from '../data/site.mjs';
 
-const HALF_SIZES = '(max-width: 760px) calc(100vw - 68px), min(660px, 48vw)';
-const PORTRAIT_SIZES = '(max-width: 700px) calc(100vw - 68px), (max-width: 1100px) 45vw, 330px';
 
 export const companyPage = {
   page: 'company',
@@ -14,7 +12,7 @@ export const companyPage = {
   title: 'Company — The Construction Project',
   description:
     'Qualified civil engineers, not contractors: proper site safety, a dedicated supervisor, daily WhatsApp updates with photographs and no compromise on quality. Projects across India.',
-  scripts: ['/assets/company.js'],
+  scripts: ['/assets/contact.js'],
   render: () => html`
     <section class="company-board" aria-labelledby="company-heading">
       <div class="shell">
@@ -33,15 +31,7 @@ export const companyPage = {
 
         <div class="company-split">
           <div class="company-media">
-            <div class="frame frame--4x3 frame--bordered">
-              ${localImage({
-                file: 'project-director.jpeg',
-                alt: 'Project director reviewing drawings at the office',
-                sizes: HALF_SIZES,
-                loading: 'eager',
-                fetchPriority: 'high',
-              })}
-            </div>
+            ${gallerySlider({ sizes: '(max-width: 900px) calc(100vw - 68px), min(640px, 46vw)' })}
             <p class="lead-text">
               We build it once and stay with it — structure, services, finishes, site rounds,
               handover.
@@ -102,39 +92,6 @@ export const companyPage = {
       </div>
     </section>
 
-    ${siteGallery({ headingId: 'company-gallery-heading' })}
-
-    <section class="enquiry-band" aria-labelledby="enquire-heading">
-      <div class="shell">
-        <div class="section-head" data-reveal>
-          <h2 class="h2-section" id="enquire-heading">Build with us</h2>
-          <span class="section-head-note">${site.hours}</span>
-        </div>
-        <div class="enquiry-split">
-          <div class="enquiry-aside" data-reveal>
-            <p class="lead-text">
-              Tell us the site and the scope. We will come and look before we price anything.
-            </p>
-            <div class="contact-details">
-              <div class="contact-detail">
-                <h3 class="contact-detail-label">Direct</h3>
-                <p>
-                  <a href="${site.phone.tel}">${site.phone.display}</a><br />
-                  <a href="${site.phone.whatsapp}" rel="noopener" target="_blank">WhatsApp</a><br />
-                  <a href="mailto:${site.email}">${site.email}</a>
-                </p>
-              </div>
-              <div class="contact-detail">
-                <h3 class="contact-detail-label">Where we work</h3>
-                <p>${site.coverageLong}.<br />${site.hours}</p>
-              </div>
-            </div>
-          </div>
-          <div class="enquiry-form-wrap" data-reveal>
-            ${enquiryForm({ fallbackAction: url('/company/'), headingLevel: 3 })}
-          </div>
-        </div>
-      </div>
-    </section>
+    ${enquirySection({ fallbackAction: url('/company/') })}
   `,
 };
