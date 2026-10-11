@@ -184,10 +184,12 @@ const quoteCard = (t) => html`
       ${'★'.repeat(t.rating)} <span class="quote-score" aria-hidden="true">${t.rating}/5</span>
     </span>
     <blockquote class="quote-text">${t.quote}</blockquote>
-    <figcaption>
-      <span class="quote-name">${t.name}</span>
-      <span class="quote-project">${t.project}</span>
-    </figcaption>
+    ${t.name || t.project
+      ? html`<figcaption>
+          ${t.name ? html`<span class="quote-name">${t.name}</span>` : ''}
+          ${t.project ? html`<span class="quote-project">${t.project}</span>` : ''}
+        </figcaption>`
+      : ''}
   </figure>
 `;
 

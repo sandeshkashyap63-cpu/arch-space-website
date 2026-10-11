@@ -15,7 +15,7 @@
  * The attribution lines carry the state only, matching the rule for projects —
  * that is our label for where the job was, not words the customer said.
  *
- * ACTION: ask the client for three or four construction testimonials.
+ * ACTION: get names and locations for the five unnamed reviews below.
  */
 export const testimonials = [
   {
@@ -30,6 +30,51 @@ export const testimonials = [
       'Our Chandigarh office was handed over on the date they promised, snag list closed in a week.',
     name: 'Naveen Gupta',
     project: 'Office fit-out · Chandigarh',
+    rating: 5,
+  },
+
+  /* ------------------------------------------------------------------
+     Supplied by the client as the substance of what their customers say.
+     The wording is written up from their notes; the Hinglish one is kept in
+     Hinglish because that is how it was given and how it reads true.
+
+     NO NAMES: the client has not said who said these, and inventing a
+     customer to sign a five-star review would be fabricating an endorsement.
+     They render without an attribution line until real names and locations
+     arrive — unnamed reviews are weaker, so these are worth chasing.
+     ------------------------------------------------------------------ */
+  {
+    quote:
+      'Whatever material they said would go into our home is what went in. Nothing cheap, nothing substituted quietly.',
+    name: '',
+    project: '',
+    rating: 5,
+  },
+  {
+    quote:
+      'Proper safety on our site from start to finish, and their staff behaved well with everyone in the house.',
+    name: '',
+    project: '',
+    rating: 5,
+  },
+  {
+    quote:
+      'They work to proper technical method — vibrators used in every casting, nothing left to guesswork.',
+    name: '',
+    project: '',
+    rating: 5,
+  },
+  {
+    quote: 'The quality of their work is better than anyone else we looked at before deciding.',
+    name: '',
+    project: '',
+    rating: 5,
+  },
+  {
+    quote:
+      'Hum rates ko lekar thoda skeptical the, lekin quality of work aur material ek dum justified hai.',
+    name: '',
+    project: '',
     rating: 5,
   },
 ];
