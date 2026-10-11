@@ -29,8 +29,12 @@ const capture = (cmd, args, opts = {}) =>
 
 async function main() {
   // 1. Build with the GitHub Pages configuration.
-  console.log('› building for GitHub Pages');
-  run('npm', ['run', 'build:pages']);
+  // With CUSTOM_DOMAIN set the site is served at a domain root, so it builds
+  // with no base path and writes a CNAME; otherwise it is the project-page
+  // build under /arch-space-website/.
+  const buildScript = process.env.CUSTOM_DOMAIN ? 'build:domain' : 'build:pages';
+  console.log(`› building (${buildScript})`);
+  run('npm', ['run', buildScript]);
 
   // Pages must not run the output through Jekyll — underscore-prefixed paths
   // and some directories would be skipped.

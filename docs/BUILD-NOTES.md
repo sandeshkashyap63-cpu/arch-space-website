@@ -558,6 +558,21 @@ source to "GitHub Actions".
 **This is a preview, not the launch.** It carries placeholder photography and
 the WhatsApp handoff form. For the real launch see below.
 
+### Custom domain (theconstructionproject.in)
+
+`npm run deploy:domain` publishes to the domain instead of the project-page
+URL: it builds with no base path, sets the origin to the real domain, and
+writes `dist/CNAME`.
+
+**The CNAME must come from the build, not the GitHub UI.** The deploy replaces
+the whole `gh-pages` branch, so a CNAME added through Settings would be wiped
+by the next deploy and the domain would silently disconnect.
+
+DNS lives at Hostinger (nameservers `*.dns-parking.com`). The apex needs the
+four GitHub Pages A records; `www` is a CNAME to `sandeshkashyap63-cpu.github.io`.
+**The MX records must be left alone** — Hostinger mail already serves
+Support@theconstructionproject.in, and removing them would stop that mail.
+
 ### Launch: any host, root domain
 
 `dist/` is a plain static directory — Netlify, Vercel, Cloudflare Pages, S3 +

@@ -13,7 +13,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 import { layout } from '../src/layouts/base.mjs';
-import { url, absolute, base, origin, enquiryMode } from '../src/lib/config.mjs';
+import { url, absolute, base, origin, enquiryMode, customDomain } from '../src/lib/config.mjs';
 import { registerAsset } from '../src/lib/assets.mjs';
 import { site } from '../src/data/site.mjs';
 import { home } from '../src/pages/home.mjs';
@@ -195,6 +195,9 @@ async function main() {
 
   await writeRedirect('/studio/', '/company/');
 
+  // Pages reads this to keep serving the custom domain after each deploy.
+  if (customDomain) await writeFile('CNAME', `${customDomain}\n`);
+
   await writeFile('sitemap.xml', sitemap());
   await writeFile('robots.txt', robots());
 
@@ -202,7 +205,8 @@ async function main() {
     `\nBuilt ${pages.length + 1} pages into dist/ in ${Date.now() - started}ms` +
       `\n  base path: ${base || '/'}` +
       `\n  origin:    ${origin}` +
-      `\n  enquiry:   ${enquiryMode}`
+      `\n  enquiry:   ${enquiryMode}` +
+      (customDomain ? `\n  domain:    ${customDomain} (CNAME written)` : '')
   );
 }
 

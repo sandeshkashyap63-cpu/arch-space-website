@@ -6,6 +6,8 @@
  *                     domain, "/arch-space-website" for GitHub Pages.
  *   SITE_ORIGIN       Absolute origin used for canonical URLs, Open Graph and
  *                     the sitemap.
+ *   CUSTOM_DOMAIN     Apex domain to publish under, e.g.
+ *                     "theconstructionproject.in". Writes dist/CNAME.
  *   ENQUIRY_MODE      "api"     — form posts to ENQUIRY_ENDPOINT (needs a
  *                                 runtime; this is the real production mode).
  *                     "handoff" — no backend available (static hosts such as
@@ -22,6 +24,12 @@ export const base = trimTrailing(process.env.BASE_PATH || '');
 export const origin = trimTrailing(
   process.env.SITE_ORIGIN || 'https://www.theconstructionproject.in'
 );
+
+/* Set when publishing to a custom domain. The build writes it to dist/CNAME,
+   which is what keeps GitHub Pages pointed at the domain — the deploy replaces
+   the whole gh-pages branch, so a CNAME added through the GitHub UI would be
+   wiped by the next deploy and the domain would silently disconnect. */
+export const customDomain = (process.env.CUSTOM_DOMAIN || '').trim();
 
 export const enquiryMode = process.env.ENQUIRY_MODE === 'handoff' ? 'handoff' : 'api';
 

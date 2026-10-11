@@ -2,7 +2,7 @@
   "name": "arch-space-website",
   "version": "1.0.0",
   "private": true,
-  "description": "The Construction Project — architecture studio website. Static four-page site, zero runtime dependencies.",
+  "description": "The Construction Project \u2014 architecture studio website. Static four-page site, zero runtime dependencies.",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
@@ -12,7 +12,9 @@
     "images": "node scripts/optimize-images.mjs",
     "fonts": "node scripts/fetch-fonts.mjs",
     "setup": "npm run fonts && npm run images && npm run build",
-    "deploy": "node scripts/deploy-pages.mjs"
+    "deploy": "node scripts/deploy-pages.mjs",
+    "build:domain": "SITE_ORIGIN=https://$CUSTOM_DOMAIN BASE_PATH= ENQUIRY_MODE=handoff node scripts/build.mjs",
+    "deploy:domain": "CUSTOM_DOMAIN=theconstructionproject.in node scripts/deploy-pages.mjs"
   },
   "engines": {
     "node": ">=18"
