@@ -49,6 +49,13 @@ export const clientImages = [
     alt: 'Residence with a tall arched entrance and carved jaali screens',
   },
   {
+    file: 'project-330-gaj-duplex.jpeg',
+    // Its own copy rather than a reference into photos/work/, so removing the
+    // photograph from the gallery cannot break the Projects page.
+    source: 'photos/projects/330-gaj-duplex.heic',
+    alt: 'Duplex residence under construction, mouldings cast and scaffolding still up',
+  },
+  {
     file: 'project-commercial-complex.jpeg',
     source: 'photos/projects/commercial-complex.heic',
     alt: 'Two-storey commercial block under construction, frame and blockwork with scaffolding',

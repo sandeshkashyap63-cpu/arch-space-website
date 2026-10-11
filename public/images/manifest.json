@@ -102,6 +102,23 @@
       ],
       "aspect": 0.7465
     },
+    "project-330-gaj-duplex.jpeg": {
+      "base": "project-330-gaj-duplex",
+      "alt": "Duplex residence under construction, mouldings cast and scaffolding still up",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
     "project-commercial-complex.jpeg": {
       "base": "project-commercial-complex",
       "alt": "Two-storey commercial block under construction, frame and blockwork with scaffolding",
@@ -266,7 +283,7 @@
     },
     "gallery-08.jpeg": {
       "base": "gallery-08",
-      "alt": "Electrical Power Station Construction",
+      "alt": "Electrical SSP Construction",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -282,7 +299,7 @@
     },
     "gallery-09.jpeg": {
       "base": "gallery-09",
-      "alt": "Electrical SSP Construction",
+      "alt": "Excavation Work",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -298,22 +315,6 @@
     },
     "gallery-10.jpeg": {
       "base": "gallery-10",
-      "alt": "Excavation Work",
-      "width": 4032,
-      "height": 3024,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
-    "gallery-11.jpeg": {
-      "base": "gallery-11",
       "alt": "Formation & Landscaping Project",
       "width": 3024,
       "height": 4032,
@@ -328,24 +329,8 @@
       ],
       "aspect": 1.3333
     },
-    "gallery-12.jpeg": {
-      "base": "gallery-12",
-      "alt": "Foundations Excavation",
-      "width": 4032,
-      "height": 3024,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
-    "gallery-13.jpeg": {
-      "base": "gallery-13",
+    "gallery-11.jpeg": {
+      "base": "gallery-11",
       "alt": "Hospital Building",
       "width": 2818,
       "height": 3024,
@@ -360,9 +345,41 @@
       ],
       "aspect": 1.0731
     },
+    "gallery-12.jpeg": {
+      "base": "gallery-12",
+      "alt": "Landscaping & Formation Work",
+      "width": 3024,
+      "height": 4032,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 1.3333
+    },
+    "gallery-13.jpeg": {
+      "base": "gallery-13",
+      "alt": "Professional Tiles Work At Site",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
     "gallery-14.jpeg": {
       "base": "gallery-14",
-      "alt": "Landscaping & Formation Work",
+      "alt": "Projects with L&T",
       "width": 3024,
       "height": 4032,
       "widths": [
@@ -378,9 +395,9 @@
     },
     "gallery-15.jpeg": {
       "base": "gallery-15",
-      "alt": "Professional Tiles Work At Site",
-      "width": 8064,
-      "height": 6048,
+      "alt": "Proper Plinth Work",
+      "width": 4032,
+      "height": 3024,
       "widths": [
         480,
         768,
@@ -394,9 +411,9 @@
     },
     "gallery-16.jpeg": {
       "base": "gallery-16",
-      "alt": "Projects with L&T",
-      "width": 3024,
-      "height": 4032,
+      "alt": "Railway Station Restoration Project",
+      "width": 4032,
+      "height": 3024,
       "widths": [
         480,
         768,
@@ -406,11 +423,11 @@
       "formats": [
         "jpeg"
       ],
-      "aspect": 1.3333
+      "aspect": 0.75
     },
     "gallery-17.jpeg": {
       "base": "gallery-17",
-      "alt": "Proper Plinth Work",
+      "alt": "Railways Project",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -426,38 +443,6 @@
     },
     "gallery-18.jpeg": {
       "base": "gallery-18",
-      "alt": "Railway Station Restoration Project",
-      "width": 4032,
-      "height": 3024,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
-    "gallery-19.jpeg": {
-      "base": "gallery-19",
-      "alt": "Railways Project",
-      "width": 4032,
-      "height": 3024,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
-    "gallery-20.jpeg": {
-      "base": "gallery-20",
       "alt": "Residential Building Construction",
       "width": 8064,
       "height": 4536,
@@ -472,9 +457,41 @@
       ],
       "aspect": 0.5625
     },
+    "gallery-19.jpeg": {
+      "base": "gallery-19",
+      "alt": "Residential Building Under Construction",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-20.jpeg": {
+      "base": "gallery-20",
+      "alt": "Residential Building",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
     "gallery-21.jpeg": {
       "base": "gallery-21",
-      "alt": "Residential Building Under Construction",
+      "alt": "Smooth Putty Before Paint",
       "width": 8064,
       "height": 6048,
       "widths": [
@@ -490,23 +507,22 @@
     },
     "gallery-22.jpeg": {
       "base": "gallery-22",
-      "alt": "Residential Building",
-      "width": 8064,
-      "height": 6048,
+      "alt": "Water Proofing Work",
+      "width": 1280,
+      "height": 576,
       "widths": [
         480,
         768,
-        1024,
-        1440
+        1024
       ],
       "formats": [
         "jpeg"
       ],
-      "aspect": 0.75
+      "aspect": 0.45
     },
     "gallery-23.jpeg": {
       "base": "gallery-23",
-      "alt": "Smooth Putty Before Paint",
+      "alt": "Wood Work at Site",
       "width": 8064,
       "height": 6048,
       "widths": [
@@ -522,53 +538,6 @@
     },
     "gallery-24.jpeg": {
       "base": "gallery-24",
-      "alt": "Water Proofing Work at Site",
-      "width": 1600,
-      "height": 720,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.45
-    },
-    "gallery-25.jpeg": {
-      "base": "gallery-25",
-      "alt": "Water Proofing Work",
-      "width": 1280,
-      "height": 576,
-      "widths": [
-        480,
-        768,
-        1024
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.45
-    },
-    "gallery-26.jpeg": {
-      "base": "gallery-26",
-      "alt": "Wood Work at Site",
-      "width": 8064,
-      "height": 6048,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
-    "gallery-27.jpeg": {
-      "base": "gallery-27",
       "alt": "Work Done For L&T",
       "width": 4032,
       "height": 3024,
@@ -608,9 +577,6 @@
     "gallery-21.jpeg",
     "gallery-22.jpeg",
     "gallery-23.jpeg",
-    "gallery-24.jpeg",
-    "gallery-25.jpeg",
-    "gallery-26.jpeg",
-    "gallery-27.jpeg"
+    "gallery-24.jpeg"
   ]
 }

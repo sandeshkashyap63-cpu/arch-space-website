@@ -37,6 +37,16 @@ export const projects = [
     image: { local: 'project-arched-residence.jpeg', alt: 'Residence with a tall arched entrance and carved jaali screens' },
   },
   {
+    slug: '330-gaj-duplex',
+    name: '330 Gaj Duplex Residential Building',
+    meta: 'In progress',
+    category: 'residential',
+    image: {
+      local: 'project-330-gaj-duplex.jpeg',
+      alt: 'Duplex residence under construction, mouldings cast and scaffolding still up',
+    },
+  },
+  {
     slug: 'neoclassical-residence',
     name: 'Neoclassical Residence',
     // meta deliberately absent: the client has not said which state this one
