@@ -68,6 +68,57 @@
       ],
       "aspect": 0.7467
     },
+    "project-classical-villa.jpeg": {
+      "base": "project-classical-villa",
+      "alt": "Classical villa with columned portico and ornamental gate",
+      "width": 2000,
+      "height": 1375,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.6875
+    },
+    "project-arched-residence.jpeg": {
+      "base": "project-arched-residence",
+      "alt": "Residence with a tall arched entrance and carved jaali screens",
+      "width": 2000,
+      "height": 1493,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.7465
+    },
+    "project-brick-and-stone-residence.jpeg": {
+      "base": "project-brick-and-stone-residence",
+      "alt": "Contemporary residence in red brick and stone",
+      "width": 2000,
+      "height": 1374,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.687
+    },
     "gallery-01.jpeg": {
       "base": "gallery-01",
       "alt": "Building Project with TATA",

@@ -18,46 +18,54 @@ export const categories = [
 ];
 
 export const projects = [
+  /* The client's own completed projects. Location is the state only — never a
+     street, sector or town. */
+  {
+    slug: 'classical-villa',
+    name: 'Classical Villa',
+    meta: 'Haryana',
+    category: 'residential',
+    featured: true,
+    image: { local: 'project-classical-villa.jpeg', alt: 'Classical villa with columned portico and ornamental gate' },
+  },
+  {
+    slug: 'arched-residence',
+    name: 'Arched Residence',
+    meta: 'Punjab',
+    category: 'residential',
+    featured: true,
+    image: { local: 'project-arched-residence.jpeg', alt: 'Residence with a tall arched entrance and carved jaali screens' },
+  },
+  {
+    slug: 'brick-and-stone-residence',
+    name: 'Brick & Stone Residence',
+    meta: 'Chandigarh',
+    category: 'residential',
+    featured: true,
+    image: { local: 'project-brick-and-stone-residence.jpeg', alt: 'Contemporary residence in red brick and stone' },
+  },
   {
     slug: 'courtyard-house',
     name: 'Courtyard House',
-    meta: 'Sector 17 · 2024',
-    homeMeta: 'Sector 17 · 2024',
+    meta: 'Haryana · 2024',
+    homeMeta: 'Haryana · 2024',
     category: 'residential',
-    featured: true,
-    image: { remote: pexels(323780), alt: 'Courtyard House — contemporary residence', placeholder: true },
+    image: { remote: pexels(323780), alt: 'Courtyard house — contemporary residence', placeholder: true },
   },
   {
     slug: 'vidya-bhawan-block',
-    name: 'Vidya Bhawan Block',
+    name: 'Institutional Block',
     meta: 'Institutional · 2023',
     homeMeta: 'Institutional · 2023',
     category: 'commercial',
-    featured: true,
-    image: { remote: pexels(269077), alt: 'Vidya Bhawan — institutional block', placeholder: true },
-  },
-  {
-    slug: 'mangla-flagship',
-    name: 'Mangla Flagship',
-    meta: 'Fit-out · 2025',
-    homeMeta: 'Fit-out · 2025',
-    category: 'interiors',
-    featured: true,
-    image: { remote: pexels(260922), alt: 'Mangla Flagship — retail interior', placeholder: true },
+    image: { remote: pexels(269077), alt: 'Institutional block', placeholder: true },
   },
   {
     slug: 'radaur-road-complex',
-    name: 'Radaur Road Complex',
+    name: 'Commercial Complex',
     meta: 'In progress',
     category: 'commercial',
-    image: { remote: pexels(323705), alt: 'Radaur Road — commercial complex', placeholder: true },
-  },
-  {
-    slug: 'kansapur-farmhouse',
-    name: 'Kansapur Farmhouse',
-    meta: 'Landscape · 2022',
-    category: 'landscape',
-    image: { remote: pexels(338504), alt: 'Kansapur Farmhouse — landscape', placeholder: true },
+    image: { remote: pexels(323705), alt: 'Commercial complex', placeholder: true },
   },
   {
     slug: 'corporate-cabin',
@@ -68,10 +76,10 @@ export const projects = [
   },
   {
     slug: 'sector-18-apartments',
-    name: 'Sector 18 Apartments',
-    meta: 'HUDA · 2021',
+    name: 'Residential Apartments',
+    meta: 'Haryana · 2021',
     category: 'residential',
-    image: { remote: pexels(439391), alt: 'Sector 18 Apartments', placeholder: true },
+    image: { remote: pexels(439391), alt: 'Residential apartments', placeholder: true },
   },
   {
     slug: 'laminate-showroom',
@@ -83,7 +91,7 @@ export const projects = [
   {
     slug: 'community-court',
     name: 'Community Court',
-    meta: 'Radaur · 2020',
+    meta: 'Haryana · 2020',
     category: 'landscape',
     image: { remote: pexels(1974596), alt: 'Community Court — landscape', placeholder: true },
   },
@@ -91,7 +99,3 @@ export const projects = [
 
 /** The three tiles shown under "Selected Projects" on Home. */
 export const featuredProjects = projects.filter((p) => p.featured);
-
-export const projectIndexMeta = {
-  eyebrow: 'Index · 09 projects · 2018—2026',
-};

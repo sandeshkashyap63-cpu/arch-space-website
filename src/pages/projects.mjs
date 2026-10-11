@@ -1,7 +1,7 @@
-import { html, remoteImage } from '../lib/html.mjs';
+import { html, projectImage } from '../lib/html.mjs';
 import { url } from '../lib/config.mjs';
 import { enquirySection } from '../components/enquiry-section.mjs';
-import { projects, categories, projectIndexMeta } from '../data/projects.mjs';
+import { projects, categories } from '../data/projects.mjs';
 
 const TILE_SIZES = '(max-width: 700px) calc(100vw - 68px), (max-width: 1100px) 45vw, 440px';
 
@@ -18,7 +18,7 @@ export const projectsPage = {
       <div class="shell">
         <div class="page-head-row">
           <h1 class="h1-page" id="projects-heading">Projects</h1>
-          <span class="eyebrow">${projectIndexMeta.eyebrow}</span>
+          <span class="eyebrow">Index · ${String(projects.length).padStart(2, '0')} projects</span>
         </div>
         <span class="rule" aria-hidden="true"></span>
         <div class="filters" role="tablist" aria-label="Filter projects by discipline" data-filters>
@@ -54,11 +54,7 @@ export const projectsPage = {
           (project) => html`
             <article class="tile tile--static" data-category="${project.category}" data-reveal>
               <div class="frame frame--4x3 frame--bordered">
-                ${remoteImage({
-                  src: project.image.remote,
-                  alt: project.image.alt,
-                  sizes: TILE_SIZES,
-                })}
+                ${projectImage({ image: project.image, sizes: TILE_SIZES })}
               </div>
               <div class="tile-caption">
                 <h2 class="tile-name">${project.name}</h2>

@@ -35,6 +35,24 @@ export const clientImages = [
   // client removed. The source is kept; re-add this entry to bring it back.
   // The award/panel photograph is no longer placed — the Awards & press block
   // it belonged to is now the site-photo gallery. Source kept in design/uploads/.
+
+  /* Project photographs — the client's own completed work. One per project on
+     the Projects page; see photos/projects/README.md. */
+  {
+    file: 'project-classical-villa.jpeg',
+    source: 'photos/projects/classical-villa.jpg',
+    alt: 'Classical villa with columned portico and ornamental gate',
+  },
+  {
+    file: 'project-arched-residence.jpeg',
+    source: 'photos/projects/arched-residence.jpg',
+    alt: 'Residence with a tall arched entrance and carved jaali screens',
+  },
+  {
+    file: 'project-brick-and-stone-residence.jpeg',
+    source: 'photos/projects/brick-and-stone-residence.jpg',
+    alt: 'Contemporary residence in red brick and stone',
+  },
 ];
 
 /** The four frames of the Home hero slideshow, in order. */

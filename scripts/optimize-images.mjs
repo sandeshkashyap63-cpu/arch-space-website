@@ -138,7 +138,11 @@ async function main() {
   const images = {};
 
   for (const image of clientImages) {
-    const src = path.join(SRC_DIR, image.source);
+    // A source with a slash is a path from the project root; a bare filename
+    // is the original handoff folder.
+    const src = image.source.includes('/')
+      ? path.join(root, image.source)
+      : path.join(SRC_DIR, image.source);
     try {
       await fs.access(src);
     } catch {

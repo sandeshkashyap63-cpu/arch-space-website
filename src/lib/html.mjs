@@ -134,3 +134,13 @@ export function remoteImage({ src, alt, sizes = '100vw', loading = 'lazy', width
     data-placeholder-photo
   />`;
 }
+
+/**
+ * A project tile's photograph. The client's own work is a local file; the
+ * remaining placeholders are still stock URLs, so this picks per project.
+ */
+export function projectImage({ image, sizes, loading = 'lazy' }) {
+  return image.local
+    ? localImage({ file: image.local, alt: image.alt, sizes, loading })
+    : remoteImage({ src: image.remote, alt: image.alt, sizes, loading });
+}
