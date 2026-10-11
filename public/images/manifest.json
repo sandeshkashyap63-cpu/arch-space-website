@@ -120,6 +120,38 @@
     },
     "gallery-02.jpeg": {
       "base": "gallery-02",
+      "alt": "Building Proper Brick Work",
+      "width": 4032,
+      "height": 3024,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-03.jpeg": {
+      "base": "gallery-03",
+      "alt": "Building Under Construction",
+      "width": 4032,
+      "height": 3024,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-04.jpeg": {
+      "base": "gallery-04",
       "alt": "Community Center Building",
       "width": 3024,
       "height": 4032,
@@ -134,8 +166,8 @@
       ],
       "aspect": 1.3333
     },
-    "gallery-03.jpeg": {
-      "base": "gallery-03",
+    "gallery-05.jpeg": {
+      "base": "gallery-05",
       "alt": "Community Center Construction",
       "width": 3024,
       "height": 4032,
@@ -150,41 +182,9 @@
       ],
       "aspect": 1.3333
     },
-    "gallery-04.jpeg": {
-      "base": "gallery-04",
-      "alt": "Construction of Hospital Building",
-      "width": 4032,
-      "height": 3024,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
-    "gallery-05.jpeg": {
-      "base": "gallery-05",
-      "alt": "Demolition & Excavation",
-      "width": 4032,
-      "height": 3024,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 0.75
-    },
     "gallery-06.jpeg": {
       "base": "gallery-06",
-      "alt": "Electrical Power Station Construction",
+      "alt": "Construction of Hospital Building",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -200,7 +200,7 @@
     },
     "gallery-07.jpeg": {
       "base": "gallery-07",
-      "alt": "Electrical SSP Construction",
+      "alt": "Demolition & Excavation",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -216,7 +216,7 @@
     },
     "gallery-08.jpeg": {
       "base": "gallery-08",
-      "alt": "Excavation Work",
+      "alt": "Electrical Power Station Construction",
       "width": 4032,
       "height": 3024,
       "widths": [
@@ -232,24 +232,8 @@
     },
     "gallery-09.jpeg": {
       "base": "gallery-09",
-      "alt": "Formation & Landscaping Project",
-      "width": 3024,
-      "height": 4032,
-      "widths": [
-        480,
-        768,
-        1024,
-        1440
-      ],
-      "formats": [
-        "jpeg"
-      ],
-      "aspect": 1.3333
-    },
-    "gallery-10.jpeg": {
-      "base": "gallery-10",
-      "alt": "Hospital Building",
-      "width": 2818,
+      "alt": "Electrical SSP Construction",
+      "width": 4032,
       "height": 3024,
       "widths": [
         480,
@@ -260,11 +244,27 @@
       "formats": [
         "jpeg"
       ],
-      "aspect": 1.0731
+      "aspect": 0.75
+    },
+    "gallery-10.jpeg": {
+      "base": "gallery-10",
+      "alt": "Excavation Work",
+      "width": 4032,
+      "height": 3024,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
     },
     "gallery-11.jpeg": {
       "base": "gallery-11",
-      "alt": "Landscaping & Formation Work",
+      "alt": "Formation & Landscaping Project",
       "width": 3024,
       "height": 4032,
       "widths": [
@@ -280,21 +280,70 @@
     },
     "gallery-12.jpeg": {
       "base": "gallery-12",
-      "alt": "Landscaping Work",
-      "width": 1280,
-      "height": 958,
+      "alt": "Foundations Excavation",
+      "width": 4032,
+      "height": 3024,
       "widths": [
         480,
         768,
-        1024
+        1024,
+        1440
       ],
       "formats": [
         "jpeg"
       ],
-      "aspect": 0.7484
+      "aspect": 0.75
     },
     "gallery-13.jpeg": {
       "base": "gallery-13",
+      "alt": "Hospital Building",
+      "width": 2818,
+      "height": 3024,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 1.0731
+    },
+    "gallery-14.jpeg": {
+      "base": "gallery-14",
+      "alt": "Landscaping & Formation Work",
+      "width": 3024,
+      "height": 4032,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 1.3333
+    },
+    "gallery-15.jpeg": {
+      "base": "gallery-15",
+      "alt": "Professional Tiles Work At Site",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-16.jpeg": {
+      "base": "gallery-16",
       "alt": "Projects with L&T",
       "width": 3024,
       "height": 4032,
@@ -309,8 +358,24 @@
       ],
       "aspect": 1.3333
     },
-    "gallery-14.jpeg": {
-      "base": "gallery-14",
+    "gallery-17.jpeg": {
+      "base": "gallery-17",
+      "alt": "Proper Plinth Work",
+      "width": 4032,
+      "height": 3024,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-18.jpeg": {
+      "base": "gallery-18",
       "alt": "Railway Station Restoration Project",
       "width": 4032,
       "height": 3024,
@@ -325,8 +390,8 @@
       ],
       "aspect": 0.75
     },
-    "gallery-15.jpeg": {
-      "base": "gallery-15",
+    "gallery-19.jpeg": {
+      "base": "gallery-19",
       "alt": "Railways Project",
       "width": 4032,
       "height": 3024,
@@ -341,8 +406,8 @@
       ],
       "aspect": 0.75
     },
-    "gallery-16.jpeg": {
-      "base": "gallery-16",
+    "gallery-20.jpeg": {
+      "base": "gallery-20",
       "alt": "Residential Building Construction",
       "width": 8064,
       "height": 4536,
@@ -357,8 +422,56 @@
       ],
       "aspect": 0.5625
     },
-    "gallery-17.jpeg": {
-      "base": "gallery-17",
+    "gallery-21.jpeg": {
+      "base": "gallery-21",
+      "alt": "Residential Building Under Construction",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-22.jpeg": {
+      "base": "gallery-22",
+      "alt": "Residential Building",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-23.jpeg": {
+      "base": "gallery-23",
+      "alt": "Smooth Putty Before Paint",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-24.jpeg": {
+      "base": "gallery-24",
       "alt": "Water Proofing Work at Site",
       "width": 1600,
       "height": 720,
@@ -373,8 +486,8 @@
       ],
       "aspect": 0.45
     },
-    "gallery-18.jpeg": {
-      "base": "gallery-18",
+    "gallery-25.jpeg": {
+      "base": "gallery-25",
       "alt": "Water Proofing Work",
       "width": 1280,
       "height": 576,
@@ -388,8 +501,24 @@
       ],
       "aspect": 0.45
     },
-    "gallery-19.jpeg": {
-      "base": "gallery-19",
+    "gallery-26.jpeg": {
+      "base": "gallery-26",
+      "alt": "Wood Work at Site",
+      "width": 8064,
+      "height": 6048,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
+    "gallery-27.jpeg": {
+      "base": "gallery-27",
       "alt": "Work Done For L&T",
       "width": 4032,
       "height": 3024,
@@ -424,6 +553,14 @@
     "gallery-16.jpeg",
     "gallery-17.jpeg",
     "gallery-18.jpeg",
-    "gallery-19.jpeg"
+    "gallery-19.jpeg",
+    "gallery-20.jpeg",
+    "gallery-21.jpeg",
+    "gallery-22.jpeg",
+    "gallery-23.jpeg",
+    "gallery-24.jpeg",
+    "gallery-25.jpeg",
+    "gallery-26.jpeg",
+    "gallery-27.jpeg"
   ]
 }

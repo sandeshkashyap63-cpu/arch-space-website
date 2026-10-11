@@ -55,7 +55,11 @@ async function dimensions(file) {
   return { width, height };
 }
 
+/** Every file written this run; anything else in OUT_DIR is stale. */
+const written = new Set();
+
 async function derive(src, out, width, format, quality) {
+  written.add(path.basename(out));
   await exec('sips', [
     '-s', 'format', format,
     '-s', 'formatOptions', String(quality),
@@ -157,6 +161,17 @@ async function main() {
     );
     gallery.push(key);
   }
+
+  // A photograph removed from photos/work/ leaves its derivatives behind
+  // otherwise — they would be committed and deployed forever, unreferenced.
+  written.add('manifest.json');
+  let pruned = 0;
+  for (const file of await fs.readdir(OUT_DIR)) {
+    if (written.has(file)) continue;
+    await fs.unlink(path.join(OUT_DIR, file));
+    pruned += 1;
+  }
+  if (pruned) console.log(`\n  pruned ${pruned} file(s) whose source is gone`);
 
   await fs.writeFile(
     path.join(OUT_DIR, 'manifest.json'),
