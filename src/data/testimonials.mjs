@@ -12,6 +12,9 @@
  * The two live quotes have one change each: "he" → "they", since the referent
  * is now a company rather than a person. Even that needs the client's nod.
  *
+ * The attribution lines carry the state only, matching the rule for projects —
+ * that is our label for where the job was, not words the customer said.
+ *
  * ACTION: ask the client for three or four construction testimonials.
  */
 export const testimonials = [
@@ -19,7 +22,7 @@ export const testimonials = [
     quote:
       'They sat with us for the plan three times before drawing a line. The house works exactly as promised.',
     name: 'Rajesh Bansal',
-    project: 'Residence · Sector 17, Jagadhri',
+    project: 'Residence · Haryana',
     rating: 5,
   },
   {
