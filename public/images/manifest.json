@@ -102,6 +102,23 @@
       ],
       "aspect": 0.7465
     },
+    "project-commercial-complex.jpeg": {
+      "base": "project-commercial-complex",
+      "alt": "Two-storey commercial block under construction, frame and blockwork with scaffolding",
+      "width": 4032,
+      "height": 3024,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.75
+    },
     "project-neoclassical-residence.jpeg": {
       "base": "project-neoclassical-residence",
       "alt": "Neoclassical residence in cream stone with ornamental iron balconies",

@@ -49,6 +49,11 @@ export const clientImages = [
     alt: 'Residence with a tall arched entrance and carved jaali screens',
   },
   {
+    file: 'project-commercial-complex.jpeg',
+    source: 'photos/projects/commercial-complex.heic',
+    alt: 'Two-storey commercial block under construction, frame and blockwork with scaffolding',
+  },
+  {
     file: 'project-neoclassical-residence.jpeg',
     source: 'photos/projects/neoclassical-residence.jpg',
     alt: 'Neoclassical residence in cream stone with ornamental iron balconies',

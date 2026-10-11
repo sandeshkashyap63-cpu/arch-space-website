@@ -76,7 +76,10 @@ export const projects = [
     name: 'Commercial Complex',
     meta: 'In progress',
     category: 'commercial',
-    image: { remote: pexels(323705), alt: 'Commercial complex', placeholder: true },
+    image: {
+      local: 'project-commercial-complex.jpeg',
+      alt: 'Two-storey commercial block under construction, frame and blockwork with scaffolding',
+    },
   },
   {
     slug: 'corporate-cabin',
