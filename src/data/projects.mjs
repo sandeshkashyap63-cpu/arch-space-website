@@ -99,13 +99,6 @@ export const projects = [
     image: { remote: pexels(260689), alt: 'Corporate Cabin — office fit-out', placeholder: true },
   },
   {
-    slug: 'sector-18-apartments',
-    name: 'Residential Apartments',
-    meta: 'Haryana · 2021',
-    category: 'residential',
-    image: { remote: pexels(439391), alt: 'Residential apartments', placeholder: true },
-  },
-  {
     slug: 'laminate-showroom',
     name: 'Laminate Showroom',
     meta: 'Fit-out · 2023',

@@ -4,13 +4,23 @@
  */
 import { html, raw, attr } from '../lib/html.mjs';
 import { site, nav } from '../data/site.mjs';
-import { url, absolute, origin } from '../lib/config.mjs';
+import { url, absolute, origin, googleTagId } from '../lib/config.mjs';
 import { asset } from '../lib/assets.mjs';
 
 function head({ title, description, canonical, page, scripts }) {
   return html`
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+${googleTagId &&
+      raw(`<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=${googleTagId}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '${googleTagId}');
+    </script>`)}
     <title>${title}</title>
     <meta name="description" content="${description}" />
     <link rel="canonical" href="${canonical}" />
