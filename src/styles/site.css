@@ -503,6 +503,24 @@ html:not(.js) .site-header--home {
   .site-header {
     position: sticky;
   }
+
+  /* On a phone the number is the main call to action, not a nav link: full
+     opacity, heavier weight and a tap target that clears 44px. */
+  .nav-phone {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    opacity: 1;
+    color: var(--gold);
+    /* 44px minimum tap target — this is the most important link on a phone.
+       The line box is 12px, so the padding carries the rest. */
+    padding-block: 16px;
+  }
+
+  .site-header--home.is-inverted .nav-phone {
+    color: var(--ink);
+    font-weight: 700;
+  }
 }
 
 /* Stack the wordmark once a single tracked line would crowd the bar. */
@@ -532,8 +550,8 @@ html:not(.js) .site-header--home {
   }
 
   .nav-phone {
-    font-size: 9px;
-    letter-spacing: 0.18em;
+    font-size: 12px;
+    letter-spacing: 0.04em;
   }
 
   .nav-toggle span:not(.nav-toggle-bars) {
