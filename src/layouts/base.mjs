@@ -4,7 +4,7 @@
  */
 import { html, raw, attr } from '../lib/html.mjs';
 import { site, nav } from '../data/site.mjs';
-import { url, absolute, origin, googleTagId } from '../lib/config.mjs';
+import { url, absolute, origin, googleTagId, clarityId } from '../lib/config.mjs';
 import { asset } from '../lib/assets.mjs';
 
 function head({ title, description, canonical, page, scripts }) {
@@ -20,6 +20,15 @@ ${googleTagId &&
       gtag('js', new Date());
 
       gtag('config', '${googleTagId}');
+    </script>`)}
+${clarityId &&
+      raw(`<!-- Microsoft Clarity -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "${clarityId}");
     </script>`)}
     <title>${title}</title>
     <meta name="description" content="${description}" />

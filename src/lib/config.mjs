@@ -50,3 +50,7 @@ export function absolute(path) {
    measurement. Build with GOOGLE_TAG_ID="" to leave it out — e.g. a preview
    build whose traffic should not be counted. */
 export const googleTagId = (process.env.GOOGLE_TAG_ID ?? 'AW-18509626432').trim();
+
+/* Microsoft Clarity project id — heatmaps and session replay. Build with
+   CLARITY_ID="" to leave it out. */
+export const clarityId = (process.env.CLARITY_ID ?? 'yygzw8jomn').trim();
