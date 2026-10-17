@@ -212,21 +212,6 @@ const testimonialsSection = () => html`
   </section>
 `;
 
-const ctaSection = () => html`
-  <section class="band-light cta" aria-labelledby="cta-heading">
-    <div class="shell" data-reveal>
-      <h2 class="cta-h2" id="cta-heading">Bring us<br />the <em>site</em>.</h2>
-      <div class="cta-aside">
-        <a class="btn btn--dark" href="#enquire">Enquire →</a>
-        <span class="cta-address"
-          >${site.coverageLong} ·
-          <a href="mailto:${site.email}">${site.email}</a></span
-        >
-      </div>
-    </div>
-  </section>
-`;
-
 export const home = {
   page: 'home',
   path: '/',
@@ -237,7 +222,7 @@ export const home = {
   scripts: ['/assets/home.js'],
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}
-    ${testimonialsSection()} ${siteGallery()} ${ctaSection()}
+    ${testimonialsSection()} ${siteGallery()}
     ${enquirySection({ heading: 'Get a quote', fallbackAction: url('/') })}
   `,
 };

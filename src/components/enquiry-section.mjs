@@ -26,7 +26,7 @@ export function enquirySection({ heading = 'Build with us', headingId = 'enquire
             <h3 class="contact-detail-label">Direct</h3>
             <p>
               <a href="${site.phone.tel}">${site.phone.display}</a><br />
-              <a href="${site.phone.whatsapp}" rel="noopener" target="_blank">WhatsApp</a><br />
+              <a href="${site.phone.whatsappGreeting}" rel="noopener" target="_blank">WhatsApp</a><br />
               <a href="mailto:${site.email}">${site.email}</a>
             </p>
           </div>

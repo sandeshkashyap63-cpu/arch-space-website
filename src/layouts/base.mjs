@@ -148,7 +148,7 @@ function contactRail() {
     <div class="contact-rail">
       <a
         class="rail-btn rail-btn--wa"
-        href="${site.phone.whatsapp}"
+        href="${site.phone.whatsappGreeting}"
         aria-label="Chat on WhatsApp"
         rel="noopener"
         target="_blank"

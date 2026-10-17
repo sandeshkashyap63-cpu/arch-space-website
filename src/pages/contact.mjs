@@ -36,7 +36,7 @@ export const contactPage = {
                 <p>
                   <a href="${site.phone.tel}">${site.phone.display}</a><br />
                   <a href="mailto:${site.email}">${site.email}</a><br />
-                  <a href="${site.phone.whatsapp}" rel="noopener" target="_blank">WhatsApp</a>
+                  <a href="${site.phone.whatsappGreeting}" rel="noopener" target="_blank">WhatsApp</a>
                 </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export const enquiryReceivedPage = {
                 <h2 class="contact-detail-label">Sooner</h2>
                 <p>
                   <a href="${site.phone.tel}">${site.phone.display}</a><br />
-                  <a href="${site.phone.whatsapp}" rel="noopener" target="_blank">WhatsApp</a><br />
+                  <a href="${site.phone.whatsappGreeting}" rel="noopener" target="_blank">WhatsApp</a><br />
                   <a href="mailto:${site.email}">${site.email}</a>
                 </p>
               </div>

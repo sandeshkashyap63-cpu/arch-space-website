@@ -18,7 +18,15 @@ export const site = {
   phone: {
     display: '+91 70155 35542',
     tel: 'tel:+917015535542',
+    /* Bare link. The enquiry form appends its own ?text= built from the
+       fields, so this one must stay without a message. */
     whatsapp: 'https://wa.me/917015535542',
+    /* For "just say hello" buttons — the floating rail and the plain
+       WhatsApp links — so the client sees why someone is writing instead of
+       an empty chat. */
+    whatsappGreeting:
+      'https://wa.me/917015535542?text=' +
+      encodeURIComponent('Hi, I am interested in The Construction Project.'),
   },
   email: 'Support@theconstructionproject.in',
   hours: 'Mon—Sat · 10:00—19:00',

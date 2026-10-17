@@ -24,6 +24,7 @@
   --hairline-ink: rgba(34, 31, 26, 0.18);
 
   --muted-45: rgba(237, 230, 217, 0.45);
+  --muted-70: rgba(237, 230, 217, 0.7);
   --muted-50: rgba(237, 230, 217, 0.5);
   --muted-55: rgba(237, 230, 217, 0.55);
   --muted-60: rgba(237, 230, 217, 0.6);
@@ -594,7 +595,7 @@ html:not(.js) .site-header--home {
 .footer-meta {
   font-size: 10px;
   letter-spacing: 0.16em;
-  color: rgba(237, 230, 217, 0.4);
+  color: rgba(237, 230, 217, 0.62);
 }
 
 .footer-meta a {
@@ -650,15 +651,21 @@ html:not(.js) .site-header--home {
   color: #fff;
 }
 
+/* Solid gold, not a hairline outline: at 35% opacity on a dark page the
+   outlined version was invisible on a phone. Ink on gold also keeps it
+   legible over the bone bands. */
 .rail-btn--call {
-  background: rgba(35, 33, 29, 0.9);
-  border: 1px solid rgba(237, 230, 217, 0.35);
-  color: var(--bone);
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 .rail-btn--call:hover {
+  background: var(--bronze);
   border-color: var(--bronze);
-  color: var(--bone);
+  color: var(--ink);
 }
 
 /* ---- Media frames ------------------------------------------------------ */
@@ -2096,23 +2103,23 @@ html:not(.js) .site-header--home {
 }
 
 .field label {
-  font-size: 9px;
-  letter-spacing: 0.26em;
+  font-size: 10px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--muted-45);
+  color: var(--muted-70);
 }
 
 .field .optional {
   text-transform: none;
   letter-spacing: 0.1em;
-  color: rgba(237, 230, 217, 0.35);
+  color: var(--muted-45);
 }
 
 .field input,
 .field textarea {
   background: none;
   border: 0;
-  border-bottom: 1px solid rgba(237, 230, 217, 0.28);
+  border-bottom: 1px solid rgba(237, 230, 217, 0.5);
   padding: 10px 0;
   font-family: var(--body);
   font-size: 14px;
@@ -2164,10 +2171,10 @@ html:not(.js) .site-header--home {
 }
 
 .scope legend {
-  font-size: 9px;
-  letter-spacing: 0.26em;
+  font-size: 10px;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--muted-45);
+  color: var(--muted-70);
   width: 100%;
   padding: 0;
   margin-bottom: 10px;
@@ -2267,9 +2274,9 @@ html:not(.js) .site-header--home {
 
 /* Capped measure so the last line cannot run under the fixed contact rail. */
 .form-note {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.7;
-  color: var(--muted-45);
+  color: var(--muted-70);
   max-width: 56ch;
 }
 

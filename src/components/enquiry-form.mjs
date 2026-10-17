@@ -52,7 +52,7 @@ ${enquiryMode === 'handoff'
         </p>
         <p class="contact-detail-direct">
           <a href="${site.phone.tel}">${site.phone.display}</a><br />
-          <a href="${site.phone.whatsapp}" rel="noopener">WhatsApp</a><br />
+          <a href="${site.phone.whatsappGreeting}" rel="noopener">WhatsApp</a><br />
           <a href="mailto:${site.email}">${site.email}</a>
         </p>
       </div>
