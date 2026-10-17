@@ -109,7 +109,8 @@ const statementSection = () => html`
   <section class="band-light statement" aria-label="What the company does" data-statement>
     <div class="shell" data-reveal>
       <p class="statement-lead">
-        Qualified civil engineers building homes &amp; buildings that last generations.
+        Qualified civil engineers building homes &amp; buildings that last generations — in
+        Dehradun, Haridwar &amp; Rishikesh.
       </p>
       <p class="statement-support">
         Every project is designed, supervised and delivered by professional engineers — sound
