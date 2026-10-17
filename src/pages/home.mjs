@@ -15,7 +15,7 @@ const callouts = [
   { label: 'Structure', text: 'RCC frame cast to drawing, checked on site', side: 'left', n: 1 },
   { label: 'Material', text: 'exposed concrete · local brick · warm tone', side: 'left', n: 2 },
   { label: 'Programme', text: 'slab to handover on a dated schedule', side: 'right', n: 3 },
-  { label: 'Site', text: 'projects across India', side: 'right', n: 4 },
+  { label: 'Site', text: 'projects across North India', side: 'right', n: 4 },
 ];
 
 const callout = (c) => html`
@@ -114,7 +114,8 @@ const statementSection = () => html`
       </p>
       <p class="statement-support">
         Every project is designed, supervised and delivered by professional engineers — sound
-        structures, honest materials, and work that passes every test across India.
+        structures, honest materials, and work that passes every test — on sites across
+        Uttarakhand, Haryana, Punjab and Chandigarh.
       </p>
       ${stats.map(
         (stat) => html`
@@ -217,9 +218,9 @@ export const home = {
   page: 'home',
   path: '/',
   outFile: 'index.html',
-  title: 'The Construction Project — Civil Engineers & Builders, India',
+  title: 'The Construction Project — Civil Engineers & Builders, North India',
   description:
-    'Qualified civil engineers building homes & buildings that last generations. Sound structures, honest materials and daily site reports — projects across India.',
+    'Qualified civil engineers building homes & buildings that last generations. Sound structures, honest materials and daily site reports — projects in Dehradun, Haridwar, Rishikesh, Haryana, Punjab and Chandigarh.',
   scripts: ['/assets/home.js'],
   render: () => html`
     ${heroSection()} ${statementSection()} ${selectedSection()} ${marqueeSection()}

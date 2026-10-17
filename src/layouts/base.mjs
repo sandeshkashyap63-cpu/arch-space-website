@@ -169,11 +169,16 @@ function structuredData() {
     '@type': 'GeneralContractor',
     name: site.name,
     description:
-      'Construction, interiors, turnkey projects, renovation and landscape, on sites across India.',
+      `Construction, interiors, turnkey projects, renovation and landscape, on sites across North India — ${site.coverageDetail}.`,
     url: absolute('/'),
     telephone: site.phone.display,
     email: site.email,
-    areaServed: { '@type': 'Country', name: site.country },
+    /* Naming the states and cities is what feeds local results; a bare
+       "Country: India" told Google nothing about where to rank this. */
+    areaServed: [
+      ...site.regions.map((name) => ({ '@type': 'State', name })),
+      ...site.cities.map((name) => ({ '@type': 'City', name })),
+    ],
     openingHours: 'Mo-Sa 10:00-19:00',
     knowsAbout: site.disciplines,
   };

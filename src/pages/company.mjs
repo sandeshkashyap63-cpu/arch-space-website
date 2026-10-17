@@ -11,7 +11,7 @@ export const companyPage = {
   outFile: 'company/index.html',
   title: 'Company — The Construction Project',
   description:
-    'Qualified civil engineers, not contractors: proper site safety, a dedicated supervisor, daily WhatsApp updates with photographs and no compromise on quality. Projects across India.',
+    'Qualified civil engineers, not contractors: proper site safety, a dedicated supervisor, daily WhatsApp updates with photographs and no compromise on quality. Projects across North India — Uttarakhand, Haryana, Punjab and Chandigarh.',
   scripts: ['/assets/contact.js'],
   render: () => html`
     <section class="company-board" aria-labelledby="company-heading">

@@ -38,12 +38,16 @@ export const site = {
      Add an `address` object back here when there is a premises to publish, and
      restore the PostalAddress in the JSON-LD with it. */
   country: 'India',
-  /* Where the company works, which is no longer a pair of towns. Used wherever
-     the site used to say "Jagadhri & Chandigarh". */
-  coverage: 'Across India',
-  coverageLong: 'Projects across India',
+  /* Where the company actually works. "Across India" overstated it and gave
+     search engines nothing to rank on; these are the regions with projects
+     behind them. `regions` and `cities` feed the JSON-LD areaServed. */
+  coverage: 'Across North India',
+  coverageLong: 'Projects across North India',
+  coverageDetail: 'Uttarakhand, Haryana, Punjab and Chandigarh',
+  regions: ['Uttarakhand', 'Haryana', 'Punjab'],
+  cities: ['Dehradun', 'Haridwar', 'Rishikesh', 'Chandigarh'],
   disciplines: ['Construction', 'Interiors', 'Turnkey Projects', 'Renovation', 'Landscape'],
-  copyright: '© 2026 · The Construction Project · Projects across India',
+  copyright: '© 2026 · The Construction Project · Projects across North India',
 };
 
 export const nav = [

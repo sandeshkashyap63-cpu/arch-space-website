@@ -11,7 +11,7 @@ export const projectsPage = {
   outFile: 'projects/index.html',
   title: 'Projects — The Construction Project',
   description:
-    'Projects built by The Construction Project: residences, institutional blocks, interiors fit-out and landscape, across India.',
+    'Projects built by The Construction Project: residences, institutional blocks, interiors fit-out and landscape, across Uttarakhand, Haryana, Punjab and Chandigarh.',
   scripts: ['/assets/projects.js'],
   render: () => html`
     <section class="page-head" aria-labelledby="projects-heading">

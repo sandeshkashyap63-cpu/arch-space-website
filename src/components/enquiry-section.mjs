@@ -32,7 +32,7 @@ export function enquirySection({ heading = 'Build with us', headingId = 'enquire
           </div>
           <div class="contact-detail">
             <h3 class="contact-detail-label">Where we work</h3>
-            <p>${site.coverageLong}.<br />${site.hours}</p>
+            <p>${site.coverageLong} — ${site.coverageDetail}.<br />${site.hours}</p>
           </div>
         </div>
       </div>
