@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /enquiry-received/
+
+Sitemap: https://theconstructionproject.in/sitemap.xml

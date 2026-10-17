@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="The Construction Project">
+  <rect width="64" height="64" fill="#23211D"/>
+  <!-- The two hairlines and the pitched line of the hero board, in miniature. -->
+  <path d="M12 6v52M52 6v52" stroke="#EDE6D9" stroke-opacity="0.28" stroke-width="1"/>
+  <path d="M20 46 32 20l12 26" fill="none" stroke="#C9A24A" stroke-width="3" stroke-linejoin="miter"/>
+  <path d="M20 46h24" stroke="#A6803F" stroke-width="3"/>
+</svg>
