@@ -2082,6 +2082,92 @@ html:not(.js) .site-header--home {
   gap: 22px;
 }
 
+/* ---- The form sits on a bone panel ------------------------------------
+   On the dark band the fields read as faint lines on near-black and people
+   were not seeing the form at all. Lifting it onto bone makes it the
+   brightest thing in the section, which is what it should be. Every colour
+   inside has to flip with the background, hence one scoped block rather
+   than edits scattered through the form rules above. */
+.enquiry-form {
+  background: var(--bone);
+  color: var(--ink);
+  padding: clamp(22px, 3vw, 38px);
+}
+
+.enquiry-form .form-title {
+  color: var(--ink);
+}
+
+/* 0.7 rather than 0.62: at 10px these clear 4.5:1 on bone, 0.62 did not. */
+.enquiry-form .field label,
+.enquiry-form .scope legend {
+  color: rgba(34, 31, 26, 0.7);
+}
+
+.enquiry-form .field .optional {
+  color: rgba(34, 31, 26, 0.42);
+}
+
+.enquiry-form .field input,
+.enquiry-form .field textarea {
+  color: var(--ink);
+  border-bottom-color: rgba(34, 31, 26, 0.32);
+}
+
+.enquiry-form .field input::placeholder,
+.enquiry-form .field textarea::placeholder {
+  color: rgba(34, 31, 26, 0.55);
+}
+
+/* Gold is nearly invisible on bone; bronze carries the focus state here. */
+.enquiry-form .field input:focus-visible,
+.enquiry-form .field textarea:focus-visible {
+  border-bottom-color: var(--bronze);
+}
+
+.enquiry-form .chip {
+  color: rgba(34, 31, 26, 0.8);
+  border-color: rgba(34, 31, 26, 0.25);
+}
+
+.enquiry-form .chip:hover {
+  border-color: rgba(34, 31, 26, 0.5);
+  color: var(--ink);
+}
+
+.enquiry-form .chip:has(input:checked) {
+  border-color: var(--bronze);
+  background: rgba(166, 128, 63, 0.12);
+  color: var(--ink);
+}
+
+.enquiry-form .chip:has(input:focus-visible) {
+  outline-color: var(--bronze);
+}
+
+.enquiry-form .form-note {
+  color: rgba(34, 31, 26, 0.65);
+}
+
+.enquiry-form .form-note a {
+  color: var(--ink);
+}
+
+.enquiry-form .form-status {
+  color: var(--bronze);
+}
+
+/* The salmon used on the dark band washes out on bone. */
+.enquiry-form .field-error,
+.enquiry-form .form-status--error {
+  color: #9c3c20;
+}
+
+.enquiry-form .field input[aria-invalid='true'],
+.enquiry-form .field textarea[aria-invalid='true'] {
+  border-bottom-color: #9c3c20;
+}
+
 .form-title {
   font-family: var(--display);
   font-weight: 300;
