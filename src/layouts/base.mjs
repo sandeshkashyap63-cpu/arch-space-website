@@ -4,7 +4,7 @@
  */
 import { html, raw, attr } from '../lib/html.mjs';
 import { site, nav } from '../data/site.mjs';
-import { url, absolute, origin, googleTagId, clarityId } from '../lib/config.mjs';
+import { url, absolute, origin, googleTagId, clarityId, metaPixelId } from '../lib/config.mjs';
 import { asset } from '../lib/assets.mjs';
 
 function head({ title, description, canonical, page, scripts }) {
@@ -29,6 +29,20 @@ ${clarityId &&
           t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
           y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "${clarityId}");
+    </script>`)}
+${metaPixelId &&
+      raw(`<!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '${metaPixelId}');
+      fbq('track', 'PageView');
     </script>`)}
     <title>${title}</title>
     <meta name="description" content="${description}" />
@@ -204,7 +218,7 @@ ${head({ title, description, canonical, page, scripts })}
 ${structuredData()}
 </head>
 <body>
-<a class="skip-link" href="#main">Skip to content</a>
+${metaPixelId ? `<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=${metaPixelId}&ev=PageView&noscript=1" alt="" /></noscript>\n` : ''}<a class="skip-link" href="#main">Skip to content</a>
 <div class="page page--${page}${bodyClass ? ` ${bodyClass}` : ''}">
 ${header({ page })}
 <main id="main">

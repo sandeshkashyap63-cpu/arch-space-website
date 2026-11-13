@@ -54,3 +54,7 @@ export const googleTagId = (process.env.GOOGLE_TAG_ID ?? 'AW-18509626432').trim(
 /* Microsoft Clarity project id — heatmaps and session replay. Build with
    CLARITY_ID="" to leave it out. */
 export const clarityId = (process.env.CLARITY_ID ?? 'yygzw8jomn').trim();
+
+/* Meta (Facebook/Instagram) Pixel id — measures ad traffic and builds
+   retargeting audiences. Build with META_PIXEL_ID="" to leave it out. */
+export const metaPixelId = (process.env.META_PIXEL_ID ?? '1355661086531704').trim();
