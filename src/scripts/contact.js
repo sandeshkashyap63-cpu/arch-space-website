@@ -91,6 +91,9 @@
     // Opened from inside the submit handler, so it counts as a user gesture
     // and is not treated as a pop-up.
     var opened = window.open(whatsapp + '?text=' + encodeURIComponent(text), '_blank', 'noopener');
+    // Counts the enquiry being handed to WhatsApp, not it being sent there —
+    // whether they press Send in WhatsApp is out of the page's sight.
+    if (window.siteTrack) window.siteTrack('Lead', { method: 'whatsapp_handoff' }, 'form_submit');
 
     if (statusEl) {
       statusEl.classList.remove('form-status--error');
@@ -158,6 +161,7 @@
       })
       .then(function (result) {
         if (result.ok && result.body.ok) {
+          if (window.siteTrack) window.siteTrack('Lead', { method: 'form' }, 'form_submit');
           form.reset();
           if (renderedAt) renderedAt.value = String(Date.now());
           setStatus('Thank you — we will call you back within a working day.');

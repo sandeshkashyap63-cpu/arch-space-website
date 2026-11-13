@@ -112,3 +112,37 @@
     }, 1200);
   }
 })();
+
+/* ---- Conversion tracking ------------------------------------------------
+   Meta's standard events: "Contact" for someone reaching out by call,
+   WhatsApp or email, "Lead" for a submitted enquiry form (fired from
+   contact.js). Clarity gets the same names so recordings can be filtered to
+   "people who tapped Call". Both are guarded: an ad blocker or a build with
+   the ids switched off must never break the page. */
+(function () {
+  'use strict';
+
+  window.siteTrack = function (metaEvent, params, clarityName) {
+    try {
+      if (typeof window.fbq === 'function') window.fbq('track', metaEvent, params || {});
+    } catch (e) {}
+    try {
+      if (typeof window.clarity === 'function') window.clarity('event', clarityName || metaEvent);
+    } catch (e) {}
+  };
+
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest ? event.target.closest('a[href]') : null;
+    if (!link) return;
+    var href = link.getAttribute('href') || '';
+    var method = null;
+
+    if (href.indexOf('tel:') === 0) method = 'call';
+    else if (href.indexOf('wa.me/') !== -1) method = 'whatsapp';
+    else if (href.indexOf('mailto:') === 0) method = 'email';
+    if (!method) return;
+
+    window.siteTrack('Contact', { method: method, page: location.pathname }, 'click_' + method);
+  });
+})();
+
