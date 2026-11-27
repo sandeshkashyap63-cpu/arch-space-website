@@ -98,9 +98,24 @@ export const projects = [
     category: 'commercial',
     featured: true,
     image: {
-      local: 'project-industrial-complex.jpeg',
-      alt: 'Industrial complex — office, warehouse and cement silos with boundary wall',
+      /* The first slide doubles as the single-image fallback (no JS, slow
+         connection) and as the thumbnail chosen by social share previews. */
+      local: 'project-industrial-complex-01.jpeg',
+      alt: 'Industrial complex — front view with office, warehouse and cement silos',
     },
+    /* When `slides` is present the tile cross-fades through all of them while
+       it is visible; see src/components/project-slider.mjs. */
+    slides: [
+      { local: 'project-industrial-complex-01.jpeg', alt: 'Industrial complex — front view with office, warehouse and cement silos' },
+      { local: 'project-industrial-complex-02.jpeg', alt: 'Industrial complex — warehouse and silo cluster from the yard' },
+      { local: 'project-industrial-complex-03.jpeg', alt: 'Industrial complex — office entrance and parking court' },
+      { local: 'project-industrial-complex-04.jpeg', alt: 'Industrial complex — perspective from above showing the yard' },
+      { local: 'project-industrial-complex-05.jpeg', alt: 'Industrial complex — rear view of the warehouse and silos' },
+      { local: 'project-industrial-complex-06.jpeg', alt: 'Industrial complex — long view across the site boundary' },
+      { local: 'project-industrial-complex-07.jpeg', alt: 'Industrial complex — tanker route alongside the main storage shed' },
+      { local: 'project-industrial-complex-08.jpeg', alt: 'Industrial complex — site plan, aerial view' },
+      { local: 'project-industrial-complex-09.jpeg', alt: 'Industrial complex — distant perspective of the office and silos' },
+    ],
   },
   {
     slug: 'corporate-cabin',

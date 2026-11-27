@@ -66,9 +66,49 @@ export const clientImages = [
     alt: 'Neoclassical residence in cream stone with ornamental iron balconies',
   },
   {
-    file: 'project-industrial-complex.jpeg',
-    source: 'photos/projects/industrial-complex.jpg',
-    alt: 'Industrial complex — office, warehouse and cement silos with boundary wall',
+    file: 'project-industrial-complex-01.jpeg',
+    source: 'photos/projects/industrial-complex-01.jpg',
+    alt: 'Industrial complex — front view with office, warehouse and cement silos',
+  },
+  {
+    file: 'project-industrial-complex-02.jpeg',
+    source: 'photos/projects/industrial-complex-02.jpg',
+    alt: 'Industrial complex — warehouse and silo cluster from the yard',
+  },
+  {
+    file: 'project-industrial-complex-03.jpeg',
+    source: 'photos/projects/industrial-complex-03.jpg',
+    alt: 'Industrial complex — office entrance and parking court',
+  },
+  {
+    file: 'project-industrial-complex-04.jpeg',
+    source: 'photos/projects/industrial-complex-04.jpg',
+    alt: 'Industrial complex — perspective from above showing the yard',
+  },
+  {
+    file: 'project-industrial-complex-05.jpeg',
+    source: 'photos/projects/industrial-complex-05.jpg',
+    alt: 'Industrial complex — rear view of the warehouse and silos',
+  },
+  {
+    file: 'project-industrial-complex-06.jpeg',
+    source: 'photos/projects/industrial-complex-06.jpg',
+    alt: 'Industrial complex — long view across the site boundary',
+  },
+  {
+    file: 'project-industrial-complex-07.jpeg',
+    source: 'photos/projects/industrial-complex-07.jpg',
+    alt: 'Industrial complex — tanker route alongside the main storage shed',
+  },
+  {
+    file: 'project-industrial-complex-08.jpeg',
+    source: 'photos/projects/industrial-complex-08.jpg',
+    alt: 'Industrial complex — site plan, aerial view',
+  },
+  {
+    file: 'project-industrial-complex-09.jpeg',
+    source: 'photos/projects/industrial-complex-09.jpg',
+    alt: 'Industrial complex — distant perspective of the office and silos',
   },
   {
     file: 'project-brick-and-stone-residence.jpeg',

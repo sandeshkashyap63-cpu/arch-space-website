@@ -144,3 +144,30 @@ export function projectImage({ image, sizes, loading = 'lazy' }) {
     ? localImage({ file: image.local, alt: image.alt, sizes, loading })
     : remoteImage({ src: image.remote, alt: image.alt, sizes, loading });
 }
+
+/**
+ * Multi-slide project frame. Renders every slide as a stacked image; the
+ * first is immediately visible, the rest are lazy-loaded and faded in by
+ * the slider script when the tile enters the viewport.
+ *
+ * No-JS fallback: the CSS keeps the first slide visible on its own, so the
+ * tile still shows a correct photograph if the script never runs.
+ *
+ * Accessibility: the first slide carries the real alt text; the rest are
+ * decorative (alt=""), so a screen reader hears one description per tile.
+ */
+export function projectSlides({ slides, sizes }) {
+  return html`<div class="tile-slider" data-tile-slider>
+    ${slides.map((slide, i) => {
+      const isFirst = i === 0;
+      const img = localImage({
+        file: slide.local,
+        alt: isFirst ? slide.alt : '',
+        sizes,
+        loading: isFirst ? 'eager' : 'lazy',
+        className: isFirst ? 'tile-slide is-active' : 'tile-slide',
+      });
+      return isFirst ? img : html`${img}`;
+    })}
+  </div>`;
+}
