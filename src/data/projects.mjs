@@ -92,6 +92,16 @@ export const projects = [
     },
   },
   {
+    slug: 'industrial-complex',
+    name: 'Industrial Complex',
+    meta: 'In progress',
+    category: 'commercial',
+    image: {
+      local: 'project-industrial-complex.jpeg',
+      alt: 'Industrial complex — office, warehouse and cement silos with boundary wall',
+    },
+  },
+  {
     slug: 'corporate-cabin',
     name: 'Corporate Cabin',
     meta: 'Fit-out · 2024',

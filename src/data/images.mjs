@@ -66,6 +66,11 @@ export const clientImages = [
     alt: 'Neoclassical residence in cream stone with ornamental iron balconies',
   },
   {
+    file: 'project-industrial-complex.jpeg',
+    source: 'photos/projects/industrial-complex.jpg',
+    alt: 'Industrial complex — office, warehouse and cement silos with boundary wall',
+  },
+  {
     file: 'project-brick-and-stone-residence.jpeg',
     source: 'photos/projects/brick-and-stone-residence.jpg',
     alt: 'Contemporary residence in red brick and stone',
