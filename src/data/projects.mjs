@@ -94,8 +94,9 @@ export const projects = [
   {
     slug: 'industrial-complex',
     name: 'Industrial Complex',
-    meta: 'In progress',
+    meta: 'Haryana · In progress',
     category: 'commercial',
+    featured: true,
     image: {
       local: 'project-industrial-complex.jpeg',
       alt: 'Industrial complex — office, warehouse and cement silos with boundary wall',
