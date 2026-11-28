@@ -739,6 +739,41 @@ html:not(.js) .site-header--home {
   transform: scale(1.02);
 }
 
+/* ---- Multi-slide tile (auto-crossfade while visible) -------------------
+   Stacked <img>s inside .frame. The first has .is-active on render; the
+   slider script adds and removes the class on the rest in a loop as long as
+   the tile is inside the viewport. No-JS: only the first slide shows,
+   because only it ever carries .is-active. */
+.tile-slider {
+  position: absolute;
+  inset: 0;
+}
+
+.tile-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 900ms var(--enter), transform 600ms var(--enter);
+}
+
+.tile-slide.is-active {
+  opacity: 1;
+}
+
+.tile:is(a):hover .tile-slide.is-active,
+.tile:is(a):focus-visible .tile-slide.is-active {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile-slide {
+    transition-duration: 0ms;
+  }
+}
+
 .tile-caption {
   display: flex;
   align-items: baseline;

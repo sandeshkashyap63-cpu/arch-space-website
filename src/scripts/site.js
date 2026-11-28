@@ -146,3 +146,59 @@
   });
 })();
 
+
+/* ---- Project tile auto-slider ---------------------------------------
+   Any .tile-slider gets its .is-active class cycled across its stacked
+   slides while the tile is on screen. One IntersectionObserver per tile
+   drives start/stop. Reduced motion holds on the first slide and never
+   advances. */
+(function () {
+  'use strict';
+  var sliders = document.querySelectorAll('[data-tile-slider]');
+  if (!sliders.length) return;
+  var reduced =
+    window.siteMotion && window.siteMotion.reducedMotion && window.siteMotion.reducedMotion();
+  if (reduced) return;
+  if (typeof IntersectionObserver !== 'function') return;
+
+  var INTERVAL = 3200; // ms per slide — matches the CSS crossfade budget
+
+  sliders.forEach(function (sliderEl) {
+    var slides = sliderEl.querySelectorAll('.tile-slide');
+    if (slides.length < 2) return;
+    var index = 0;
+    var timer = null;
+
+    function advance() {
+      slides[index].classList.remove('is-active');
+      index = (index + 1) % slides.length;
+      slides[index].classList.add('is-active');
+    }
+    function start() {
+      if (timer) return;
+      timer = window.setInterval(advance, INTERVAL);
+    }
+    function stop() {
+      if (!timer) return;
+      window.clearInterval(timer);
+      timer = null;
+    }
+
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) start();
+          else stop();
+        });
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(sliderEl);
+
+    // Pause when the tab is hidden so the loop doesn't drift while off-screen.
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) stop();
+      else if (sliderEl.getBoundingClientRect().top < window.innerHeight) start();
+    });
+  });
+})();

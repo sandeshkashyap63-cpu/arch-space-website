@@ -152,6 +152,158 @@
       ],
       "aspect": 0.75
     },
+    "project-industrial-complex-01.jpeg": {
+      "base": "project-industrial-complex-01",
+      "alt": "Industrial complex — front view with office, warehouse and cement silos",
+      "width": 3200,
+      "height": 1800,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.5625
+    },
+    "project-industrial-complex-02.jpeg": {
+      "base": "project-industrial-complex-02",
+      "alt": "Industrial complex — warehouse and silo cluster from the yard",
+      "width": 3200,
+      "height": 1800,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.5625
+    },
+    "project-industrial-complex-03.jpeg": {
+      "base": "project-industrial-complex-03",
+      "alt": "Industrial complex — office entrance and parking court",
+      "width": 3200,
+      "height": 1800,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.5625
+    },
+    "project-industrial-complex-04.jpeg": {
+      "base": "project-industrial-complex-04",
+      "alt": "Industrial complex — perspective from above showing the yard",
+      "width": 3200,
+      "height": 1800,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.5625
+    },
+    "project-industrial-complex-05.jpeg": {
+      "base": "project-industrial-complex-05",
+      "alt": "Industrial complex — rear view of the warehouse and silos",
+      "width": 3200,
+      "height": 1800,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.5625
+    },
+    "project-industrial-complex-06.jpeg": {
+      "base": "project-industrial-complex-06",
+      "alt": "Industrial complex — long view across the site boundary",
+      "width": 3200,
+      "height": 1800,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.5625
+    },
+    "project-industrial-complex-07.jpeg": {
+      "base": "project-industrial-complex-07",
+      "alt": "Industrial complex — tanker route alongside the main storage shed",
+      "width": 3200,
+      "height": 1800,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.5625
+    },
+    "project-industrial-complex-08.jpeg": {
+      "base": "project-industrial-complex-08",
+      "alt": "Industrial complex — site plan, aerial view",
+      "width": 1624,
+      "height": 2160,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 1.33
+    },
+    "project-industrial-complex-09.jpeg": {
+      "base": "project-industrial-complex-09",
+      "alt": "Industrial complex — distant perspective of the office and silos",
+      "width": 3200,
+      "height": 1800,
+      "widths": [
+        480,
+        768,
+        1024,
+        1440,
+        2000
+      ],
+      "formats": [
+        "jpeg"
+      ],
+      "aspect": 0.5625
+    },
     "project-brick-and-stone-residence.jpeg": {
       "base": "project-brick-and-stone-residence",
       "alt": "Contemporary residence in red brick and stone",

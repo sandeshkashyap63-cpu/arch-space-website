@@ -1,4 +1,4 @@
-import { html, projectImage } from '../lib/html.mjs';
+import { html, projectImage, projectSlides } from '../lib/html.mjs';
 import { url } from '../lib/config.mjs';
 import { enquirySection } from '../components/enquiry-section.mjs';
 import { projects, categories } from '../data/projects.mjs';
@@ -54,7 +54,9 @@ export const projectsPage = {
           (project) => html`
             <article class="tile tile--static" data-category="${project.category}" data-reveal>
               <div class="frame frame--4x3 frame--bordered">
-                ${projectImage({ image: project.image, sizes: TILE_SIZES })}
+                ${project.slides
+                  ? projectSlides({ slides: project.slides, sizes: TILE_SIZES })
+                  : projectImage({ image: project.image, sizes: TILE_SIZES })}
               </div>
               <div class="tile-caption">
                 <h2 class="tile-name">${project.name}</h2>

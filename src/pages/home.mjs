@@ -1,4 +1,4 @@
-import { html, raw, localImage, projectImage } from '../lib/html.mjs';
+import { html, raw, localImage, projectImage, projectSlides } from '../lib/html.mjs';
 import { siteGallery } from '../components/site-gallery.mjs';
 import { enquirySection } from '../components/enquiry-section.mjs';
 import { url } from '../lib/config.mjs';
@@ -147,7 +147,9 @@ const selectedSection = () => html`
           (project) => html`
             <a class="tile" href="${url('/projects/')}" data-reveal>
               <div class="frame frame--4x3">
-                ${projectImage({ image: project.image, sizes: TILE_SIZES })}
+                ${project.slides
+                  ? projectSlides({ slides: project.slides, sizes: TILE_SIZES })
+                  : projectImage({ image: project.image, sizes: TILE_SIZES })}
               </div>
               <div class="tile-caption">
                 <span class="tile-name">${project.name}</span>
